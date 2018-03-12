@@ -1,13 +1,11 @@
 package com.ldeng.backend.service.impl;
 
-import com.ldeng.backend.forgerock.openam.AMUserService;
-import com.ldeng.backend.model.Role;
+import com.ldeng.backend.fr.openam.AMUserService;
 import com.ldeng.backend.model.User;
 import com.ldeng.backend.model.UserRole;
 import com.ldeng.backend.repository.RoleRepository;
 import com.ldeng.backend.repository.UserRepository;
 import com.ldeng.backend.service.UserService;
-import com.ldeng.backend.utility.SecurityUtility;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +13,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.Date;
-import java.util.HashSet;
 import java.util.Set;
 
 @Service
