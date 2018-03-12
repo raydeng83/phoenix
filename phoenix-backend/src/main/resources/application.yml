@@ -1,0 +1,21 @@
+
+
+tracer.property: "I AM THE DEFAULT"
+spring.datasource.platform: "mysql"
+spring.jpa.show-sql: "true"
+spring.database.driverClassName: "com.mysql.jdbc.Driver"
+spring.datasource.url: "jdbc:mysql://127.0.0.1:3306/phoenix-db"
+spring.datasource.username: "root"
+spring.datasource.password: "Rochester24"
+spring.datasource.testWhileIdle: "true"
+spring.datasource.validationQuery: "SELECT 1"
+spring.jpa.properties.hibernate.dialect:
+     "org.hibernate.dialect.MySQL5Dialect"
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+server:
+  port: 8181
+
+openam-server.address: "http://openam.phoenix.com:18080/openam"
