@@ -1,21 +1,13 @@
 package com.ldeng.backend.model;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
-import java.io.Serializable;
-import java.util.Collection;
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-public class User implements Serializable, UserDetails {
-
-    private static final long serialVersionUID = -9138461153733765604L;
+public class User{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -23,16 +15,13 @@ public class User implements Serializable, UserDetails {
     private String lastName;
     private String email;
 
-    @JsonFormat(shape= JsonFormat.Shape.STRING, pattern="yyyy-MM-dd")
-    private Date joinDate;
-    private String username;
+    @Transient
     private String password;
+    private String username;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JsonIgnore
     private Set<UserRole> userRoles = new HashSet<>();
-
-
 
     public Long getId() {
         return id;
@@ -66,32 +55,6 @@ public class User implements Serializable, UserDetails {
         this.email = email;
     }
 
-    public Date getJoinDate() {
-        return joinDate;
-    }
-
-    public void setJoinDate(Date joinDate) {
-        this.joinDate = joinDate;
-    }
-
-    @Override
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    @Override
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public Set<UserRole> getUserRoles() {
         return userRoles;
     }
@@ -100,33 +63,19 @@ public class User implements Serializable, UserDetails {
         this.userRoles = userRoles;
     }
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        Set<GrantedAuthority> authorities = new HashSet<>();
-        userRoles.forEach(ur -> authorities.add(new Authority(ur.getRole().getName())));
-        return authorities;
+    public String getPassword() {
+        return password;
     }
 
-    @Override
-    public boolean isAccountNonExpired() {
-        // TODO Auto-generated method stub
-        return true;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    @Override
-    public boolean isAccountNonLocked() {
-        // TODO Auto-generated method stub
-        return true;
+    public String getUsername() {
+        return username;
     }
 
-    @Override
-    public boolean isCredentialsNonExpired() {
-        // TODO Auto-generated method stub
-        return true;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return true;
+    public void setUsername(String username) {
+        this.username = username;
     }
 }

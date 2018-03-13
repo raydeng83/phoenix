@@ -1,16 +1,13 @@
 package com.ldeng.backend.model;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-public class Role implements Serializable {
-
-    private static final long serialVersionUID = 890245234L;
-
+public class Role {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int roleId;
 
     private String name;

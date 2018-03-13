@@ -1,5 +1,7 @@
 package com.ldeng.backend.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.ldeng.backend.fr.openam.AMUserService;
 import com.ldeng.backend.model.User;
 import com.ldeng.backend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,12 +13,16 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 
 @RestController
 public class LoginController {
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private AMUserService amUserService;
 
 //    @RequestMapping("/login")
 //    public ResponseEntity login(
@@ -76,6 +82,16 @@ public class LoginController {
 //        return userService.save(user);
 //    }
 
+    @RequestMapping(value = "/authenticate", method = RequestMethod.POST)
+    public void authenticate(
+            @RequestBody HashMap<String, Object> mapper
+    ){
+        ObjectMapper om = new ObjectMapper();
+        String username = (String) mapper.get("username");
+        String password = (String) mapper.get("password");
+
+        amUserService.authenticateUser(username, password);
+    }
 
     @RequestMapping("/test")
     public String test() {

@@ -4,9 +4,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name="user_role")
-public class UserRole implements Serializable {
-    private static final long serialVersionUID = 890345L;
+public class UserRole{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

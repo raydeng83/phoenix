@@ -5,5 +5,5 @@ import com.ldeng.backend.model.User;
 public interface AMUserService {
     void createUser (User user);
 
-    void authenticateUser (User user);
+    String authenticateUser (String usernamne, String password);
 }
