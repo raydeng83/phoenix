@@ -10,44 +10,15 @@ export class LoginService {
 
   constructor (private http: Http, private router:Router) {}
 
-  // sendCredential(username: string, password: string) {
-  //   let url = this.serverPath+"/authenticate";
-  //   let userInfo = {
-  //   	"username" : username,
-  //   	"password" : password
-  //   };
-  //   let headers = new Headers(
-  //     {
-  //       'Content-Type': 'application/json',
-
-  //     });
-  //   return this.http.post(url, userInfo, {headers: headers});
-  // }
-
-  // sendCredential(username: string, password: string) {
-  //   let url = this.serverPath+"/login";
-  //   let encodedCredentials = btoa(username+":"+password);
-  //   let basicHeader = "Basic "+ encodedCredentials;
-  //   let headers = new Headers(
-  //     {
-  //       'Content-Type': 'application/x-www-form-urlencoded',
-  //       'Authorization' : basicHeader
-
-  //       // 'Access-Control-Allow-Credentials' : true
-  //     });
-  //   return this.http.get(url, {headers: headers});
-  // }
-
   sendCredential(username: string, password: string) {
     let url = this.serverPath+"/login";
     const body = new URLSearchParams();
-    body.set("username", "admin");
-    body.set("password", "password");
+    body.set("username", username);
+    body.set("password", password);
     let headers = new Headers(
       {
         'Content-Type': 'application/x-www-form-urlencoded',
 
-        // 'Access-Control-Allow-Credentials' : true
       });
 
 
