@@ -100,7 +100,7 @@ public class LoginController {
 
     @RequestMapping("/checkSession")
     public String checkSession() {
-        return "Session Active";
+        return "UserSession Active";
     }
 
     @RequestMapping("/token")

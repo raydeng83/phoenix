@@ -16,6 +16,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
+import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import java.security.AuthProvider;
@@ -40,20 +41,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     };
 
     @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-                .csrf().disable().cors().disable().authorizeRequests()
-                .antMatchers(PUBLIC_MATCHERS).permitAll()
-                .antMatchers(HttpMethod.POST, "/user/").permitAll()
-                .antMatchers(HttpMethod.POST, "/guest/").permitAll()
-                .anyRequest().authenticated()
-                .and()
-                .logout().logoutSuccessUrl("/logoutSuccess").deleteCookies("JSESSIONID")
-                .invalidateHttpSession(true)
-                .and()
-                .addFilter(new JWTAuthenticationFilter(authenticationManager()))
-                .addFilter(new JWTAuthorizationFilter(authenticationManager()));
+    protected void configure(final HttpSecurity http) throws Exception
+    {
+
+        //Implementing Token based authentication in this filter
+        final TokenAuthenticationFilter tokenFilter = new TokenAuthenticationFilter();
+        http.addFilterBefore(tokenFilter, BasicAuthenticationFilter.class);
+
+        //Creating token when basic authentication is successful and the same token can be used to authenticate for further requests
+        final CustomBasicAuthenticationFilter customBasicAuthFilter = new CustomBasicAuthenticationFilter(authenticationManager());
+        http.addFilter(customBasicAuthFilter);
+
     }
 
     @Override

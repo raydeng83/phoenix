@@ -4,8 +4,10 @@ import com.ldeng.backend.fr.openam.AMUserService;
 import com.ldeng.backend.model.Role;
 import com.ldeng.backend.model.User;
 import com.ldeng.backend.model.UserRole;
+import com.ldeng.backend.model.UserSession;
 import com.ldeng.backend.repository.RoleRepository;
 import com.ldeng.backend.repository.UserRepository;
+import com.ldeng.backend.repository.UserSessionRepository;
 import com.ldeng.backend.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,6 +34,9 @@ public class UserServiceImpl implements UserService{
     @Autowired
     private RoleRepository roleRepository;
 
+    @Autowired
+    private UserSessionRepository userSessionRepository;
+
     @Override
     public User createUser(User user, Set<UserRole> userRoles) {
         User localUser = userRepository.findByEmail(user.getEmail());
@@ -55,6 +60,14 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public User getUserByUsername(String username) {
-        return new User();
+        return userRepository.findByUsername(username);
+    }
+
+    @Override
+    public UserSession setUserSession (User user, String tokenId) {
+        UserSession userSession = new UserSession();
+        userSession.setTokenId(tokenId);
+        userSession.setUser(user);
+        return userSessionRepository.save(userSession);
     }
 }

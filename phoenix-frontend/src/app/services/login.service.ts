@@ -40,17 +40,18 @@ export class LoginService {
 
   sendCredential(username: string, password: string) {
     let url = this.serverPath+"/login";
-    
+    const body = new URLSearchParams();
+    body.set("username", "admin");
+    body.set("password", "password");
     let headers = new Headers(
       {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/x-www-form-urlencoded',
 
         // 'Access-Control-Allow-Credentials' : true
       });
 
-    let data = {"username" : username, "password" : password};
 
-    return this.http.post(url, JSON.stringify(data), {headers: headers});
+    return this.http.post(url, body.toString(), {withCredentials: true, headers: headers});
   }
 
   checkSession() {
@@ -60,7 +61,7 @@ export class LoginService {
         'Accept': 'application/json',
       });
     
-    return this.http.get(url, {headers : headers});
+    return this.http.get(url, {withCredentials: true,headers : headers});
   }
 
   logout() {

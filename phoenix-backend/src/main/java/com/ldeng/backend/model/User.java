@@ -23,6 +23,10 @@ public class User{
     @JsonIgnore
     private Set<UserRole> userRoles = new HashSet<>();
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonIgnore
+    private Set<UserSession> userSessionList = new HashSet<>();
+
     public Long getId() {
         return id;
     }
@@ -77,5 +81,13 @@ public class User{
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public Set<UserSession> getUserSessionList() {
+        return userSessionList;
+    }
+
+    public void setUserSessionList(Set<UserSession> userSessionList) {
+        this.userSessionList = userSessionList;
     }
 }
