@@ -13,6 +13,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { LoginService } from './services/login.service';
 import { UserService } from './services/user.service';
 import { RegistrationService } from './services/registration.service';
+import { LoginGuardService } from './services/login-guard.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { RegistrationService } from './services/registration.service';
   providers: [
   	LoginService,
     UserService,
-    RegistrationService
+    RegistrationService,
+    LoginGuardService
   ],
   bootstrap: [AppComponent]
 })

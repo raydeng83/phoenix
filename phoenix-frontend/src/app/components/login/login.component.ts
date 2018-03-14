@@ -43,34 +43,12 @@ export class LoginComponent implements OnInit {
   }
 
   onCheckSession() {
-  	this.loginService.checkSession().subscribe(
-      res => {
-        this.loggedIn=true;
-      },
-      error => {
-        this.loggedIn=false;
-      }
+    this.loginService.checkSession().subscribe(
+      (res) => this.loggedIn=res
     );
   }
 
-  // onNewAccount() {
-  //   this.usernameExists=false;
-  //   this.emailExists=false;
-  //   this.emailSent = false;
-    
-  //   this.userService.newUser(this.username, this.email).subscribe(
-  //     res => {
-  //       console.log(res);
-  //       this.emailSent = true;
-  //     },
-  //     error => {
-  //       console.log(error.text());
-  //       let errorMessage=error.text();
-  //       if (errorMessage==="usernameExists") this.usernameExists=true;
-  //       if (errorMessage==="emailExists") this.emailExists=true;
-  //     }
-  //   );
-  // }
+
 
   // onForgetPassword() {
   //   this.forgetPasswordEmailSent = false;
@@ -91,7 +69,6 @@ export class LoginComponent implements OnInit {
   // }
 
   ngOnInit() {
-    this.onCheckSession();
   }
 
 

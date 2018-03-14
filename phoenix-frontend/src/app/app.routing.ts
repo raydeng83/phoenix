@@ -5,6 +5,7 @@ import {LoginComponent} from './components/login/login.component';
 import {RegistrationComponent} from './components/registration/registration.component';
 import {HomeComponent} from './components/home/home.component';
 
+import {LoginGuardService} from './services/login-guard.service';
 
 const appRoutes: Routes = [
   {
@@ -14,7 +15,8 @@ const appRoutes: Routes = [
   },
   {
   	path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate: [LoginGuardService]
   },
   {
     path: 'login',

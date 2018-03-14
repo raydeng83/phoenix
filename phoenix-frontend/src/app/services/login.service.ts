@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import {AppConst} from '../app-const';
 import {Http, Headers} from '@angular/http';
 import {Router} from "@angular/router";
-
+import {Observable} from 'rxjs/Rx';
+import 'rxjs/add/operator/map'
 
 @Injectable()
 export class LoginService {
@@ -32,15 +33,20 @@ export class LoginService {
         'Accept': 'application/json',
       });
     
-    return this.http.get(url, {withCredentials: true,headers : headers});
+    return this.http.get(url, {withCredentials: true,headers : headers}).map(
+      res => {
+        if (res) {
+          return true;
+        }
+        return false;
+      }
+    );
   }
 
   logout() {
     let url = this.serverPath+"/user/logout";
-    let tokenHeader = new Headers ({
-      'x-auth-token' : localStorage.getItem("xAuthToken")
-    });
-    return this.http.post(url,'', {headers : tokenHeader});
+    
+    return this.http.post(url,'', {withCredentials: true});
   }
 
 }
