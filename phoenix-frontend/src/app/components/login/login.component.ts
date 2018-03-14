@@ -33,6 +33,7 @@ export class LoginComponent implements OnInit {
     this.loginService.sendCredential(this.credential.username, this.credential.password).subscribe(
       res=>{
         this.loggedIn=true;
+        this.router.navigate(['/home']);
       },
       error=>{
         this.loggedIn=false;

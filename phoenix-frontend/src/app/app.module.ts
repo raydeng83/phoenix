@@ -8,15 +8,18 @@ import { routing }  from './app.routing';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { RegistrationComponent } from './components/registration/registration.component';
 
 import { LoginService } from './services/login.service';
 import { UserService } from './services/user.service';
+import { RegistrationService } from './services/registration.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,8 @@ import { UserService } from './services/user.service';
   ],
   providers: [
   	LoginService,
-    UserService
+    UserService,
+    RegistrationService
   ],
   bootstrap: [AppComponent]
 })

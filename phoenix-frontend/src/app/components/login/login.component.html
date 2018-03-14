@@ -1,4 +1,4 @@
-<div style="margin-top:20px;">
+<div style="margin:20px 200px 0 200px">
 	<div *ngIf="loginError" style="color:red;">Incorrect username or password.</div>
 	<form (ngSubmit)="onLogin()">
 		<div class="form-group">
@@ -12,10 +12,7 @@
 			<p style="color: #828282;"> Enter the password that accompanies your username
 			</p>
 		</div>
-		<button md-raised-button type="submit" class="mat-primary">Log in</button>
+		<button type="submit" class="btn btn-primary btn-block">Log in</button>
 	</form>
-
-
+	<div><a routerLink="/register" routerLinkActive="active"><span style="font-size: 1.2em;">Create a new account</span></a></div>
 </div>
-
-
