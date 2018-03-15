@@ -20,4 +20,10 @@ export class UserService {
     return this.http.post(url, user, {headers : tokenHeader});
   }
 
+  client1SSo() {
+  	let url = this.serverPath+"/client/client1SSO";
+    
+    return this.http.get(url, {withCredentials:true});
+  }
+
 }
