@@ -3,11 +3,13 @@ package com.phoenix.external.ssoapp.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
 
 @Configuration
@@ -29,28 +31,24 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/image/**",
             "/login/**",
             "/logout/**",
-            "/user",
-            "/**"
+            "/user"
     };
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-                .cors().and()
-                .csrf().disable()
-                .exceptionHandling()
-                .authenticationEntryPoint(restAuthenticationEntryPoint)
-                .and()
-                .authorizeRequests()
-                .antMatchers(PUBLIC_MATCHERS)
-                .permitAll()
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
+                .csrf().disable().cors().disable().authorizeRequests()
+                .antMatchers(PUBLIC_MATCHERS).permitAll()
+                .antMatchers(HttpMethod.POST, "/user/").permitAll()
+                .antMatchers(HttpMethod.POST, "/guest/").permitAll()
                 .anyRequest().authenticated()
                 .and()
-                .formLogin()
-                .successHandler(authenticationSuccessHandler)
-                .failureHandler(new SimpleUrlAuthenticationFailureHandler())
+                .logout().logoutSuccessUrl("/logoutSuccess").deleteCookies("JSESSIONID")
+                .invalidateHttpSession(true)
                 .and()
-                .logout();
+                .addFilter(new JWTAuthorizationFilter(authenticationManager()));
+    
     }
 
     @Bean
@@ -65,11 +63,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
 
-    @Override
-    protected void configure(
-            AuthenticationManagerBuilder auth) throws Exception {
-        auth.authenticationProvider(authProvider);
-    }
+
 
 
 }

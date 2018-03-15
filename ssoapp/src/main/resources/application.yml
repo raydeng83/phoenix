@@ -13,6 +13,6 @@ spring:
     hibernate:
       ddl-auto: update
 server:
-  port: 8282
+  port: 8383
 
 openam-server.address: "http://openam.phoenix.com:18080/openam"
