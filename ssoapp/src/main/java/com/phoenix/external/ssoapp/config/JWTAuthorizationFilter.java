@@ -4,12 +4,17 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTVerificationException;
+import com.auth0.jwt.interfaces.Claim;
 import com.auth0.jwt.interfaces.DecodedJWT;
+import com.phoenix.external.ssoapp.model.User;
+import com.phoenix.external.ssoapp.service.UserService;
 import io.jsonwebtoken.Jwts;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
+import org.springframework.stereotype.Component;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -23,9 +28,14 @@ import static com.phoenix.external.ssoapp.utility.SecurityConstants.HEADER_STRIN
 import static com.phoenix.external.ssoapp.utility.SecurityConstants.TOKEN_PREFIX;
 
 public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
+
+    @Autowired
+    private UserService userService;
+
     public JWTAuthorizationFilter(AuthenticationManager authManager) {
         super(authManager);
     }
+
     @Override
     protected void doFilterInternal(HttpServletRequest req,
                                     HttpServletResponse res,
@@ -50,11 +60,16 @@ public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
                 JWTVerifier verifier = JWT.require(algorithm)
                         .build(); //Reusable verifier instance
                 DecodedJWT jwt = verifier.verify(token);
-                System.out.println(jwt.getSubject());
+                Claim emailClaim = jwt.getClaim("email");
+
+                String email = emailClaim.asString();
+                String username = jwt.getSubject();
+                if(username != null) {
+                    return new UsernamePasswordAuthenticationToken(username, null, new ArrayList<>());
+                }
+
             } catch (UnsupportedEncodingException exception){
-                //UTF-8 encoding not supported
-            } catch (JWTVerificationException exception){
-                //Invalid signature/claims
+                exception.printStackTrace();
             }
 
             return null;

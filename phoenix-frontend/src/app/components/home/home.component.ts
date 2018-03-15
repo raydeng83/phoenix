@@ -32,7 +32,14 @@ export class HomeComponent implements OnInit {
     this.userService.client1SSo().subscribe(
       res => {
         this.issued_token=res.text();
-        console.log(this.issued_token);
+        this.loginService.ssoClient1(this.issued_token).subscribe(
+          res => {
+            location.href = "http://localhost:8383/onSSO";
+          },
+          error => {
+            console.log(error);
+          }
+        );
       },
       error => {
         this.loggedIn=true;

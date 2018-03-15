@@ -12,6 +12,8 @@ public interface UserService {
 
     User getUserByUsername(String username);
 
+    User getUserByEmail(String email);
+
     Session setUserSession(String username, String sessionId, String tokenId);
 
     JSONObject invalidateUserSession(String username, String sessionId);

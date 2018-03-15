@@ -49,4 +49,14 @@ export class LoginService {
     return this.http.post(url,'', {withCredentials: true});
   }
 
+  ssoClient1(issued_token){
+    let url = "http://localhost:8383/onSSO";
+    let headers = new Headers(
+      {
+        'Authorization': 'Bearer '+issued_token
+     });
+
+    return this.http.get(url, {withCredentials:true, headers : headers});
+  }
+
 }

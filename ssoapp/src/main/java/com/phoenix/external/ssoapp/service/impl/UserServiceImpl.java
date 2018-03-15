@@ -79,4 +79,9 @@ public class UserServiceImpl implements UserService {
         return amUserService.invalidateSession(tokenId);
     }
 
+    @Override
+    public User getUserByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
+
 }
