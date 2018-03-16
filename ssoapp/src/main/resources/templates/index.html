@@ -1,10 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.springframework.org/schema/data/jaxb">
 <head>
-    <meta charset="UTF-8"></head>
-    <title>Home Page</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    <title>Client 1 Home Page</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/css/non-responsive.css" rel="stylesheet"/>
+
+    <!-- Bootstrap Dropdown Hover CSS -->
+    <link href="/css/animate.min.css" rel="stylesheet"/>
+    <link href="/css/bootstrap-dropdownhover.min.css" rel="stylesheet"/>
+
+    <!--data table-->
+    <link th:href="@{/css/jquery.dataTables.min.css}" rel="stylesheet" />
+    <link th:href="@{/css/dataTables.bootstrap.min.css}" rel="stylesheet" />
+
+    <link href="/css/font-awesome.min.css" rel="stylesheet"/>
+
+    <link href="/css/style.css" rel="stylesheet"/>
+    <link rel="icon" href="image/apple-touch-icon.png"/>
 </head>
 <body>
-<h1>Welcome to home page of client1</h1>
+<div class="container">
+    <a class="btn btn-info btn-lg" href="http://localhost:4200">Go to Admin Portal</a>
+    <div class="text-center">
+    <h1>This is a cool app</h1>
+    <img src="image/coolcat.jpg" class="img-fluid" alt="Responsive image">
+    </div>
+</div>
 </body>
 </html>

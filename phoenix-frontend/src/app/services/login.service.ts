@@ -49,6 +49,12 @@ export class LoginService {
     return this.http.post(url,'', {withCredentials: true});
   }
 
+  logoutClient1() {
+    let url = "http://localhost:8383/logout";
+    
+    return this.http.post(url,'', {withCredentials: true});
+  }
+
   ssoClient1(issued_token){
     let url = "http://localhost:8383/onSSO";
     let headers = new Headers(

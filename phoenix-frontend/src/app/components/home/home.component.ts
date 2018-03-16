@@ -17,6 +17,8 @@ export class HomeComponent implements OnInit {
   }
 
   onLogout() {
+    this.loginService.logoutClient1().subscribe();
+
     this.loginService.logout().subscribe(
       res => {
         this.loggedIn=false;
@@ -48,8 +50,8 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.loginService.checkSession().subscribe(
+      (res) => this.loggedIn=res
+    );
   }
-
-
-
 }

@@ -44,7 +44,12 @@ export class LoginComponent implements OnInit {
 
   onCheckSession() {
     this.loginService.checkSession().subscribe(
-      (res) => this.loggedIn=res
+      (res) => {
+        this.loggedIn=res;
+        if(this.loggedIn) {
+          this.router.navigate(['/home']);
+        }
+      }
     );
   }
 
@@ -69,6 +74,8 @@ export class LoginComponent implements OnInit {
   // }
 
   ngOnInit() {
+    console.log("test");
+    this.onCheckSession();
   }
 
 

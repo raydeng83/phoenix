@@ -14,5 +14,9 @@ spring:
       ddl-auto: update
 server:
   port: 8383
+  servlet:
+    session:
+      cookie:
+        name: mysessionid
 
 openam-server.address: "http://openam.phoenix.com:18080/openam"
