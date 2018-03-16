@@ -26,4 +26,19 @@ export class UserService {
     return this.http.get(url, {withCredentials:true});
   }
 
+  forgetPassword(username: string) {
+    let url = this.serverPath+"/user/forgetpassword";
+
+    let userInfo = {
+      "input": {
+       "queryFilter": "uid eq "+username
+     }
+    };
+    
+    let tokenHeader = new Headers ({
+      'Content-Type': 'application/json',
+    });
+    return this.http.post(url, userInfo, {headers : tokenHeader});
+  }
+
 }

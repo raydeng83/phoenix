@@ -14,13 +14,15 @@ import { LoginService } from './services/login.service';
 import { UserService } from './services/user.service';
 import { RegistrationService } from './services/registration.service';
 import { LoginGuardService } from './services/login-guard.service';
+import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassword.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    ForgetpasswordComponent
   ],
   imports: [
     BrowserModule,
