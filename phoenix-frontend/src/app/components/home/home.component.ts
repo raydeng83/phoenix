@@ -17,7 +17,6 @@ export class HomeComponent implements OnInit {
   }
 
   onLogout() {
-    this.loginService.logoutClient1().subscribe();
 
     this.loginService.logout().subscribe(
       res => {
@@ -28,6 +27,9 @@ export class HomeComponent implements OnInit {
         this.loggedIn=true;
       }
     );
+
+    this.loginService.logoutClient1().subscribe();
+    
   }
 
   onClient1SSO(){
