@@ -1,0 +1,2175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright 2015-2017 ForgeRock AS. All Rights Reserved
+ 
+  Use of this code requires a commercial software license with ForgeRock AS.
+  or with one of its affiliates. All use shall be exclusively subject
+  to such license between the licensee and ForgeRock AS.
+-->
+<!DOCTYPE ServicesConfiguration
+    PUBLIC "=//iPlanet//Service Management Services (SMS) 1.0 DTD//EN" "jar://com/sun/identity/sm/sms.dtd">
+
+<ServicesConfiguration>
+    <Service name="ScriptingService" version="1.0">
+
+        <Schema serviceHierarchy="/DSAMEConfig/ScriptingService"
+                i18nFileName="scripting"
+                revisionNumber="1"
+                i18nKey="service-description"
+                resourceName="scripting">
+            <Global>
+                <AttributeSchema name="defaultScriptContext" i18nKey="g101" order="900" type="single_choice"
+                                 resourceName="defaultContext">
+                    <ChoiceValues>
+                        <ChoiceValue i18nKey="script-type-01">POLICY_CONDITION</ChoiceValue>
+                        <ChoiceValue i18nKey="script-type-02">AUTHENTICATION_SERVER_SIDE</ChoiceValue>
+                        <ChoiceValue i18nKey="script-type-03">AUTHENTICATION_CLIENT_SIDE</ChoiceValue>
+                        <ChoiceValue i18nKey="script-type-04">OIDC_CLAIMS</ChoiceValue>
+                        <ChoiceValue i18nKey="script-type-05">AUTHENTICATION_TREE_DECISION_NODE</ChoiceValue>
+                    </ChoiceValues>
+                    <DefaultValues>
+                        <Value>POLICY_CONDITION</Value>
+                    </DefaultValues>
+                </AttributeSchema>
+                <SubSchema name="scriptContext" inheritance="multiple" resourceName="contexts">
+                    <AttributeSchema name="i18nKey" type="single"/>
+                    <AttributeSchema name="languages" type="multiple_choice" syntax="string" i18nKey="st101" order="1100">
+                        <ChoiceValues>
+                            <ChoiceValue i18nKey="language-01">JAVASCRIPT</ChoiceValue>
+                            <ChoiceValue i18nKey="language-02">GROOVY</ChoiceValue>
+                        </ChoiceValues>
+                        <DefaultValues>
+                            <Value>JAVASCRIPT</Value>
+                            <Value>GROOVY</Value>
+                        </DefaultValues>
+                    </AttributeSchema>
+                    <AttributeSchema name="defaultScript" type="single_choice" uitype="globalScriptSelect"
+                                     propertiesViewBeanURL="../XUI/%23realms/{0}/scripts/edit/{1}" syntax="string"
+                                     i18nKey="st103"
+                                     order="1200">
+                        <ChoiceValues>
+                            <ChoiceValuesClassName
+                                    className="org.forgerock.openam.scripting.service.ScriptChoiceValues">
+                                <AttributeValuePair>
+                                    <Attribute name="GlobalOnly"/>
+                                    <Value>true</Value>
+                                </AttributeValuePair>
+                            </ChoiceValuesClassName>
+                        </ChoiceValues>
+                    </AttributeSchema>
+                    <SubSchema name="engineConfiguration" i18nKey="ec100">
+                        <AttributeSchema name="i18nKey" type="single">
+                            <DefaultValues>
+                                <Value>engine-configuration</Value>
+                            </DefaultValues>
+                        </AttributeSchema>
+                        <AttributeSchema name="serverTimeout"
+                                         type="single" syntax="number_range" rangeStart="0"
+                                         rangeEnd="2147483647" i18nKey="ec101" order="100">
+                            <DefaultValues>
+                                <Value>0</Value>
+                            </DefaultValues>
+                        </AttributeSchema>
+                        <AttributeSchema name="coreThreads"
+                                         type="single" syntax="number_range" rangeStart="1"
+                                         rangeEnd="2147483647" i18nKey="ec102" order="200">
+                            <DefaultValues>
+                                <Value>10</Value>
+                            </DefaultValues>
+                        </AttributeSchema>
+                        <AttributeSchema name="maxThreads"
+                                         type="single" syntax="number_range" rangeStart="1"
+                                         rangeEnd="2147483647" i18nKey="ec103" order="300">
+                            <DefaultValues>
+                                <Value>50</Value>
+                            </DefaultValues>
+                        </AttributeSchema>
+                        <AttributeSchema name="queueSize"
+                                         type="single" syntax="number_range" rangeStart="-1"
+                                         rangeEnd="2147483647" i18nKey="ec104" order="400">
+                            <DefaultValues>
+                                <Value>10</Value>
+                            </DefaultValues>
+                        </AttributeSchema>
+                        <AttributeSchema name="idleTimeout"
+                                         type="single" syntax="number_range" rangeStart="0"
+                                         rangeEnd="2147483647" i18nKey="ec105" order="500">
+                            <DefaultValues>
+                                <Value>60</Value>
+                            </DefaultValues>
+                        </AttributeSchema>
+                        <AttributeSchema name="whiteList"
+                                         type="list" syntax="string" i18nKey="ec106" order="600">
+                            <DefaultValues>
+                                <Value>java.lang.Boolean</Value>
+                                <Value>java.lang.Byte</Value>
+                                <Value>java.lang.Character</Value>
+                                <Value>java.lang.Character$Subset</Value>
+                                <Value>java.lang.Character$UnicodeBlock</Value>
+                                <Value>java.lang.Double</Value>
+                                <Value>java.lang.Float</Value>
+                                <Value>java.lang.Integer</Value>
+                                <Value>java.lang.Long</Value>
+                                <Value>java.lang.Math</Value>
+                                <Value>java.lang.Number</Value>
+                                <Value>java.lang.Object</Value>
+                                <Value>java.lang.Short</Value>
+                                <Value>java.lang.StrictMath</Value>
+                                <Value>java.lang.String</Value>
+                                <Value>java.lang.Void</Value>
+                                <Value>java.util.ArrayList</Value>
+                                <Value>java.util.HashSet</Value>
+                                <Value>java.util.HashMap</Value>
+                                <Value>java.util.HashMap$KeyIterator</Value>
+                                <Value>java.util.LinkedHashMap</Value>
+                                <Value>java.util.LinkedHashSet</Value>
+                                <Value>java.util.LinkedList</Value>
+                                <Value>java.util.TreeMap</Value>
+                                <Value>java.util.TreeSet</Value>
+                                <Value>com.sun.identity.shared.debug.Debug</Value>
+                                <Value>org.forgerock.http.client.*</Value>
+                                <Value>org.forgerock.http.Client</Value>
+                                <Value>org.forgerock.http.Handler</Value>
+                                <Value>org.forgerock.http.Context</Value>
+                                <Value>org.forgerock.http.context.RootContext</Value>
+                                <Value>java.util.Collections$EmptyList</Value>
+                                <Value>org.forgerock.http.protocol.Entity</Value>
+                                <Value>org.forgerock.http.protocol.Form</Value>
+                                <Value>org.forgerock.http.protocol.Header</Value>
+                                <Value>org.forgerock.http.protocol.Headers</Value>
+                                <Value>org.forgerock.http.protocol.Message</Value>
+                                <Value>org.forgerock.http.protocol.Request</Value>
+                                <Value>org.forgerock.http.protocol.RequestCookies</Value>
+                                <Value>org.forgerock.http.protocol.Response</Value>
+                                <Value>org.forgerock.http.protocol.ResponseException</Value>
+                                <Value>org.forgerock.http.protocol.Responses</Value>
+                                <Value>org.forgerock.http.protocol.Status</Value>
+                                <Value>org.forgerock.util.promise.NeverThrowsException</Value>
+                                <Value>org.forgerock.util.promise.Promise</Value>
+                                <Value>org.forgerock.util.promise.PromiseImpl</Value>
+                                <Value>org.forgerock.openam.scripting.api.http.GroovyHttpClient</Value>
+                                <Value>org.forgerock.openam.scripting.api.http.JavaScriptHttpClient</Value>
+                                <Value>org.forgerock.openam.scripting.api.ScriptedIdentity</Value>
+                                <Value>org.forgerock.openam.scripting.api.ScriptedSession</Value>
+                                <Value>groovy.json.JsonSlurper</Value>
+                            </DefaultValues>
+                        </AttributeSchema>
+                        <AttributeSchema name="blackList"
+                                         type="list" syntax="string" i18nKey="ec107" order="700">
+                            <DefaultValues>
+                                <Value>java.security.AccessController</Value>
+                                <Value>java.lang.Class</Value>
+                                <Value>java.lang.reflect.*</Value>
+                            </DefaultValues>
+                        </AttributeSchema>
+                        <AttributeSchema name="useSecurityManager"
+                                         type="single" syntax="boolean" i18nKey="ec108" order="800">
+                            <BooleanValues>
+                                <BooleanTrueValue i18nKey="i18nTrue">true</BooleanTrueValue>
+                                <BooleanFalseValue i18nKey="i18nFalse">false</BooleanFalseValue>
+                            </BooleanValues>
+                            <DefaultValues>
+                                <Value>true</Value>
+                            </DefaultValues>
+                        </AttributeSchema>
+                    </SubSchema>
+                </SubSchema>
+                <SubSchema name="globalScripts" hideConfigUI="yes" resourceName="USE-PARENT">
+                    <SubSchema name="globalScript" hideConfigUI="yes" inheritance="multiple">
+                        <AttributeSchema name="name" type="single" syntax="string" i18nKey="script.name"/>
+                        <AttributeSchema name="description" type="single" syntax="string" i18nKey="script.description"/>
+                        <AttributeSchema name="context" type="single" syntax="string" i18nKey="script.type"/>
+                        <AttributeSchema name="language" type="single" i18nKey="script.language">
+                            <DefaultValues>
+                                <Value>JAVASCRIPT</Value>
+                            </DefaultValues>
+                        </AttributeSchema>
+                        <AttributeSchema name="script" type="single" syntax="script" i18nKey="script.content"/>
+                        <AttributeSchema name="createdBy" type="single" syntax="string" i18nKey="script.createdBy">
+                            <DefaultValues>
+                                <Value>id=dsameuser,ou=user,dc=openam,dc=forgerock,dc=org</Value>
+                            </DefaultValues>
+                        </AttributeSchema>
+                        <AttributeSchema name="creationDate" type="single" syntax="string" i18nKey="script.creationDate">
+                            <DefaultValues>
+                                <Value>1433147666269</Value>
+                            </DefaultValues>
+                        </AttributeSchema>
+                        <AttributeSchema name="lastModifiedBy" type="single" syntax="string" i18nKey="script.lastModifiedBy">
+                            <DefaultValues>
+                                <Value>id=dsameuser,ou=user,dc=openam,dc=forgerock,dc=org</Value>
+                            </DefaultValues>
+                        </AttributeSchema>
+                        <AttributeSchema name="lastModifiedDate" type="single" syntax="string" i18nKey="script.lastModifiedDate">
+                            <DefaultValues>
+                                <Value>1433147666269</Value>
+                            </DefaultValues>
+                        </AttributeSchema>
+                    </SubSchema>
+                </SubSchema>
+            </Global>
+            <Organization>
+                <SubSchema name="scriptConfigurations" resourceName="EMPTY">
+                    <SubSchema name="scriptConfiguration" inheritance="multiple" resourceName="scripts"
+                               hideConfigUI="yes">
+                        <AttributeSchema name="name" type="single" syntax="string" i18nKey="script.name" order="1000"/>
+                        <AttributeSchema name="description" type="single" syntax="string" i18nKey="script.description" order="1000"/>
+                        <AttributeSchema name="script" type="single" syntax="script" i18nKey="script.content" order="1000"/>
+                        <AttributeSchema name="language" type="single" syntax="string" i18nKey="script.language" order="1000">
+                            <ChoiceValues>
+                                <ChoiceValue i18nKey="language-01">JAVASCRIPT</ChoiceValue>
+                                <ChoiceValue i18nKey="language-02">GROOVY</ChoiceValue>
+                            </ChoiceValues>
+                        </AttributeSchema>
+                        <AttributeSchema name="context" type="single_choice" syntax="string" i18nKey="script.type" order="1000">
+                            <ChoiceValues>
+                                <ChoiceValue i18nKey="script-type-01">POLICY_CONDITION</ChoiceValue>
+                                <ChoiceValue i18nKey="script-type-02">AUTHENTICATION_SERVER_SIDE</ChoiceValue>
+                                <ChoiceValue i18nKey="script-type-03">AUTHENTICATION_CLIENT_SIDE</ChoiceValue>
+                                <ChoiceValue i18nKey="script-type-04">OIDC_CLAIMS</ChoiceValue>
+                                <ChoiceValue i18nKey="script-type-05">AUTHENTICATION_TREE_DECISION_NODE</ChoiceValue>
+                            </ChoiceValues>
+                        </AttributeSchema>
+                        <AttributeSchema name="createdBy" type="single" syntax="string" i18nKey="script.createdBy" order="1000"/>
+                        <AttributeSchema name="creationDate" type="single" syntax="string" i18nKey="script.creationDate" order="1000"/>
+                        <AttributeSchema name="lastModifiedBy" type="single" syntax="string" i18nKey="script.lastModifiedBy" order="1000"/>
+                        <AttributeSchema name="lastModifiedDate" type="single" syntax="string" i18nKey="script.lastModifiedDate" order="1000"/>
+                    </SubSchema>
+                </SubSchema>
+            </Organization>
+        </Schema>
+
+        <Configuration>
+            <GlobalConfiguration>
+                <SubConfiguration name="POLICY_CONDITION" id="scriptContext">
+                    <AttributeValuePair>
+                        <Attribute name="i18nKey"/>
+                        <Value>script-type-01</Value>
+                    </AttributeValuePair>
+                    <AttributeValuePair>
+                        <Attribute name="defaultScript"/>
+                        <Value>9de3eb62-f131-4fac-a294-7bd170fd4acb</Value>
+                    </AttributeValuePair>
+                    <SubConfiguration name="engineConfiguration" id="engineConfiguration"/>
+                </SubConfiguration>
+                <SubConfiguration name="AUTHENTICATION_SERVER_SIDE" id="scriptContext">
+                    <AttributeValuePair>
+                        <Attribute name="i18nKey"/>
+                        <Value>script-type-02</Value>
+                    </AttributeValuePair>
+                    <AttributeValuePair>
+                        <Attribute name="defaultScript"/>
+                        <Value>7e3d7067-d50f-4674-8c76-a3e13a810c33</Value>
+                    </AttributeValuePair>
+                    <SubConfiguration name="engineConfiguration" id="engineConfiguration">
+                        <AttributeValuePair>
+                            <Attribute name="whiteList"/>
+                            <Value>java.lang.Boolean</Value>
+                            <Value>java.lang.Byte</Value>
+                            <Value>java.lang.Character</Value>
+                            <Value>java.lang.Character$Subset</Value>
+                            <Value>java.lang.Character$UnicodeBlock</Value>
+                            <Value>java.lang.Double</Value>
+                            <Value>java.lang.Float</Value>
+                            <Value>java.lang.Integer</Value>
+                            <Value>java.lang.Long</Value>
+                            <Value>java.lang.Math</Value>
+                            <Value>java.lang.Number</Value>
+                            <Value>java.lang.Object</Value>
+                            <Value>java.lang.Short</Value>
+                            <Value>java.lang.StrictMath</Value>
+                            <Value>java.lang.String</Value>
+                            <Value>java.lang.Void</Value>
+                            <Value>java.util.ArrayList</Value>
+                            <Value>java.util.ArrayList$Itr</Value>
+                            <Value>java.util.HashSet</Value>
+                            <Value>java.util.HashMap</Value>
+                            <Value>java.util.HashMap$KeyIterator</Value>
+                            <Value>java.util.LinkedHashMap</Value>
+                            <Value>java.util.LinkedHashSet</Value>
+                            <Value>java.util.LinkedList</Value>
+                            <Value>java.util.TreeMap</Value>
+                            <Value>java.util.TreeSet</Value>
+                            <Value>com.sun.identity.shared.debug.Debug</Value>
+                            <Value>org.codehaus.groovy.runtime.GStringImpl</Value>
+                            <Value>org.codehaus.groovy.runtime.ScriptBytecodeAdapter</Value>
+                            <Value>org.forgerock.openam.core.rest.devices.deviceprint.DeviceIdDao</Value>
+                            <Value>org.forgerock.openam.authentication.modules.scripted.*</Value>
+                            <Value>org.forgerock.openam.scripting.api.http.GroovyHttpClient</Value>
+                            <Value>org.forgerock.openam.scripting.api.http.JavaScriptHttpClient</Value>
+                            <Value>org.forgerock.openam.scripting.api.ScriptedIdentity</Value>
+                            <Value>org.forgerock.openam.scripting.api.ScriptedSession</Value>
+                            <Value>org.forgerock.http.client.*</Value>
+                            <Value>groovy.json.JsonSlurper</Value>
+                            <Value>org.forgerock.http.protocol.Cookie</Value>
+                            <Value>org.forgerock.http.protocol.Entity</Value>
+                            <Value>org.forgerock.http.protocol.Form</Value>
+                            <Value>org.forgerock.http.protocol.Header</Value>
+                            <Value>org.forgerock.http.protocol.Headers</Value>
+                            <Value>org.forgerock.http.protocol.Message</Value>
+                            <Value>org.forgerock.http.protocol.Request</Value>
+                            <Value>org.forgerock.http.protocol.RequestCookies</Value>
+                            <Value>org.forgerock.http.protocol.Response</Value>
+                            <Value>org.forgerock.http.protocol.ResponseException</Value>
+                            <Value>org.forgerock.http.protocol.Responses</Value>
+                            <Value>org.forgerock.http.protocol.Status</Value>
+                            <Value>org.forgerock.util.promise.NeverThrowsException</Value>
+                            <Value>org.forgerock.util.promise.Promise</Value>
+                            <Value>org.forgerock.util.promise.PromiseImpl</Value>
+                        </AttributeValuePair>
+                    </SubConfiguration>
+                </SubConfiguration>
+                <SubConfiguration name="AUTHENTICATION_CLIENT_SIDE" id="scriptContext">
+                    <AttributeValuePair>
+                        <Attribute name="i18nKey"/>
+                        <Value>script-type-03</Value>
+                    </AttributeValuePair>
+                    <AttributeValuePair>
+                        <Attribute name="languages"/>
+                        <Value>JAVASCRIPT</Value>
+                    </AttributeValuePair>
+                    <AttributeValuePair>
+                        <Attribute name="defaultScript"/>
+                        <Value>[Empty]</Value>
+                    </AttributeValuePair>
+                </SubConfiguration>
+                <SubConfiguration name="OIDC_CLAIMS" id="scriptContext">
+                    <AttributeValuePair>
+                        <Attribute name="i18nKey"/>
+                        <Value>script-type-04</Value>
+                    </AttributeValuePair>
+                    <AttributeValuePair>
+                        <Attribute name="defaultScript"/>
+                        <Value>36863ffb-40ec-48b9-94b1-9a99f71cc3b5</Value>
+                    </AttributeValuePair>
+                    <SubConfiguration name="engineConfiguration" id="engineConfiguration">
+                        <AttributeValuePair>
+                            <Attribute name="whiteList"/>
+                            <Value>java.lang.Boolean</Value>
+                            <Value>java.lang.Byte</Value>
+                            <Value>java.lang.Character</Value>
+                            <Value>java.lang.Character$Subset</Value>
+                            <Value>java.lang.Character$UnicodeBlock</Value>
+                            <Value>java.lang.Double</Value>
+                            <Value>java.lang.Float</Value>
+                            <Value>java.lang.Integer</Value>
+                            <Value>java.lang.Long</Value>
+                            <Value>java.lang.Math</Value>
+                            <Value>java.lang.Number</Value>
+                            <Value>java.lang.Object</Value>
+                            <Value>java.lang.Short</Value>
+                            <Value>java.lang.StrictMath</Value>
+                            <Value>java.lang.String</Value>
+                            <Value>java.lang.Void</Value>
+                            <Value>java.util.ArrayList</Value>
+                            <Value>java.util.ArrayList$Itr</Value>
+                            <Value>java.util.HashSet</Value>
+                            <Value>java.util.HashMap</Value>
+                            <Value>java.util.HashMap$Entry</Value>
+                            <Value>java.util.HashMap$KeyIterator</Value>
+                            <Value>java.util.LinkedHashMap$LinkedEntryIterator</Value>
+                            <Value>java.util.LinkedHashMap</Value>
+                            <Value>java.util.LinkedHashSet</Value>
+                            <Value>java.util.LinkedList</Value>
+                            <Value>java.util.TreeMap</Value>
+                            <Value>java.util.Collections$SingletonList</Value>
+                            <Value>java.util.TreeSet</Value>
+                            <Value>org.forgerock.oauth2.core.exceptions.InvalidRequestException</Value>
+                            <Value>org.forgerock.openidconnect.Claim</Value>
+                            <Value>com.sun.identity.shared.debug.Debug</Value>
+                            <Value>com.iplanet.sso.providers.dpro.SSOTokenImpl</Value>
+                            <Value>java.util.Collections$1</Value>
+                            <Value>java.util.Collections$EmptyList</Value>
+                            <Value>org.forgerock.http.client.*</Value>
+                            <Value>groovy.json.JsonSlurper</Value>
+                            <Value>com.sun.identity.idm.AMIdentity</Value>
+                            <Value>java.util.LinkedHashMap$Entry</Value>
+                            <Value>java.util.LinkedHashMap$LinkedEntrySet</Value>
+                            <Value>org.forgerock.openam.oauth2.OpenAMAccessToken</Value>
+                            <Value>java.util.HashMap$Node</Value>
+                            <Value>org.forgerock.oauth2.core.UserInfoClaims</Value>
+                            <Value>org.codehaus.groovy.runtime.GStringImpl</Value>
+                            <Value>org.forgerock.openam.sso.providers.stateless.StatelessSSOToken</Value>
+                            <Value>org.forgerock.openidconnect.ssoprovider.OpenIdConnectSSOToken</Value>
+                        </AttributeValuePair>
+                    </SubConfiguration>
+                </SubConfiguration>
+                <SubConfiguration name="AUTHENTICATION_TREE_DECISION_NODE" id="scriptContext">
+                    <AttributeValuePair>
+                        <Attribute name="i18nKey"/>
+                        <Value>script-type-05</Value>
+                    </AttributeValuePair>
+                    <AttributeValuePair>
+                        <Attribute name="defaultScript"/>
+                        <Value>01e1a3c0-038b-4c16-956a-6c9d89328cff</Value>
+                    </AttributeValuePair>
+                    <SubConfiguration name="engineConfiguration" id="engineConfiguration">
+                        <AttributeValuePair>
+                            <Attribute name="whiteList"/>
+                            <Value>java.lang.Boolean</Value>
+                            <Value>java.lang.Byte</Value>
+                            <Value>java.lang.Character</Value>
+                            <Value>java.lang.Character$Subset</Value>
+                            <Value>java.lang.Character$UnicodeBlock</Value>
+                            <Value>java.lang.Double</Value>
+                            <Value>java.lang.Float</Value>
+                            <Value>java.lang.Integer</Value>
+                            <Value>java.lang.Long</Value>
+                            <Value>java.lang.Math</Value>
+                            <Value>java.lang.Number</Value>
+                            <Value>java.lang.Object</Value>
+                            <Value>java.lang.Short</Value>
+                            <Value>java.lang.StrictMath</Value>
+                            <Value>java.lang.String</Value>
+                            <Value>java.lang.Void</Value>
+                            <Value>java.util.ArrayList</Value>
+                            <Value>java.util.HashSet</Value>
+                            <Value>java.util.HashMap</Value>
+                            <Value>java.util.HashMap$KeyIterator</Value>
+                            <Value>java.util.LinkedHashMap</Value>
+                            <Value>java.util.LinkedHashSet</Value>
+                            <Value>java.util.LinkedList</Value>
+                            <Value>java.util.TreeMap</Value>
+                            <Value>java.util.TreeSet</Value>
+                            <Value>com.sun.identity.shared.debug.Debug</Value>
+                            <Value>org.forgerock.http.client.*</Value>
+                            <Value>org.forgerock.http.Client</Value>
+                            <Value>org.forgerock.http.Handler</Value>
+                            <Value>org.forgerock.http.Context</Value>
+                            <Value>org.forgerock.http.context.RootContext</Value>
+                            <Value>org.forgerock.http.protocol.Cookie</Value>
+                            <Value>org.forgerock.http.protocol.Entity</Value>
+                            <Value>org.forgerock.http.protocol.Form</Value>
+                            <Value>org.forgerock.http.protocol.Header</Value>
+                            <Value>org.forgerock.http.protocol.Headers</Value>
+                            <Value>org.forgerock.http.protocol.Message</Value>
+                            <Value>org.forgerock.http.protocol.Request</Value>
+                            <Value>org.forgerock.http.protocol.RequestCookies</Value>
+                            <Value>org.forgerock.http.protocol.Response</Value>
+                            <Value>org.forgerock.http.protocol.ResponseException</Value>
+                            <Value>org.forgerock.http.protocol.Responses</Value>
+                            <Value>org.forgerock.http.protocol.Status</Value>
+                            <Value>org.forgerock.util.promise.NeverThrowsException</Value>
+                            <Value>org.forgerock.util.promise.Promise</Value>
+                            <Value>org.forgerock.util.promise.PromiseImpl</Value>
+                            <Value>org.forgerock.openam.scripting.api.http.GroovyHttpClient</Value>
+                            <Value>org.forgerock.openam.scripting.api.http.JavaScriptHttpClient</Value>
+                            <Value>org.forgerock.openam.scripting.api.ScriptedIdentity</Value>
+                            <Value>org.forgerock.openam.scripting.api.ScriptedSession</Value>
+                            <Value>groovy.json.JsonSlurper</Value>
+                        </AttributeValuePair>
+                    </SubConfiguration>
+                </SubConfiguration>
+                <SubConfiguration name="globalScripts" id="globalScripts">
+                    <SubConfiguration name="9de3eb62-f131-4fac-a294-7bd170fd4acb" id="globalScript">
+                        <AttributeValuePair>
+                            <Attribute name="name"/>
+                            <Value>Scripted Policy Condition</Value>
+                        </AttributeValuePair>
+                        <AttributeValuePair>
+                            <Attribute name="description"/>
+                            <Value>Default global script for Scripted Policy Conditions</Value>
+                        </AttributeValuePair>
+                        <AttributeValuePair>
+                            <Attribute name="context"/>
+                            <Value>POLICY_CONDITION</Value>
+                        </AttributeValuePair>
+                        <AttributeValuePair>
+                            <Attribute name="script"/>
+                            <Value>
+/*
+ * Copyright 2015-2017 ForgeRock AS. All Rights Reserved
+ *
+ * Use of this code requires a commercial software license with ForgeRock AS.
+ * or with one of its affiliates. All use shall be exclusively subject
+ * to such license between the licensee and ForgeRock AS.
+ */
+/**
+ * This is a Policy Condition example script. It demonstrates how to access a user's information,
+ * use that information in external HTTP calls and make a policy decision based on the outcome.
+ */
+
+var userAddress, userIP, resourceHost;
+
+if (validateAndInitializeParameters()) {
+
+    var countryFromUserAddress = getCountryFromUserAddress();
+    logger.message("Country retrieved from user's address: " + countryFromUserAddress);
+    var countryFromUserIP = getCountryFromUserIP();
+    logger.message("Country retrieved from user's IP: " + countryFromUserIP);
+    var countryFromResourceURI = getCountryFromResourceURI();
+    logger.message("Country retrieved from resource URI: " + countryFromResourceURI);
+
+    if (countryFromUserAddress === countryFromUserIP &amp;&amp; countryFromUserAddress === countryFromResourceURI) {
+        logger.message("Authorization Succeeded");
+        responseAttributes.put("countryOfOrigin", [countryFromUserAddress]);
+        authorized = true;
+    } else {
+        logger.message("Authorization Failed");
+        authorized = false;
+    }
+
+} else {
+    logger.message("Required parameters not found. Authorization Failed.");
+    authorized = false;
+}
+
+/**
+ * Use the user's address to lookup their country of residence.
+ *
+ * @returns {*} The user's country of residence.
+ */
+function getCountryFromUserAddress() {
+
+    var request = new org.forgerock.http.protocol.Request();
+    request.setUri("http://maps.googleapis.com/maps/api/geocode/json?address=" + encodeURIComponent(userAddress));
+  	request.setMethod("GET");
+
+    var response = httpClient.send(request).get();
+    logResponse(response);
+
+    var geocode = JSON.parse(response.getEntity());
+    var i;
+    for (i = 0; i &lt; geocode.results.length; i++) {
+        var result = geocode.results[i];
+        var j;
+        for (j = 0; j &lt; result.address_components.length; i++) {
+            if (result.address_components[i].types[0] == "country") {
+                return result.address_components[i].long_name;
+            }
+        }
+    }
+}
+
+/**
+ * Use the user's IP to lookup the country from which the request originated.
+ *
+ * @returns {*} The country from which the request originated.
+ */
+function getCountryFromUserIP() {
+    var request = new org.forgerock.http.protocol.Request();
+    request.setUri("http://ip-api.com/json/" + userIP);
+  	request.setMethod("GET");
+
+    var response = httpClient.send(request).get();
+    logResponse(response);
+
+    var result = JSON.parse(response.getEntity());
+    if (result) {
+        return result.country;
+    }
+}
+
+/**
+ * Use the requested resource's host name to lookup the country where the resource is hosted.
+ *
+ * @returns {*} The country in which the resource is hosted.
+ */
+function getCountryFromResourceURI() {
+    var request = new org.forgerock.http.protocol.Request();
+    request.setUri("http://ip-api.com/json/" + encodeURIComponent(resourceHost));
+  	request.setMethod("GET");
+
+    var response = httpClient.send(request).get();
+    logResponse(response);
+
+    var result = JSON.parse(response.getEntity());
+    if (result) {
+        return result.country;
+    }
+}
+
+/**
+ * Retrieve and validate the variables required to make the external HTTP calls.
+ *
+ * @returns {boolean} Will be true if validation was successful.
+ */
+function validateAndInitializeParameters() {
+    var userAddressSet = identity.getAttribute("postalAddress");
+    if (userAddressSet == null || userAddressSet.isEmpty()) {
+        logger.warning("No address specified for user: " + username);
+        return false;
+    }
+    userAddress = userAddressSet.iterator().next();
+    logger.message("User address: " + userAddress);
+
+    if (!environment) {
+        logger.warning("No environment parameters specified in the evaluation request.");
+        return false;
+    }
+
+    var ipSet = environment.get("IP");
+    if (ipSet == null || ipSet.isEmpty()) {
+        logger.warning("No IP specified in the evaluation request environment parameters.");
+        return false;
+    }
+    userIP = ipSet.iterator().next();
+    logger.message("User IP: " + userIP);
+
+    if (!resourceURI) {
+        logger.warning("No resource URI specified.");
+        return false;
+    }
+    resourceHost = resourceURI.match(/^(.*:\/\/)(www\.)?([A-Za-z0-9\-\.]+)(:[0-9]+)?(.*)$/)[3];
+    logger.message("Resource host: " + resourceHost);
+
+    return true;
+}
+
+function logResponse(response) {
+    logger.message("User REST Call. Status: " + response.getStatus() + ", Body: " + response.getEntity());
+}
+                            </Value>
+                        </AttributeValuePair>
+                    </SubConfiguration>
+                    <SubConfiguration name="7e3d7067-d50f-4674-8c76-a3e13a810c33" id="globalScript">
+                        <AttributeValuePair>
+                            <Attribute name="name"/>
+                            <Value>Scripted Module - Server Side</Value>
+                        </AttributeValuePair>
+                        <AttributeValuePair>
+                            <Attribute name="description"/>
+                            <Value>Default global script for server side Scripted Authentication Module</Value>
+                        </AttributeValuePair>
+                        <AttributeValuePair>
+                            <Attribute name="context"/>
+                            <Value>AUTHENTICATION_SERVER_SIDE</Value>
+                        </AttributeValuePair>
+                        <AttributeValuePair>
+                            <Attribute name="script"/>
+                            <Value>
+/*
+ * Copyright 2015-2017 ForgeRock AS. All Rights Reserved
+ *
+ * Use of this code requires a commercial software license with ForgeRock AS.
+ * or with one of its affiliates. All use shall be exclusively subject
+ * to such license between the licensee and ForgeRock AS.
+ */
+
+var START_TIME = 9;  // 9am
+var END_TIME   = 17; // 5pm
+var longitude, latitude;
+var localTime;
+
+logger.message("Starting scripted authentication");
+logger.message("User: " + username);
+
+var userPostalAddress = getUserPostalAddress();
+logger.message("User address: " + userPostalAddress);
+
+getLongitudeLatitudeFromUserPostalAddress();
+getLocalTime();
+
+logger.message("Current time at the users location: " + localTime.getHours());
+if (localTime.getHours() &lt; START_TIME || localTime.getHours() &gt; END_TIME) {
+    logger.error("Login forbidden outside work hours!");
+    authState = FAILED;
+} else {
+    logger.message("Authentication allowed!");
+    authState = SUCCESS;
+}
+
+function getLongitudeLatitudeFromUserPostalAddress() {
+
+    var request = new org.forgerock.http.protocol.Request();
+    request.setUri("http://maps.googleapis.com/maps/api/geocode/json?address=" + encodeURIComponent(userPostalAddress));
+  	request.setMethod("GET");
+  	//the above URI has to be extended with an API_KEY if used in a frequent manner
+  	//see documentation: https://developers.google.com/maps/documentation/geocoding/intro
+
+    var response = httpClient.send(request).get();
+    logResponse(response);
+
+    var geocode = JSON.parse(response.getEntity());
+    var i;
+    for (i = 0; i &lt; geocode.results.length; i++) {
+        var result = geocode.results[i];
+        latitude = result.geometry.location.lat;
+        longitude = result.geometry.location.lng;
+      
+   	    logger.message("latitude:" + latitude + " longitude:" + longitude);
+    }
+}
+
+function getLocalTime() {
+
+    var now = new Date().getTime() / 1000;
+    var location = "location=" + latitude + "," + longitude;
+    var timestamp = "timestamp=" + now;
+  	  
+    var request = new org.forgerock.http.protocol.Request();
+    request.setUri("https://maps.googleapis.com/maps/api/timezone/json?" + location + "&amp;" + timestamp);
+  	request.setMethod("GET");
+  	//the above URI has to be extended with an API_KEY if used in a frequent manner
+  	//see documentation: https://developers.google.com/maps/documentation/timezone/intro
+
+    var response = httpClient.send(request).get();
+    logResponse(response);
+
+    var timezone = JSON.parse(response.getEntity());
+    var localTimestamp = parseInt(now) + parseInt(timezone.dstOffset) + parseInt(timezone.rawOffset);
+    localTime = new Date(localTimestamp*1000);
+}
+
+function getUserPostalAddress() {
+    var userAddressSet = idRepository.getAttribute(username, "postalAddress");
+    if (userAddressSet == null || userAddressSet.isEmpty()) {
+        logger.warning("No address specified for user: " + username);
+        return false;
+    }
+    return userAddressSet.iterator().next()
+}
+
+function logResponse(response) {
+    logger.message("User REST Call. Status: " + response.getStatus() + ", Body: " + response.getEntity());
+}
+                            </Value>
+                        </AttributeValuePair>
+                    </SubConfiguration>
+                    <SubConfiguration name="c827d2b4-3608-4693-868e-bbcf86bd87c7" id="globalScript">
+                        <AttributeValuePair>
+                            <Attribute name="name"/>
+                            <Value>Scripted Module - Client Side</Value>
+                        </AttributeValuePair>
+                        <AttributeValuePair>
+                            <Attribute name="description"/>
+                            <Value>Default global script for client side Scripted Authentication Module</Value>
+                        </AttributeValuePair>
+                        <AttributeValuePair>
+                            <Attribute name="context"/>
+                            <Value>AUTHENTICATION_CLIENT_SIDE</Value>
+                        </AttributeValuePair>
+                        <AttributeValuePair>
+                            <Attribute name="script"/>
+                            <Value>
+/*
+ * Copyright 2016-2017 ForgeRock AS. All Rights Reserved
+ *
+ * Use of this code requires a commercial software license with ForgeRock AS.
+ * or with one of its affiliates. All use shall be exclusively subject
+ * to such license between the licensee and ForgeRock AS.
+ */
+/* Default Authentication client side script to use as a template for new scripts */
+                            </Value>
+                        </AttributeValuePair>
+                    </SubConfiguration>
+                    <SubConfiguration name="703dab1a-1921-4981-98dd-b8e5349d8548" id="globalScript">
+                        <AttributeValuePair>
+                            <Attribute name="name"/>
+                            <Value>Device Id (Match) - Server Side</Value>
+                        </AttributeValuePair>
+                        <AttributeValuePair>
+                            <Attribute name="description"/>
+                            <Value>Default global script for server side Device Id (Match) Authentication Module</Value>
+                        </AttributeValuePair>
+                        <AttributeValuePair>
+                            <Attribute name="context"/>
+                            <Value>AUTHENTICATION_SERVER_SIDE</Value>
+                        </AttributeValuePair>
+                        <AttributeValuePair>
+                            <Attribute name="script"/>
+                            <Value>
+/*
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+ *
+ * Copyright (c) 2009 Sun Microsystems Inc. All Rights Reserved
+ *
+ * The contents of this file are subject to the terms
+ * of the Common Development and Distribution License
+ * (the License). You may not use this file except in
+ * compliance with the License.
+ *
+ * You can obtain a copy of the License at
+ * https://opensso.dev.java.net/public/CDDLv1.0.html or
+ * opensso/legal/CDDLv1.0.txt
+ * See the License for the specific language governing
+ * permission and limitations under the License.
+ *
+ * When distributing Covered Code, include this CDDL
+ * Header Notice in each file and include the License file
+ * at opensso/legal/CDDLv1.0.txt.
+ * If applicable, add the following below the CDDL Header,
+ * with the fields enclosed by brackets [] replaced by
+ * your own identifying information:
+ * "Portions Copyrighted [year] [name of copyright owner]"
+ *
+ */
+/*
+ * Portions Copyrighted 2013 Syntegrity.
+ * Portions Copyrighted 2013-2017 ForgeRock AS.
+ */
+
+var ScalarComparator = {}, ScreenComparator = {}, MultiValueComparator = {}, UserAgentComparator = {}, GeolocationComparator = {};
+
+var config = {
+    profileExpiration: 30,              //in days
+    maxProfilesAllowed: 5,
+    maxPenaltyPoints: 0,
+    attributes: {
+        screen: {
+            required: true,
+            comparator: ScreenComparator,
+            args: {
+                penaltyPoints: 50
+            }
+        },
+        plugins: {
+            installedPlugins: {
+                required: false,
+                comparator: MultiValueComparator,
+                args: {
+                    maxPercentageDifference: 10,
+                    maxDifferences: 5,
+                    penaltyPoints: 100
+                }
+            }
+        },
+        fonts: {
+            installedFonts: {
+                required: false,
+                comparator: MultiValueComparator,
+                args: {
+                    maxPercentageDifference: 10,
+                    maxDifferences: 5,
+                    penaltyPoints: 100
+                }
+            }
+        },
+        timezone: {
+            timezone: {
+                required: false,
+                comparator: ScalarComparator,
+                args: {
+                    penaltyPoints: 100
+                }
+            }
+        },
+        userAgent: {
+            required: true,
+            comparator: UserAgentComparator,
+            args: {
+                ignoreVersion: true,
+                penaltyPoints: 100
+            }
+        },
+        geolocation: {
+            required: false,
+            comparator: GeolocationComparator,
+            args: {
+                allowedRange: 100,			//in miles
+                penaltyPoints: 100
+            }
+        }
+    }
+};
+
+//---------------------------------------------------------------------------//
+//                           Comparator functions                            //
+//---------------------------------------------------------------------------//
+
+var all, any, calculateDistance, calculateIntersection, calculatePercentage, nullOrUndefined, splitAndTrim,
+    undefinedLocation;
+
+// ComparisonResult
+
+/**
+ * Constructs an instance of a ComparisonResult with the given penalty points.
+ *
+ * @param penaltyPoints (Number) The penalty points for the comparison (defaults to 0).
+ * @param additionalInfoInCurrentValue (boolean) Whether the current value contains more information
+ *                                               than the stored value (defaults to false).
+ */
+function ComparisonResult() {
+
+    var penaltyPoints = 0,
+        additionalInfoInCurrentValue = false;
+
+    if (arguments[0] !== undefined &amp;&amp; arguments[1] !== undefined) {
+        penaltyPoints = arguments[0];
+        additionalInfoInCurrentValue = arguments[1];
+    }
+
+    if (arguments[0] !== undefined &amp;&amp; arguments[1] === undefined) {
+        if (typeof(arguments[0]) === "boolean") {
+            additionalInfoInCurrentValue = arguments[0];
+        } else {
+            penaltyPoints = arguments[0];
+        }
+    }
+
+    this.penaltyPoints = penaltyPoints;
+    this.additionalInfoInCurrentValue = additionalInfoInCurrentValue;
+
+}
+
+ComparisonResult.ZERO_PENALTY_POINTS = new ComparisonResult(0);
+
+/**
+ * Static method for functional programming.
+ *
+ * @return boolean true if comparisonResult.isSuccessful().
+ */
+ComparisonResult.isSuccessful =  function(comparisonResult) {
+    return comparisonResult.isSuccessful();
+};
+
+
+/**
+ * Static method for functional programming.
+ *
+ * @return boolean true if comparisonResult.additionalInfoInCurrentValue.
+ */
+ComparisonResult.additionalInfoInCurrentValue =  function(comparisonResult) {
+    return comparisonResult.additionalInfoInCurrentValue;
+};
+
+/**
+ * Comparison function that can be provided as an argument to array.sort
+ */
+ComparisonResult.compare = function(first, second) {
+    if (nullOrUndefined(first) &amp;&amp; nullOrUndefined(second)) {
+        return 0;
+    } else if (nullOrUndefined(first)) {
+        return -1;
+    } else if (nullOrUndefined(second)) {
+        return 1;
+    } else {
+        if (first.penaltyPoints !== second.penaltyPoints) {
+            return first.penaltyPoints - second.penaltyPoints;
+        } else {
+            return (first.additionalInfoInCurrentValue ? 1 : 0) - (second.additionalInfoInCurrentValue ? 1 : 0);
+        }
+    }
+};
+
+/**
+ * Amalgamates the given ComparisonResult into this ComparisonResult.
+ *
+ * @param comparisonResult The ComparisonResult to include.
+ */
+ComparisonResult.prototype.addComparisonResult = function(comparisonResult) {
+    this.penaltyPoints += comparisonResult.penaltyPoints;
+    if (comparisonResult.additionalInfoInCurrentValue) {
+        this.additionalInfoInCurrentValue = comparisonResult.additionalInfoInCurrentValue;
+    }
+};
+
+/**
+ * Returns true if no penalty points have been assigned for the comparison.
+ *
+ * @return boolean true if the comparison was successful.
+ */
+ComparisonResult.prototype.isSuccessful = function() {
+    return nullOrUndefined(this.penaltyPoints) || this.penaltyPoints === 0;
+};
+
+/**
+ * Compares two simple objects (String|Number) and if they are equal then returns a ComparisonResult with zero
+ * penalty points assigned, otherwise returns a ComparisonResult with the given number of penalty points assigned.
+ *
+ * @param currentValue (String|Number) The current value.
+ * @param storedValue (String|Number) The stored value.
+ * @param config: {
+ *            "penaltyPoints": (Number) The number of penalty points.
+ *        }
+ * @return ComparisonResult.
+ */
+ScalarComparator.compare = function (currentValue, storedValue, config) {
+    if (logger.messageEnabled()) {
+        logger.message("StringComparator.compare:currentValue: " + JSON.stringify(currentValue));
+        logger.message("StringComparator.compare:storedValue: " + JSON.stringify(storedValue));
+        logger.message("StringComparator.compare:config: " + JSON.stringify(config));
+    }
+    if (config.penaltyPoints === 0) {
+        return ComparisonResult.ZERO_PENALTY_POINTS;
+    }
+
+    if (!nullOrUndefined(storedValue)) {
+        if (nullOrUndefined(currentValue) || currentValue !== storedValue) {
+            return new ComparisonResult(config.penaltyPoints);
+        }
+    } else if (!nullOrUndefined(currentValue)) {
+        return new ComparisonResult(true);
+    }
+
+    return ComparisonResult.ZERO_PENALTY_POINTS;
+};
+
+/**
+ * Compares two screens and if they are equal then returns a ComparisonResult with zero penalty points assigned,
+ * otherwise returns a ComparisonResult with the given number of penalty points assigned.
+ *
+ * @param currentValue: {
+ *            "screenWidth": (Number) The current client screen width.
+ *            "screenHeight": (Number) The current client screen height.
+ *            "screenColourDepth": (Number) The current client screen colour depth.
+ *        }
+ * @param storedValue: {
+ *            "screenWidth": (Number) The stored client screen width.
+ *            "screenHeight": (Number) The stored client screen height.
+ *            "screenColourDepth": (Number) The stored client screen colour depth.
+ *        }
+ * @param config: {
+ *            "penaltyPoints": (Number) The number of penalty points.
+ *        }
+ * @return ComparisonResult
+ */
+ScreenComparator.compare = function (currentValue, storedValue, config) {
+    if (logger.messageEnabled()) {
+        logger.message("ScreenComparator.compare:currentValue: " + JSON.stringify(currentValue));
+        logger.message("ScreenComparator.compare:storedValue: " + JSON.stringify(storedValue));
+        logger.message("ScreenComparator.compare:config: " + JSON.stringify(config));
+    }
+
+    if (nullOrUndefined(currentValue)) {
+        currentValue = {screenWidth: null, screenHeight: null, screenColourDepth: null};
+    }
+    if (nullOrUndefined(storedValue)) {
+        storedValue = {screenWidth: null, screenHeight: null, screenColourDepth: null};
+    }
+
+    var comparisonResults = [
+        ScalarComparator.compare(currentValue.screenWidth, storedValue.screenWidth, config),
+        ScalarComparator.compare(currentValue.screenHeight, storedValue.screenHeight, config),
+        ScalarComparator.compare(currentValue.screenColourDepth, storedValue.screenColourDepth, config)];
+
+    if (all(comparisonResults, ComparisonResult.isSuccessful)) {
+        return new ComparisonResult(any(comparisonResults, ComparisonResult.additionalInfoInCurrentValue));
+    } else {
+        return new ComparisonResult(config.penaltyPoints);
+    }
+};
+
+/**
+ * Splits both values using delimiter, trims every value and compares collections of values.
+ * Returns zero-result for same multi-value attributes.
+ *
+ * If collections are not same checks if number of differences is less or equal maxDifferences or
+ * percentage of difference is less or equal maxPercentageDifference.
+ *
+ * If yes then returns zero-result with additional info, else returns penaltyPoints-result.
+ *
+ * @param currentValue: (String) The current value.
+ * @param storedValue: (String) The stored value.
+ * @param config: {
+ *            "maxPercentageDifference": (Number) The max difference percentage in the values,
+ *                                                before the penalty is assigned.
+ *            "maxDifferences": (Number) The max number of differences in the values,
+ *                                       before the penalty points are assigned.
+ *            "penaltyPoints": (Number) The number of penalty points.
+  *        }
+ * @return ComparisonResult
+ */
+MultiValueComparator.compare = function (currentValue, storedValue, config) {
+    if (logger.messageEnabled()) {
+        logger.message("MultiValueComparator.compare:currentValue: " + JSON.stringify(currentValue));
+        logger.message("MultiValueComparator.compare:storedValue: " + JSON.stringify(storedValue));
+        logger.message("MultiValueComparator.compare:config: " + JSON.stringify(config));
+    }
+
+    var delimiter = ";",
+        currentValues = splitAndTrim(currentValue, delimiter),
+        storedValues = splitAndTrim(storedValue, delimiter),
+        maxNumberOfElements = Math.max(currentValues.length, storedValues.length),
+        numberOfTheSameElements = calculateIntersection(currentValues, storedValues).length,
+        numberOfDifferences = maxNumberOfElements - numberOfTheSameElements,
+        percentageOfDifferences = calculatePercentage(numberOfDifferences, maxNumberOfElements);
+
+    if (nullOrUndefined(storedValue) &amp;&amp; !nullOrUndefined(currentValue)) {
+        return new ComparisonResult(true);
+    }
+
+    if (logger.messageEnabled()) {
+        logger.message(numberOfTheSameElements + " of " + maxNumberOfElements + " are same");
+    }
+
+    if (maxNumberOfElements === 0) {
+        logger.message("Ignored because no attributes found in both profiles");
+        return ComparisonResult.ZERO_PENALTY_POINTS;
+    }
+
+    if (numberOfTheSameElements === maxNumberOfElements) {
+        logger.message("Ignored because all attributes are same");
+        return ComparisonResult.ZERO_PENALTY_POINTS;
+    }
+
+    if (numberOfDifferences &gt; config.maxDifferences) {
+        if (logger.messageEnabled()) {
+            logger.message("Would be ignored if not more than " + config.maxDifferences + " differences");
+        }
+        return new ComparisonResult(config.penaltyPoints);
+    }
+
+    if (percentageOfDifferences &gt; config.maxPercentageDifference) {
+        if (logger.messageEnabled()) {
+            logger.message(percentageOfDifferences + " percents are different");
+            logger.message("Would be ignored if not more than " + config.maxPercentageDifference + " percent");
+        }
+        return new ComparisonResult(config.penaltyPoints);
+    }
+
+    if (logger.messageEnabled()) {
+        logger.message("Ignored because number of differences(" + numberOfDifferences + ") not more than "
+            + config.maxDifferences);
+        logger.message(percentageOfDifferences + " percents are different");
+        logger.message("Ignored because not more than " + config.maxPercentageDifference + " percent");
+    }
+    return new ComparisonResult(true);
+};
+
+/**
+ * Compares two User Agent Strings and if they are equal then returns a ComparisonResult with zero penalty
+ * points assigned, otherwise returns a ComparisonResult with the given number of penalty points assigned.
+ *
+ * @param currentValue (String) The current value.
+ * @param storedValue (String) The stored value.
+ * @param config: {
+ *            "ignoreVersion": (boolean) If the version numbers in the User Agent Strings should be ignore
+ *                                       in the comparison.
+ *            "penaltyPoints": (Number) The number of penalty points.
+ *        }
+ * @return A ComparisonResult.
+ */
+UserAgentComparator.compare = function (currentValue, storedValue, config) {
+    if (logger.messageEnabled()) {
+        logger.message("UserAgentComparator.compare:currentValue: " + JSON.stringify(currentValue));
+        logger.message("UserAgentComparator.compare:storedValue: " + JSON.stringify(storedValue));
+        logger.message("UserAgentComparator.compare:config: " + JSON.stringify(config));
+    }
+
+    if (config.ignoreVersion) {
+        // remove version number
+        currentValue = nullOrUndefined(currentValue) ? null : currentValue.replace(/[\d\.]+/g, "").trim();
+        storedValue = nullOrUndefined(storedValue) ? null : storedValue.replace(/[\d\.]+/g, "").trim();
+    }
+
+    return ScalarComparator.compare(currentValue, storedValue, config);
+};
+
+/**
+ * Compares two locations, taking into account a degree of difference.
+ *
+ * @param currentValue: {
+ *            "latitude": (Number) The current latitude.
+ *            "longitude": (Number) The current longitude.
+ *        }
+ * @param storedValue: {
+ *            "latitude": (Number) The stored latitude.
+ *            "longitude": (Number) The stored longitude.
+ *        }
+ * @param config: {
+ *            "allowedRange": (Number) The max difference allowed in the two locations, before the penalty is assigned.
+ *            "penaltyPoints": (Number) The number of penalty points.
+*         }
+ * @return ComparisonResult
+ */
+GeolocationComparator.compare = function (currentValue, storedValue, config) {
+    if (logger.messageEnabled()) {
+        logger.message("GeolocationComparator.compare:currentValue: " + JSON.stringify(currentValue));
+        logger.message("GeolocationComparator.compare:storedValue: " + JSON.stringify(storedValue));
+        logger.message("GeolocationComparator.compare:config: " + JSON.stringify(config));
+    }
+
+    // Check for undefined stored or current locations
+
+    if (undefinedLocation(currentValue) &amp;&amp; undefinedLocation(storedValue)) {
+        return ComparisonResult.ZERO_PENALTY_POINTS;
+    }
+    if (undefinedLocation(currentValue) &amp;&amp; !undefinedLocation(storedValue)) {
+        return new ComparisonResult(config.penaltyPoints);
+    }
+    if (!undefinedLocation(currentValue) &amp;&amp; undefinedLocation(storedValue)) {
+        return new ComparisonResult(true);
+    }
+
+    // Both locations defined, therefore perform comparison
+
+    var distance = calculateDistance(currentValue, storedValue);
+
+    if (logger.messageEnabled()) {
+        logger.message("Distance between (" + currentValue.latitude + "," + currentValue.longitude + ") and (" +
+            storedValue.latitude + "," + storedValue.longitude + ") is " + distance + " miles");
+    }
+
+    if (parseFloat(distance.toPrecision(5)) === 0) {
+        logger.message("Location is the same");
+        return ComparisonResult.ZERO_PENALTY_POINTS;
+    }
+
+    if (distance &lt;= config.allowedRange) {
+        if (logger.messageEnabled()) {
+            logger.message("Tolerated because distance not more then " + config.allowedRange);
+        }
+        return new ComparisonResult(true);
+    } else {
+        if (logger.messageEnabled()) {
+            logger.message("Would be ignored if distance not more then " + config.allowedRange);
+        }
+        return new ComparisonResult(config.penaltyPoints);
+    }
+};
+
+
+//---------------------------------------------------------------------------//
+//                    Device Print Logic - DO NOT MODIFY                     //
+//---------------------------------------------------------------------------//
+
+// Utility functions
+
+/**
+ * Returns true if evaluating function f on each element of the Array a returns true.
+ *
+ * @param a: (Array) The array of elements to evaluate
+ * @param f: (Function) A single argument function for mapping elements of the array to boolean.
+ * @return boolean.
+ */
+all = function(a, f) {
+    var i;
+    for (i = 0; i &lt; a.length; i++) {
+        if (f(a[i]) === false) {
+            return false;
+        }
+    }
+    return true;
+};
+
+/**
+ * Returns true if evaluating function f on any element of the Array a returns true.
+ *
+ * @param a: (Array) The array of elements to evaluate
+ * @param f: (Function) A single argument function for mapping elements of the array to boolean.
+ * @return boolean.
+ */
+any = function(a, f) {
+    var i;
+    for (i = 0; i &lt; a.length; i++) {
+        if (f(a[i]) === true) {
+            return true;
+        }
+    }
+    return false;
+};
+
+/**
+ * Returns true if the provided location is null or has undefined longitude or latitude values.
+ *
+ * @param location: {
+ *            "latitude": (Number) The latitude.
+ *            "longitude": (Number) The longitude.
+ *        }
+ * @return boolean
+ */
+undefinedLocation = function(location) {
+    return nullOrUndefined(location) || nullOrUndefined(location.latitude) || nullOrUndefined(location.longitude);
+};
+
+/**
+ * Returns true if the provided value is null or undefined.
+ *
+ * @param value: a value of any type
+ * @return boolean
+ */
+nullOrUndefined = function(value) {
+    return value === null || value === undefined;
+};
+
+/**
+ * Calculates the distances between the two locations.
+ *
+ * @param first: {
+ *            "latitude": (Number) The first latitude.
+ *            "longitude": (Number) The first longitude.
+ *        }
+ * @param second: {
+ *            "latitude": (Number) The second latitude.
+ *            "longitude": (Number) The second longitude.
+ *        }
+ * @return Number The distance between the two locations.
+ */
+calculateDistance = function(first, second) {
+    var factor = (Math.PI / 180),
+        theta,
+        dist;
+    function degreesToRadians(degrees) {
+        return degrees * factor;
+    }
+    function radiansToDegrees(radians) {
+        return radians / factor;
+    }
+    theta = first.longitude - second.longitude;
+    dist = Math.sin(degreesToRadians(first.latitude)) * Math.sin(degreesToRadians(second.latitude))
+        + Math.cos(degreesToRadians(first.latitude)) * Math.cos(degreesToRadians(second.latitude))
+        * Math.cos(degreesToRadians(theta));
+    dist = Math.acos(dist);
+    dist = radiansToDegrees(dist);
+    dist = dist * 60 * 1.1515;
+    return dist;
+};
+
+/**
+ * Converts a String holding a delimited sequence of values into an array.
+ *
+ * @param text (String) The String representation of a delimited sequence of values.
+ * @param delimiter (String) The character delimiting values within the text String.
+ * @return (Array) The comma separated values.
+ */
+splitAndTrim = function(text, delimiter) {
+
+    var results = [],
+        i,
+        values,
+        value;
+    if (text === null) {
+        return results;
+    }
+
+    values = text.split(delimiter);
+    for (i = 0; i &lt; values.length; i++) {
+        value = values[i].trim();
+        if (value !== "") {
+            results.push(value);
+        }
+    }
+
+    return results;
+};
+
+/**
+ * Converts value to a percentage of range.
+ *
+ * @param value (Number) The actual number to be converted to a percentage.
+ * @param range (Number) The total number of values (i.e. represents 100%).
+ * @return (Number) The percentage.
+ */
+calculatePercentage = function(value, range) {
+    if (range === 0) {
+        return 0;
+    }
+    return parseFloat((value / range).toPrecision(2)) * 100;
+};
+
+/**
+ * Creates a new array containing only those elements found in both arrays received as arguments.
+ *
+ * @param first (Array) The first array.
+ * @param second (Array) The second array.
+ * @return (Array) The elements that found in first and second.
+ */
+calculateIntersection = function(first, second) {
+    return first.filter(function(element) {
+        return second.indexOf(element) !== -1;
+    });
+};
+
+function getValue(obj, attributePath) {
+    var value = obj,
+        i;
+    for (i = 0; i &lt; attributePath.length; i++) {
+        if (value === undefined) {
+            return null;
+        }
+        value = value[attributePath[i]];
+    }
+    return value;
+}
+
+
+function isLeafNode(attributeConfig) {
+    return attributeConfig.comparator !== undefined;
+}
+
+function getAttributePaths(attributeConfig, attributePath) {
+
+    var attributePaths = [],
+        attributeName,
+        attrPaths,
+        attrPath,
+        i;
+
+    for (attributeName in attributeConfig) {
+        if (attributeConfig.hasOwnProperty(attributeName)) {
+
+            if (isLeafNode(attributeConfig[attributeName])) {
+                attrPath = attributePath.slice();
+                attrPath.push(attributeName);
+                attributePaths.push(attrPath);
+            } else {
+                attrPath = attributePath.slice();
+                attrPath.push(attributeName);
+                attrPaths = getAttributePaths(attributeConfig[attributeName], attrPath);
+                for (i = 0; i &lt; attrPaths.length; i++) {
+                    attributePaths.push(attrPaths[i]);
+                }
+            }
+        }
+    }
+
+    return attributePaths;
+}
+
+function getDevicePrintAttributePaths(attributeConfig) {
+    return getAttributePaths(attributeConfig, []);
+}
+
+function hasRequiredAttributes(devicePrint, attributeConfig) {
+
+    var attributePaths = getDevicePrintAttributePaths(attributeConfig),
+        i,
+        attrValue,
+        attrConfig;
+
+    for (i = 0; i &lt; attributePaths.length; i++) {
+
+        attrValue = getValue(devicePrint, attributePaths[i]);
+        attrConfig = getValue(attributeConfig, attributePaths[i]);
+
+        if (attrConfig.required &amp;&amp; attrValue === undefined) {
+            logger.warning("Device Print profile missing required attribute, " + attributePaths[i]);
+            return false;
+        }
+    }
+
+    logger.message("device print has required attributes");
+    return true;
+}
+
+function compareDevicePrintProfiles(attributeConfig, devicePrint, devicePrintProfiles, maxPenaltyPoints) {
+
+    var attributePaths = getDevicePrintAttributePaths(attributeConfig),
+        dao = sharedState.get('_DeviceIdDao'),
+        results,
+        j,
+        aggregatedComparisonResult,
+        i,
+        currentValue,
+        storedValue,
+        attrConfig,
+        comparisonResult,
+        selectedComparisonResult,
+        selectedProfile,
+        vals;
+
+    results = [];
+    for (j = 0; j &lt; devicePrintProfiles.length; j++) {
+
+        aggregatedComparisonResult = new ComparisonResult();
+        for (i = 0; i &lt; attributePaths.length; i++) {
+
+            currentValue = getValue(devicePrint, attributePaths[i]);
+            storedValue = getValue(devicePrintProfiles[j].devicePrint, attributePaths[i]);
+            attrConfig = getValue(attributeConfig, attributePaths[i]);
+
+            if (storedValue === null) {
+                comparisonResult = new ComparisonResult(attrConfig.penaltyPoints);
+            } else {
+                comparisonResult = attrConfig.comparator.compare(currentValue, storedValue, attrConfig.args);
+            }
+
+            if (logger.messageEnabled()) {
+                logger.message("Comparing attribute path: " + attributePaths[i]
+                    + ", Comparison result: successful=" + comparisonResult.isSuccessful() + ", penaltyPoints="
+                    + comparisonResult.penaltyPoints + ", additionalInfoInCurrentValue="
+                    + comparisonResult.additionalInfoInCurrentValue);
+            }
+            aggregatedComparisonResult.addComparisonResult(comparisonResult);
+        }
+        if (logger.messageEnabled()) {
+            logger.message("Aggregated comparison result: successful="
+                + aggregatedComparisonResult.isSuccessful() + ", penaltyPoints="
+                + aggregatedComparisonResult.penaltyPoints + ", additionalInfoInCurrentValue="
+                + aggregatedComparisonResult.additionalInfoInCurrentValue);
+        }
+
+        results.push({
+            key: aggregatedComparisonResult,
+            value: devicePrintProfiles[j]
+        });
+    }
+
+    if (results.length === 0) {
+        return null;
+    }
+
+    results.sort(function(a, b) {
+        return ComparisonResult.compare(a.key, b.key);
+    });
+    selectedComparisonResult = results[0].key;
+    if (logger.messageEnabled()) {
+        logger.message("Selected comparison result: successful=" + selectedComparisonResult.isSuccessful()
+            + ", penaltyPoints=" + selectedComparisonResult.penaltyPoints + ", additionalInfoInCurrentValue="
+            + selectedComparisonResult.additionalInfoInCurrentValue);
+    }
+
+    selectedProfile = null;
+    if (selectedComparisonResult.penaltyPoints &lt;= maxPenaltyPoints) {
+        selectedProfile = results[0].value;
+        if (logger.messageEnabled()) {
+            logger.message("Selected profile: " + JSON.stringify(selectedProfile) +
+                " with " + selectedComparisonResult.penaltyPoints + " penalty points");
+        }
+    }
+
+    if (selectedProfile === null) {
+        return false;
+    }
+
+    /* update profile */
+    selectedProfile.selectionCounter = selectedProfile.selectionCounter + 1;
+    selectedProfile.lastSelectedDate = new Date().getTime();
+    selectedProfile.devicePrint = devicePrint;
+
+    vals = [];
+    for (i = 0; i &lt; devicePrintProfiles.length; i++) {
+        vals.push(JSON.stringify(devicePrintProfiles[i]));
+    }
+
+    dao.saveDeviceProfiles(username, realm, vals);
+
+    return true;
+}
+
+function matchDevicePrint() {
+
+    if (!username) {
+        logger.error("Username not set. Cannot compare user's device print profiles.");
+        authState = FAILED;
+    } else {
+
+        if (logger.messageEnabled()) {
+            logger.message("client devicePrint: " + clientScriptOutputData);
+        }
+
+        var getProfiles = function () {
+
+                function isExpiredProfile(devicePrintProfile) {
+                    var expirationDate = new Date(),
+                        lastSelectedDate;
+                    expirationDate.setDate(expirationDate.getDate() - config.profileExpiration);
+
+                    lastSelectedDate = new Date(devicePrintProfile.lastSelectedDate);
+
+                    return lastSelectedDate &lt; expirationDate;
+                }
+
+                function getNotExpiredProfiles() {
+                    var profile,
+                        dao = sharedState.get('_DeviceIdDao'),
+                        results = [],
+                        profiles,
+                        iter;
+
+                    profiles = dao.getDeviceProfiles(username, realm);
+
+                    if (profiles) {
+                        iter = profiles.iterator();
+                        
+                        while (iter.hasNext()) {
+                            profile = JSON.parse(iter.next());
+                            if (!isExpiredProfile(profile)) {
+                                results.push(profile);
+                            }
+                        }
+                    }
+                    if (logger.messageEnabled()) {
+                        logger.message("stored non-expired profiles: " + JSON.stringify(results));
+                    }                    
+                    return results;
+                }
+
+                return getNotExpiredProfiles();
+            },
+            devicePrint = JSON.parse(clientScriptOutputData),
+            devicePrintProfiles = getProfiles();
+
+        if (!hasRequiredAttributes(devicePrint, config.attributes)) {
+            logger.message("devicePrint.hasRequiredAttributes: false");
+            // Will fail this module but fall-through to next module. Which should be OTP.
+            authState = FAILED;
+        } else if (compareDevicePrintProfiles(config.attributes, devicePrint, devicePrintProfiles, config.maxPenaltyPoints)) {
+            logger.message("devicePrint.hasValidProfile: true");
+            authState = SUCCESS;
+        } else {
+            logger.message("devicePrint.hasValidProfile: false");
+            sharedState.put('devicePrintProfile', JSON.stringify(devicePrint));
+            // Will fail this module but fall-through to next module. Which should be OTP.
+            authState = FAILED;
+        }
+    }
+}
+
+matchDevicePrint();
+                            </Value>
+                        </AttributeValuePair>
+                    </SubConfiguration>
+                    <SubConfiguration name="157298c0-7d31-4059-a95b-eeb08473b7e5" id="globalScript">
+                        <AttributeValuePair>
+                            <Attribute name="name"/>
+                            <Value>Device Id (Match) - Client Side</Value>
+                        </AttributeValuePair>
+                        <AttributeValuePair>
+                            <Attribute name="description"/>
+                            <Value>Default global script for client side Device Id (Match) Authentication Module</Value>
+                        </AttributeValuePair>
+                        <AttributeValuePair>
+                            <Attribute name="context"/>
+                            <Value>AUTHENTICATION_CLIENT_SIDE</Value>
+                        </AttributeValuePair>
+                        <AttributeValuePair>
+                            <Attribute name="script"/>
+                            <Value>
+var fontDetector = (function () {
+    /**
+     * JavaScript code to detect available availability of a
+     * particular font in a browser using JavaScript and CSS.
+     *
+     * Author : Lalit Patel
+     * Website: http://www.lalit.org/lab/javascript-css-font-detect/
+     * License: Apache Software License 2.0
+     *          http://www.apache.org/licenses/LICENSE-2.0
+     * Version: 0.15 (21 Sep 2009)
+     *          Changed comparision font to default from sans-default-default,
+     *          as in FF3.0 font of child element didn't fallback
+     *          to parent element if the font is missing.
+     * Version: 0.2 (04 Mar 2012)
+     *          Comparing font against all the 3 generic font families ie,
+     *          'monospace', 'sans-serif' and 'sans'. If it doesn't match all 3
+     *          then that font is 100% not available in the system
+     * Version: 0.3 (24 Mar 2012)
+     *          Replaced sans with serif in the list of baseFonts
+     */
+    /*
+     * Portions Copyrighted 2013 ForgeRock AS.
+     */
+    var detector = {}, baseFonts, testString, testSize, h, s, defaultWidth = {}, defaultHeight = {}, index;
+
+    // a font will be compared against all the three default fonts.
+    // and if it doesn't match all 3 then that font is not available.
+    baseFonts = ['monospace', 'sans-serif', 'serif'];
+
+    //we use m or w because these two characters take up the maximum width.
+    // And we use a LLi so that the same matching fonts can get separated
+    testString = "mmmmmmmmmmlli";
+
+    //we test using 72px font size, we may use any size. I guess larger the better.
+    testSize = '72px';
+
+    h = document.getElementsByTagName("body")[0];
+
+    // create a SPAN in the document to get the width of the text we use to test
+    s = document.createElement("span");
+    s.style.fontSize = testSize;
+    s.innerHTML = testString;
+    for (index in baseFonts) {
+        //get the default width for the three base fonts
+        s.style.fontFamily = baseFonts[index];
+        h.appendChild(s);
+        defaultWidth[baseFonts[index]] = s.offsetWidth; //width for the default font
+        defaultHeight[baseFonts[index]] = s.offsetHeight; //height for the defualt font
+        h.removeChild(s);
+    }
+
+    detector.detect = function(font) {
+        var detected = false, index, matched;
+        for (index in baseFonts) {
+            s.style.fontFamily = font + ',' + baseFonts[index]; // name of the font along with the base font for fallback.
+            h.appendChild(s);
+            matched = (s.offsetWidth !== defaultWidth[baseFonts[index]] || s.offsetHeight !== defaultHeight[baseFonts[index]]);
+            h.removeChild(s);
+            detected = detected || matched;
+        }
+        return detected;
+    };
+
+    return detector;
+}());
+/*
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+ *
+ * Copyright (c) 2009 Sun Microsystems Inc. All Rights Reserved
+ *
+ * The contents of this file are subject to the terms
+ * of the Common Development and Distribution License
+ * (the License). You may not use this file except in
+ * compliance with the License.
+ *
+ * You can obtain a copy of the License at
+ * https://opensso.dev.java.net/public/CDDLv1.0.html or
+ * opensso/legal/CDDLv1.0.txt
+ * See the License for the specific language governing
+ * permission and limitations under the License.
+ *
+ * When distributing Covered Code, include this CDDL
+ * Header Notice in each file and include the License file
+ * at opensso/legal/CDDLv1.0.txt.
+ * If applicable, add the following below the CDDL Header,
+ * with the fields enclosed by brackets [] replaced by
+ * your own identifying information:
+ * "Portions Copyrighted [year] [name of copyright owner]"
+ *
+ */
+/*
+ * Portions Copyrighted 2013 Syntegrity.
+ * Portions Copyrighted 2013-2014 ForgeRock AS.
+ */
+
+var collectScreenInfo = function () {
+        var screenInfo = {};
+        if (screen) {
+            if (screen.width) {
+                screenInfo.screenWidth = screen.width;
+            }
+
+            if (screen.height) {
+                screenInfo.screenHeight = screen.height;
+            }
+
+            if (screen.pixelDepth) {
+                screenInfo.screenColourDepth = screen.pixelDepth;
+            }
+        } else {
+            console.warn("Cannot collect screen information. screen is not defined.");
+        }
+        return screenInfo;
+    },
+    collectTimezoneInfo = function () {
+        var timezoneInfo =  {}, offset = new Date().getTimezoneOffset();
+
+        if (offset) {
+            timezoneInfo.timezone = offset;
+        } else {
+            console.warn("Cannot collect timezone information. timezone is not defined.");
+        }
+
+        return timezoneInfo;
+    },
+    collectBrowserPluginsInfo = function () {
+
+        if (navigator &amp;&amp; navigator.plugins) {
+            var pluginsInfo = {}, i, plugins = navigator.plugins;
+            pluginsInfo.installedPlugins = "";
+
+            for (i = 0; i &lt; plugins.length; i++) {
+                pluginsInfo.installedPlugins = pluginsInfo.installedPlugins + plugins[i].filename + ";";
+            }
+
+            return pluginsInfo;
+        } else {
+            console.warn("Cannot collect browser plugin information. navigator.plugins is not defined.");
+            return {};
+        }
+
+    },
+// Getting geolocation takes some time and is done asynchronously, hence need a callback which is called once geolocation is retrieved.
+    collectGeolocationInfo = function (callback) {
+        var geolocationInfo = {},
+            successCallback = function(position) {
+                geolocationInfo.longitude = position.coords.longitude;
+                geolocationInfo.latitude = position.coords.latitude;
+                callback(geolocationInfo);
+            }, errorCallback = function(error) {
+                console.warn("Cannot collect geolocation information. " + error.code + ": " + error.message);
+                callback(geolocationInfo);
+            };
+        if (navigator &amp;&amp; navigator.geolocation) {
+            // NB: If user chooses 'Not now' on Firefox neither callback gets called
+            //     https://bugzilla.mozilla.org/show_bug.cgi?id=675533
+            navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+        } else {
+            console.warn("Cannot collect geolocation information. navigator.geolocation is not defined.");
+            callback(geolocationInfo);
+        }
+    },
+    collectBrowserFontsInfo = function () {
+        var fontsInfo = {}, i, fontsList = ["cursive","monospace","serif","sans-serif","fantasy","default","Arial","Arial Black",
+            "Arial Narrow","Arial Rounded MT Bold","Bookman Old Style","Bradley Hand ITC","Century","Century Gothic",
+            "Comic Sans MS","Courier","Courier New","Georgia","Gentium","Impact","King","Lucida Console","Lalit",
+            "Modena","Monotype Corsiva","Papyrus","Tahoma","TeX","Times","Times New Roman","Trebuchet MS","Verdana",
+            "Verona"];
+        fontsInfo.installedFonts = "";
+
+        for (i = 0; i &lt; fontsList.length; i++) {
+            if (fontDetector.detect(fontsList[i])) {
+                fontsInfo.installedFonts = fontsInfo.installedFonts + fontsList[i] + ";";
+            }
+        }
+        return fontsInfo;
+    },
+    devicePrint = {};
+
+devicePrint.screen = collectScreenInfo();
+devicePrint.timezone = collectTimezoneInfo();
+devicePrint.plugins = collectBrowserPluginsInfo();
+devicePrint.fonts = collectBrowserFontsInfo();
+
+if (navigator.userAgent) {
+    devicePrint.userAgent = navigator.userAgent;
+}
+if (navigator.appName) {
+    devicePrint.appName = navigator.appName;
+}
+if (navigator.appCodeName) {
+    devicePrint.appCodeName = navigator.appCodeName;
+}
+if (navigator.appVersion) {
+    devicePrint.appVersion = navigator.appVersion;
+}
+if (navigator.appMinorVersion) {
+    devicePrint.appMinorVersion = navigator.appMinorVersion;
+}
+if (navigator.buildID) {
+    devicePrint.buildID = navigator.buildID;
+}
+if (navigator.platform) {
+    devicePrint.platform = navigator.platform;
+}
+if (navigator.cpuClass) {
+    devicePrint.cpuClass = navigator.cpuClass;
+}
+if (navigator.oscpu) {
+    devicePrint.oscpu = navigator.oscpu;
+}
+if (navigator.product) {
+    devicePrint.product = navigator.product;
+}
+if (navigator.productSub) {
+    devicePrint.productSub = navigator.productSub;
+}
+if (navigator.vendor) {
+    devicePrint.vendor = navigator.vendor;
+}
+if (navigator.vendorSub) {
+    devicePrint.vendorSub = navigator.vendorSub;
+}
+if (navigator.language) {
+    devicePrint.language = navigator.language;
+}
+if (navigator.userLanguage) {
+    devicePrint.userLanguage = navigator.userLanguage;
+}
+if (navigator.browserLanguage) {
+    devicePrint.browserLanguage = navigator.browserLanguage;
+}
+if (navigator.systemLanguage) {
+    devicePrint.systemLanguage = navigator.systemLanguage;
+}
+
+// Attempt to collect geo-location information and return this with the data collected so far.
+// Otherwise, if geo-location fails or takes longer than 30 seconds, auto-submit the data collected so far.
+autoSubmitDelay = 30000;
+output.value = JSON.stringify(devicePrint);
+collectGeolocationInfo(function(geolocationInfo) {
+    devicePrint.geolocation = geolocationInfo;
+    output.value = JSON.stringify(devicePrint);
+    submit();
+});
+                            </Value>
+                        </AttributeValuePair>
+                    </SubConfiguration>
+                    <SubConfiguration name="36863ffb-40ec-48b9-94b1-9a99f71cc3b5" id="globalScript">
+                        <AttributeValuePair>
+                            <Attribute name="name"/>
+                            <Value>OIDC Claims Script</Value>
+                        </AttributeValuePair>
+                        <AttributeValuePair>
+                            <Attribute name="description"/>
+                            <Value>Default global script for OIDC claims</Value>
+                        </AttributeValuePair>
+                        <AttributeValuePair>
+                            <Attribute name="context"/>
+                            <Value>OIDC_CLAIMS</Value>
+                        </AttributeValuePair>
+                        <AttributeValuePair>
+                            <Attribute name="language"/>
+                            <Value>GROOVY</Value>
+                        </AttributeValuePair>
+                        <AttributeValuePair>
+                            <Attribute name="script"/>
+                            <Value>
+/*
+ * Copyright 2014-2017 ForgeRock AS. All Rights Reserved
+ *
+ * Use of this code requires a commercial software license with ForgeRock AS.
+ * or with one of its affiliates. All use shall be exclusively subject
+ * to such license between the licensee and ForgeRock AS.
+ */
+import com.iplanet.sso.SSOException
+import com.sun.identity.idm.IdRepoException
+import org.forgerock.oauth2.core.exceptions.InvalidRequestException
+import org.forgerock.oauth2.core.UserInfoClaims
+import org.forgerock.openidconnect.Claim
+
+/*
+* Defined variables:
+* logger - always presents, the "OAuth2Provider" debug logger instance
+* claims - always present, default server provided claims - Map&lt;String, Object&gt;
+* claimObjects - always present, default server provided claims - List&lt;Claim&gt;
+* session - present if the request contains the session cookie, the user's session object
+* identity - always present, the identity of the resource owner
+* scopes - always present, the requested scopes
+* requestedClaims - Map&lt;String, Set&lt;String&gt;&gt;
+*                  always present, not empty if the request contains a claims parameter and server has enabled
+*                  claims_parameter_supported, map of requested claims to possible values, otherwise empty,
+*                  requested claims with no requested values will have a key but no value in the map. A key with
+*                  a single value in its Set indicates this is the only value that should be returned.
+* requestedTypedClaims - List&lt;Claim&gt;
+*                       always present, not empty if the request contains a claims parameter and server has enabled
+*                       claims_paramater_supported, list of requested claims with claim name, requested possible values
+*                       and if claim is essential, otherwise empty,
+*                       requested claims with no requested values will have a claim with no values. A claims with
+*                       a single value indicates this is the only value that should be returned.
+* claimsLocales - the values from the 'claims_locales' parameter - List&lt;String&gt;
+* Required to return a Map of claims to be added to the id_token claims
+*
+* Expected return value structure:
+* UserInfoClaims {
+*    Map&lt;String, Object&gt; values; // The values of the claims for the user information
+*    Map&lt;String, List&lt;String&gt;&gt; compositeScopes; // Mapping of scope name to a list of claim names.
+* }
+*/
+
+// user session not guaranteed to be present
+boolean sessionPresent = session != null
+
+/*
+ * Pulls first value from users profile attribute
+ *
+ * @param claim The claim object.
+ * @param attr The profile attribute name.
+ */
+def fromSet = { claim, attr -&gt;
+    if (attr != null &amp;&amp; attr.size() == 1){
+        attr.iterator().next()
+    } else if (attr != null &amp;&amp; attr.size() &gt; 1){
+        attr
+    } else if (logger.warningEnabled()) {
+        logger.warning("OpenAMScopeValidator.getUserInfo(): Got an empty result for claim=$claim");
+    }
+}
+
+// ---vvvvvvvvvv--- EXAMPLE CLAIM ATTRIBUTE RESOLVER FUNCTIONS ---vvvvvvvvvv---
+/*
+ * Claim resolver which resolves the value of the claim from its requested values.
+ *
+ * This resolver will return a value if the claim has one requested values, otherwise an exception is thrown.
+ */
+defaultClaimResolver = { claim -&gt;
+    if (claim.getValues().size() == 1) {
+        [(claim.getName()): claim.getValues().iterator().next()]
+    } else {
+        [:]
+    }
+}
+
+/*
+ * Claim resolver which resolves the value of the claim by looking up the user's profile.
+ *
+ * This resolver will return a value for the claim if:
+ * # the user's profile attribute is not null
+ * # AND the claim contains no requested values
+ * # OR the claim contains requested values and the value from the user's profile is in the list of values
+ *
+ * If no match is found an exception is thrown.
+ */
+userProfileClaimResolver = { attribute, claim, identity -&gt;
+    userProfileValue = fromSet(claim.getName(), identity.getAttribute(attribute))
+    if (userProfileValue != null &amp;&amp; (claim.getValues() == null || claim.getValues().isEmpty() || claim.getValues().contains(userProfileValue))) {
+        return [(claim.getName()): userProfileValue]
+    }
+    [:]
+}
+
+/*
+ * Claim resolver which resolves the value of the claim by looking up the user's profile.
+ *
+ * This resolver will return a value for the claim if:
+ * # the user's profile attribute is not null
+ * # AND the claim contains no requested values
+ * # OR the claim contains requested values and the value from the user's profile is in the list of values
+ *
+ * If the claim is essential and no value is found an InvalidRequestException will be thrown and returned to the user.
+ * If no match is found an exception is thrown.
+ */
+essentialClaimResolver = { attribute, claim, identity -&gt;
+    userProfileValue = fromSet(claim.getName(), identity.getAttribute(attribute))
+    if (claim.isEssential() &amp;&amp; (userProfileValue == null || userProfileValue.isEmpty())) {
+        throw new InvalidRequestException("Could not provide value for essential claim $claim")
+    }
+    if (userProfileValue != null &amp;&amp; (claim.getValues() == null || claim.getValues().isEmpty() || claim.getValues().contains(userProfileValue))) {
+        return [(claim.getName()): userProfileValue]
+    } else {
+        return [:]
+    }
+}
+
+/*
+ * Claim resolver which expects the user's profile attribute value to be in the following format:
+ * "language_tag|value_for_language,...".
+ *
+ * This resolver will take the list of requested languages from the 'claims_locales' authorize request
+ * parameter and attempt to match it to a value from the users' profile attribute.
+ * If no match is found an exception is thrown.
+ */
+claimLocalesClaimResolver = { attribute, claim, identity -&gt;
+    userProfileValue = fromSet(claim.getName(), identity.getAttribute(attribute))
+    if (userProfileValue != null) {
+        localeValues = parseLocaleAwareString(userProfileValue)
+        locale = claimsLocales.find { locale -&gt; localeValues.containsKey(locale) }
+        if (locale != null) {
+            return [(claim.getName()): localeValues.get(locale)]
+        }
+    }
+    return [:]
+}
+
+/*
+ * Claim resolver which expects the user's profile attribute value to be in the following format:
+ * "language_tag|value_for_language,...".
+ *
+ * This resolver will take the language tag specified in the claim object and attempt to match it to a value
+ * from the users' profile attribute. If no match is found an exception is thrown.
+ */
+languageTagClaimResolver = { attribute, claim, identity -&gt;
+    userProfileValue = fromSet(claim.getName(), identity.getAttribute(attribute))
+    if (userProfileValue != null) {
+        localeValues = parseLocaleAwareString(userProfileValue)
+        if (claim.getLocale() != null) {
+            if (localeValues.containsKey(claim.getLocale())) {
+                return [(claim.getName()): localeValues.get(claim.getLocale())]
+            } else {
+                entry = localeValues.entrySet().iterator().next()
+                return [(claim.getName() + "#" + entry.getKey()): entry.getValue()]
+            }
+        } else {
+            entry = localeValues.entrySet().iterator().next()
+            return [(claim.getName()): entry.getValue()]
+        }
+    }
+    return [:]
+}
+
+/*
+ * Given a string "en|English,jp|Japenese,fr_CA|French Canadian" will return map of locale -&gt; value.
+ */
+parseLocaleAwareString = { s -&gt;
+    return result = s.split(",").collectEntries { entry -&gt;
+        split = entry.split("\\|")
+        [(split[0]): value = split[1]]
+    }
+}
+// ---^^^^^^^^^^--- EXAMPLE CLAIM ATTRIBUTE RESOLVER FUNCTIONS ---^^^^^^^^^^---
+
+// -------------- UPDATE THIS TO CHANGE CLAIM TO ATTRIBUTE MAPPING FUNCTIONS ---------------
+/*
+ * List of claim resolver mappings.
+ */
+// [ {claim}: {attribute retriever}, ... ]
+claimAttributes = [
+        "email": userProfileClaimResolver.curry("mail"),
+        "address": { claim, identity -&gt; [ "formatted" : userProfileClaimResolver("postaladdress", claim, identity) ] },
+        "phone_number": userProfileClaimResolver.curry("telephonenumber"),
+        "given_name": userProfileClaimResolver.curry("givenname"),
+        "zoneinfo": userProfileClaimResolver.curry("preferredtimezone"),
+        "family_name": userProfileClaimResolver.curry("sn"),
+        "locale": userProfileClaimResolver.curry("preferredlocale"),
+        "name": userProfileClaimResolver.curry("cn")
+]
+
+
+// -------------- UPDATE THIS TO CHANGE SCOPE TO CLAIM MAPPINGS --------------
+/*
+ * Map of scopes to claim objects.
+ */
+// {scope}: [ {claim}, ... ]
+scopeClaimsMap = [
+        "email": [ "email" ],
+        "address": [ "address" ],
+        "phone": [ "phone_number" ],
+        "profile": [ "given_name", "zoneinfo", "family_name", "locale", "name" ]
+]
+
+
+// ---------------- UPDATE BELOW FOR ADVANCED USAGES -------------------
+if (logger.messageEnabled()) {
+    scopes.findAll { s -&gt; !("openid".equals(s) || scopeClaimsMap.containsKey(s)) }.each { s -&gt;
+        logger.message("OpenAMScopeValidator.getUserInfo()::Message: scope not bound to claims: $s")
+    }
+}
+
+/*
+ * Computes the claims return key and value. The key may be a different value if the claim value is not in
+ * the requested language.
+ */
+def computeClaim = { claim -&gt;
+    try {
+        claimResolver = claimAttributes.get(claim.getName(), { claimObj, identity -&gt; defaultClaimResolver(claim)})
+        claimResolver(claim, identity)
+    } catch (IdRepoException e) {
+        if (logger.warningEnabled()) {
+            logger.warning("OpenAMScopeValidator.getUserInfo(): Unable to retrieve attribute=$attribute", e);
+        }
+    } catch (SSOException e) {
+        if (logger.warningEnabled()) {
+            logger.warning("OpenAMScopeValidator.getUserInfo(): Unable to retrieve attribute=$attribute", e);
+        }
+    }
+}
+
+/*
+ * Converts requested scopes into claim objects based on the scope mappings in scopeClaimsMap.
+ */
+def convertScopeToClaims = {
+    scopes.findAll { scope -&gt; "openid" != scope &amp;&amp; scopeClaimsMap.containsKey(scope) }.collectMany { scope -&gt;
+        scopeClaimsMap.get(scope).collect { claim -&gt;
+            new Claim(claim)
+        }
+    }
+}
+
+// Creates a full list of claims to resolve from requested scopes, claims provided by AS and requested claims
+def claimsToResolve = convertScopeToClaims() + claimObjects + requestedTypedClaims
+
+// Computes the claim return key and values for all requested claims
+computedClaims = claimsToResolve.collectEntries() { claim -&gt;
+    result = computeClaim(claim)
+}
+
+// Computes composite scopes
+def compositeScopes = scopeClaimsMap.findAll { scope -&gt;
+    scopes.contains(scope.key)
+}
+
+return new UserInfoClaims((Map)computedClaims, (Map)compositeScopes)
+                            </Value>
+                        </AttributeValuePair>
+                    </SubConfiguration>
+                    <SubConfiguration name="01e1a3c0-038b-4c16-956a-6c9d89328cff" id="globalScript">
+                        <AttributeValuePair>
+                            <Attribute name="name"/>
+                            <Value>Authentication Tree Decision Node Script</Value>
+                        </AttributeValuePair>
+                        <AttributeValuePair>
+                            <Attribute name="description"/>
+                            <Value>Default global script for a scripted decision node</Value>
+                        </AttributeValuePair>
+                        <AttributeValuePair>
+                            <Attribute name="context"/>
+                            <Value>AUTHENTICATION_TREE_DECISION_NODE</Value>
+                        </AttributeValuePair>
+                        <AttributeValuePair>
+                            <Attribute name="script"/>
+                            <Value>
+/*
+  - Data made available by nodes that have already executed are available in the sharedState variable.
+  - The script should set outcome to either true or false.
+ */
+
+outcome = true;
+                            </Value>
+                        </AttributeValuePair>
+                    </SubConfiguration>
+                </SubConfiguration>
+            </GlobalConfiguration>
+        </Configuration>
+
+    </Service>
+</ServicesConfiguration>

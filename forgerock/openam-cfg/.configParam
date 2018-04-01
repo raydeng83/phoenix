@@ -1,0 +1,21 @@
+DIRECTORY_SSL=SIMPLE
+COOKIE_DOMAIN=.example.com
+DIRECTORY_SERVER=localhost
+BASE_DIR=c:/projects/phoenix/forgerock/openam-cfg
+DATA_STORE=embedded
+ROOT_SUFFIX=dc=openam,dc=forgerock,dc=org
+DIRECTORY_JMX_PORT=1689
+AM_ENC_KEY=********
+DIRECTORY_PORT=50389
+ADMIN_CONFIRM_PWD=********
+ie7fix=18
+locale=en_US
+PLATFORM_LOCALE=en_US
+DS_DIRMGRDN=cn=Directory Manager
+ADMIN_PWD=********
+DIRECTORY_ADMIN_PORT=5444
+SERVER_URI=/openam
+DS_DIRMGRPASSWD=********
+SERVER_URL=http://openam.example.com:18080/openam
+acceptLicense=true
+SERVER_HOST=openam.example.com

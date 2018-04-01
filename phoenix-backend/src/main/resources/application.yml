@@ -15,4 +15,4 @@ spring:
 server:
   port: 8181
 
-openam-server.address: "http://openam.phoenix.com:18080/openam"
+openam-server.address: "http://openam.example.com:18080/openam"

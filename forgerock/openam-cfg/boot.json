@@ -1,0 +1,19 @@
+{
+  "instance" : "http://openam.example.com:18080/openam",
+  "dsameUser" : "cn=dsameuser,ou=DSAME Users,dc=openam,dc=forgerock,dc=org",
+  "keystores" : {
+    "default" : {
+      "keyStorePasswordFile" : "c:/projects/phoenix/forgerock/openam-cfg/openam/.storepass",
+      "keyPasswordFile" : "c:/projects/phoenix/forgerock/openam-cfg/openam/.keypass",
+      "keyStoreType" : "JCEKS",
+      "keyStoreFile" : "c:/projects/phoenix/forgerock/openam-cfg/openam/keystore.jceks"
+    }
+  },
+  "configStoreList" : [ {
+    "baseDN" : "dc=openam,dc=forgerock,dc=org",
+    "dirManagerDN" : "cn=Directory Manager",
+    "ldapHost" : "localhost",
+    "ldapPort" : 50389,
+    "ldapProtocol" : "ldap"
+  } ]
+}

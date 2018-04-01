@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  ~ Copyright 2017 ForgeRock AS. All Rights Reserved
+  ~
+  ~ Use of this code requires a commercial software license with ForgeRock AS.
+  ~ or with one of its affiliates. All use shall be exclusively subject
+  ~ to such license between the licensee and ForgeRock AS.
+  -->
+
+<!DOCTYPE ServicesConfiguration PUBLIC "=//iPlanet//Service Management Services (SMS) 1.0 DTD//EN"
+        "jar://com/sun/identity/sm/sms.dtd">
+
+<ServicesConfiguration>
+    <Service name="iPlanetAMAuthEdgeAuthenticationService" version="1.0">
+        <Schema
+                serviceHierarchy="/DSAMEConfig/authentication/iPlanetAMAuthEdgeAuthenticationService"
+                i18nFileName="amAuthEdge"
+                revisionNumber="1"
+                i18nKey="edge-authentication-service-description"
+                resourceName="authEdgeAuthentication">
+
+            <Organization>
+                <AttributeSchema name="subjectJwkSetAttr"
+                                 type="single" syntax="string"
+                                 i18nKey="subjectJwkSetAttr"
+                                 order="100">
+                </AttributeSchema>
+                <AttributeSchema name="challengeSigningKey"
+                                 type="single" syntax="string"
+                                 i18nKey="challengeSigningKey"
+                                 order="200">
+                </AttributeSchema>
+                <AttributeSchema name="forgerock-am-auth-edgeauthentication-auth-level"
+                                 type="single"
+                                 syntax="number_range" rangeStart="0" rangeEnd="2147483647"
+                                 i18nKey="authenticationLevel"
+                                 order="10000"
+                                 resourceName="authenticationLevel">
+                    <DefaultValues>
+                        <Value>0</Value>
+                    </DefaultValues>
+                </AttributeSchema>
+
+                <SubSchema name="serverconfig" inheritance="multiple" resourceName="USE-PARENT">
+                    <AttributeSchema name="subjectJwkSetAttr"
+                                     type="single" syntax="string"
+                                     i18nKey="subjectJwkSetAttr"
+                                     order="100">
+                    </AttributeSchema>
+                    <AttributeSchema name="challengeSigningKey"
+                                     type="single" syntax="string"
+                                     i18nKey="challengeSigningKey"
+                                     order="200">
+                    </AttributeSchema>
+                    <AttributeSchema name="forgerock-am-auth-edgeauthentication-auth-level"
+                                     type="single"
+                                     syntax="number_range" rangeStart="0" rangeEnd="2147483647"
+                                     i18nKey="authenticationLevel"
+                                     order="10000"
+                                     resourceName="authenticationLevel">
+                        <DefaultValues>
+                            <Value>0</Value>
+                        </DefaultValues>
+                    </AttributeSchema>
+                </SubSchema>
+            </Organization>
+        </Schema>
+    </Service>
+</ServicesConfiguration>

@@ -2,16 +2,18 @@ package com.ldeng.backend.service.impl;
 
 import com.ldeng.backend.fr.openam.AMUserService;
 import com.ldeng.backend.model.Role;
+import com.ldeng.backend.model.Session;
 import com.ldeng.backend.model.User;
 import com.ldeng.backend.model.UserRole;
-import com.ldeng.backend.model.UserSession;
 import com.ldeng.backend.repository.RoleRepository;
+import com.ldeng.backend.repository.SessionRepository;
 import com.ldeng.backend.repository.UserRepository;
-import com.ldeng.backend.repository.UserSessionRepository;
 import com.ldeng.backend.service.UserService;
+import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -23,9 +25,6 @@ public class UserServiceImpl implements UserService{
     private static final Logger LOG = LoggerFactory.getLogger(UserService.class);
 
     @Autowired
-    private BCryptPasswordEncoder passwordEncoder;
-
-    @Autowired
     private AMUserService amUserService;
 
     @Autowired
@@ -35,7 +34,7 @@ public class UserServiceImpl implements UserService{
     private RoleRepository roleRepository;
 
     @Autowired
-    private UserSessionRepository userSessionRepository;
+    private SessionRepository sessionRepository;
 
     @Override
     public User createUser(User user, Set<UserRole> userRoles) {
@@ -64,10 +63,23 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public UserSession setUserSession (User user, String tokenId) {
-        UserSession userSession = new UserSession();
-        userSession.setTokenId(tokenId);
-        userSession.setUser(user);
-        return userSessionRepository.save(userSession);
+    public Session setUserSession (String username, String sessionId, String tokenId) {
+        Session session = new Session();
+        session.setJsessionId(sessionId);
+        session.setTokenId(tokenId);
+
+        User user = getUserByUsername(username);
+        session.setUser(user);
+        return sessionRepository.save(session);
     }
+
+    @Override
+    public JSONObject invalidateUserSession (String username, String sessionId) {
+        Session session = sessionRepository.findByJsessionId(sessionId);
+        String tokenId = session.getTokenId();
+        SecurityContextHolder.clearContext();
+        sessionRepository.delete(session);
+        return amUserService.invalidateSession(tokenId);
+    }
+
 }

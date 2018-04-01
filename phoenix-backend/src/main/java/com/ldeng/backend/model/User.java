@@ -23,9 +23,9 @@ public class User{
     @JsonIgnore
     private Set<UserRole> userRoles = new HashSet<>();
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     @JsonIgnore
-    private Set<UserSession> userSessionList = new HashSet<>();
+    private Set<Session> sessions = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -83,11 +83,11 @@ public class User{
         this.username = username;
     }
 
-    public Set<UserSession> getUserSessionList() {
-        return userSessionList;
+    public Set<Session> getSessions() {
+        return sessions;
     }
 
-    public void setUserSessionList(Set<UserSession> userSessionList) {
-        this.userSessionList = userSessionList;
+    public void setSessions(Set<Session> sessions) {
+        this.sessions = sessions;
     }
 }

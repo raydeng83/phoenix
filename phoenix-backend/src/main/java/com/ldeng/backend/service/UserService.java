@@ -1,8 +1,9 @@
 package com.ldeng.backend.service;
 
+import com.ldeng.backend.model.Session;
 import com.ldeng.backend.model.User;
 import com.ldeng.backend.model.UserRole;
-import com.ldeng.backend.model.UserSession;
+import org.json.JSONObject;
 
 import java.util.Set;
 
@@ -11,5 +12,7 @@ public interface UserService {
 
     User getUserByUsername(String username);
 
-    UserSession setUserSession (User user, String tokenId);
+    Session setUserSession (String username, String sessionId, String tokenId);
+
+    JSONObject invalidateUserSession (String username, String sessionId);
 }

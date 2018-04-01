@@ -1,0 +1,1709 @@
+******************************************************
+03/31/2018 08:21:55:093 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 2.0
+Number of Hits during this interval: 1
+Hit ratio for this interval: 0.5
+Total number of Get requests since server start: 2
+Total number of Get Hits since server start: 1
+Overall Hit ratio: 0.5
+Total number of Search requests since server start: 0
+Total number of FQDN Search hits since server start: 0
+Overall Hit ratio: NaN
+Total Cache Size: 1
+
+03/31/2018 08:22:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 31.0
+Number of Hits during this interval: 22
+Hit ratio for this interval: 0.7096774193548387
+Total number of Get requests since server start: 30
+Total number of Get Hits since server start: 22
+Overall Hit ratio: 0.7333333333333333
+Total number of Search requests since server start: 3
+Total number of FQDN Search hits since server start: 1
+Overall Hit ratio: 0.3333333333333333
+Total Cache Size: 2
+
+03/31/2018 08:23:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 149.0
+Number of Hits during this interval: 150
+Hit ratio for this interval: 1.0067114093959733
+Total number of Get requests since server start: 178
+Total number of Get Hits since server start: 172
+Overall Hit ratio: 0.9662921348314607
+Total number of Search requests since server start: 3
+Total number of FQDN Search hits since server start: 1
+Overall Hit ratio: 0.3333333333333333
+Total Cache Size: 2
+
+03/31/2018 08:24:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 237.0
+Number of Hits during this interval: 238
+Hit ratio for this interval: 1.0042194092827004
+Total number of Get requests since server start: 415
+Total number of Get Hits since server start: 410
+Overall Hit ratio: 0.9879518072289156
+Total number of Search requests since server start: 3
+Total number of FQDN Search hits since server start: 1
+Overall Hit ratio: 0.3333333333333333
+Total Cache Size: 2
+
+03/31/2018 08:25:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 141.0
+Number of Hits during this interval: 138
+Hit ratio for this interval: 0.9787234042553191
+Total number of Get requests since server start: 555
+Total number of Get Hits since server start: 548
+Overall Hit ratio: 0.9873873873873874
+Total number of Search requests since server start: 4
+Total number of FQDN Search hits since server start: 1
+Overall Hit ratio: 0.25
+Total Cache Size: 3
+
+03/31/2018 08:26:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 555
+Total number of Get Hits since server start: 548
+Overall Hit ratio: 0.9873873873873874
+Total number of Search requests since server start: 4
+Total number of FQDN Search hits since server start: 1
+Overall Hit ratio: 0.25
+Total Cache Size: 3
+
+03/31/2018 08:27:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 555
+Total number of Get Hits since server start: 548
+Overall Hit ratio: 0.9873873873873874
+Total number of Search requests since server start: 4
+Total number of FQDN Search hits since server start: 1
+Overall Hit ratio: 0.25
+Total Cache Size: 3
+
+03/31/2018 08:28:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 555
+Total number of Get Hits since server start: 548
+Overall Hit ratio: 0.9873873873873874
+Total number of Search requests since server start: 4
+Total number of FQDN Search hits since server start: 1
+Overall Hit ratio: 0.25
+Total Cache Size: 3
+
+03/31/2018 08:29:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 555
+Total number of Get Hits since server start: 548
+Overall Hit ratio: 0.9873873873873874
+Total number of Search requests since server start: 4
+Total number of FQDN Search hits since server start: 1
+Overall Hit ratio: 0.25
+Total Cache Size: 3
+
+03/31/2018 08:30:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 4.0
+Number of Hits during this interval: 3
+Hit ratio for this interval: 0.75
+Total number of Get requests since server start: 558
+Total number of Get Hits since server start: 551
+Overall Hit ratio: 0.9874551971326165
+Total number of Search requests since server start: 5
+Total number of FQDN Search hits since server start: 1
+Overall Hit ratio: 0.2
+Total Cache Size: 3
+
+03/31/2018 08:31:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 75.0
+Number of Hits during this interval: 74
+Hit ratio for this interval: 0.9866666666666667
+Total number of Get requests since server start: 633
+Total number of Get Hits since server start: 625
+Overall Hit ratio: 0.9873617693522907
+Total number of Search requests since server start: 5
+Total number of FQDN Search hits since server start: 1
+Overall Hit ratio: 0.2
+Total Cache Size: 3
+
+03/31/2018 08:32:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 633
+Total number of Get Hits since server start: 625
+Overall Hit ratio: 0.9873617693522907
+Total number of Search requests since server start: 5
+Total number of FQDN Search hits since server start: 1
+Overall Hit ratio: 0.2
+Total Cache Size: 3
+
+03/31/2018 08:33:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 633
+Total number of Get Hits since server start: 625
+Overall Hit ratio: 0.9873617693522907
+Total number of Search requests since server start: 5
+Total number of FQDN Search hits since server start: 1
+Overall Hit ratio: 0.2
+Total Cache Size: 3
+
+03/31/2018 08:34:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 633
+Total number of Get Hits since server start: 625
+Overall Hit ratio: 0.9873617693522907
+Total number of Search requests since server start: 5
+Total number of FQDN Search hits since server start: 1
+Overall Hit ratio: 0.2
+Total Cache Size: 3
+
+03/31/2018 08:35:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 633
+Total number of Get Hits since server start: 625
+Overall Hit ratio: 0.9873617693522907
+Total number of Search requests since server start: 5
+Total number of FQDN Search hits since server start: 1
+Overall Hit ratio: 0.2
+Total Cache Size: 3
+
+03/31/2018 08:36:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 2.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: 0.0
+Total number of Get requests since server start: 635
+Total number of Get Hits since server start: 625
+Overall Hit ratio: 0.984251968503937
+Total number of Search requests since server start: 5
+Total number of FQDN Search hits since server start: 1
+Overall Hit ratio: 0.2
+Total Cache Size: 4
+
+03/31/2018 08:37:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 36.0
+Number of Hits during this interval: 30
+Hit ratio for this interval: 0.8333333333333334
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 08:38:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 08:39:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 08:40:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 08:41:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 08:42:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 08:43:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 08:44:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 08:45:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 08:46:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 08:47:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 08:48:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 08:49:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 08:50:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 08:51:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 08:52:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 08:53:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 08:54:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 08:55:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 08:56:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 08:57:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 08:58:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 08:59:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:00:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:01:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:02:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:03:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:04:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:05:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:06:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:07:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:08:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:09:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:10:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:11:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:12:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:13:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:14:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:15:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:16:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:17:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:18:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:19:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:20:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:21:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:22:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:23:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:24:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:25:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:26:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:27:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:28:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:29:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:30:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:31:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:32:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:33:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:34:55:002 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:35:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:36:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:37:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:38:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:39:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:40:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:41:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:42:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:43:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:44:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:45:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:46:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:47:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:48:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:49:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:50:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:51:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:52:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:53:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:54:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:55:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:56:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 662
+Total number of Get Hits since server start: 647
+Overall Hit ratio: 0.9773413897280967
+Total number of Search requests since server start: 14
+Total number of FQDN Search hits since server start: 9
+Overall Hit ratio: 0.6428571428571429
+Total Cache Size: 5
+
+03/31/2018 09:57:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 12.0
+Number of Hits during this interval: 12
+Hit ratio for this interval: 1.0
+Total number of Get requests since server start: 670
+Total number of Get Hits since server start: 655
+Overall Hit ratio: 0.9776119402985075
+Total number of Search requests since server start: 18
+Total number of FQDN Search hits since server start: 13
+Overall Hit ratio: 0.7222222222222222
+Total Cache Size: 5
+
+03/31/2018 09:58:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 670
+Total number of Get Hits since server start: 655
+Overall Hit ratio: 0.9776119402985075
+Total number of Search requests since server start: 18
+Total number of FQDN Search hits since server start: 13
+Overall Hit ratio: 0.7222222222222222
+Total Cache Size: 5
+
+03/31/2018 09:59:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 670
+Total number of Get Hits since server start: 655
+Overall Hit ratio: 0.9776119402985075
+Total number of Search requests since server start: 18
+Total number of FQDN Search hits since server start: 13
+Overall Hit ratio: 0.7222222222222222
+Total Cache Size: 5
+
+03/31/2018 10:00:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 670
+Total number of Get Hits since server start: 655
+Overall Hit ratio: 0.9776119402985075
+Total number of Search requests since server start: 18
+Total number of FQDN Search hits since server start: 13
+Overall Hit ratio: 0.7222222222222222
+Total Cache Size: 5
+
+03/31/2018 10:01:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 670
+Total number of Get Hits since server start: 655
+Overall Hit ratio: 0.9776119402985075
+Total number of Search requests since server start: 18
+Total number of FQDN Search hits since server start: 13
+Overall Hit ratio: 0.7222222222222222
+Total Cache Size: 5
+
+03/31/2018 10:02:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 670
+Total number of Get Hits since server start: 655
+Overall Hit ratio: 0.9776119402985075
+Total number of Search requests since server start: 18
+Total number of FQDN Search hits since server start: 13
+Overall Hit ratio: 0.7222222222222222
+Total Cache Size: 5
+
+03/31/2018 10:03:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 670
+Total number of Get Hits since server start: 655
+Overall Hit ratio: 0.9776119402985075
+Total number of Search requests since server start: 18
+Total number of FQDN Search hits since server start: 13
+Overall Hit ratio: 0.7222222222222222
+Total Cache Size: 5
+
+03/31/2018 10:04:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 670
+Total number of Get Hits since server start: 655
+Overall Hit ratio: 0.9776119402985075
+Total number of Search requests since server start: 18
+Total number of FQDN Search hits since server start: 13
+Overall Hit ratio: 0.7222222222222222
+Total Cache Size: 5
+
+03/31/2018 10:05:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 12.0
+Number of Hits during this interval: 12
+Hit ratio for this interval: 1.0
+Total number of Get requests since server start: 678
+Total number of Get Hits since server start: 663
+Overall Hit ratio: 0.9778761061946902
+Total number of Search requests since server start: 22
+Total number of FQDN Search hits since server start: 17
+Overall Hit ratio: 0.7727272727272727
+Total Cache Size: 5
+
+03/31/2018 10:06:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 678
+Total number of Get Hits since server start: 663
+Overall Hit ratio: 0.9778761061946902
+Total number of Search requests since server start: 22
+Total number of FQDN Search hits since server start: 17
+Overall Hit ratio: 0.7727272727272727
+Total Cache Size: 5
+
+03/31/2018 10:07:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 23.0
+Number of Hits during this interval: 23
+Hit ratio for this interval: 1.0
+Total number of Get requests since server start: 694
+Total number of Get Hits since server start: 679
+Overall Hit ratio: 0.978386167146974
+Total number of Search requests since server start: 29
+Total number of FQDN Search hits since server start: 24
+Overall Hit ratio: 0.8275862068965517
+Total Cache Size: 5
+
+03/31/2018 10:08:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 11.0
+Number of Hits during this interval: 8
+Hit ratio for this interval: 0.7272727272727273
+Total number of Get requests since server start: 702
+Total number of Get Hits since server start: 684
+Overall Hit ratio: 0.9743589743589743
+Total number of Search requests since server start: 32
+Total number of FQDN Search hits since server start: 27
+Overall Hit ratio: 0.84375
+Total Cache Size: 5
+
+03/31/2018 10:09:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 51.0
+Number of Hits during this interval: 48
+Hit ratio for this interval: 0.9411764705882353
+Total number of Get requests since server start: 744
+Total number of Get Hits since server start: 726
+Overall Hit ratio: 0.9758064516129032
+Total number of Search requests since server start: 41
+Total number of FQDN Search hits since server start: 33
+Overall Hit ratio: 0.8048780487804879
+Total Cache Size: 5
+
+03/31/2018 10:10:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 7.0
+Number of Hits during this interval: 6
+Hit ratio for this interval: 0.8571428571428571
+Total number of Get requests since server start: 750
+Total number of Get Hits since server start: 732
+Overall Hit ratio: 0.976
+Total number of Search requests since server start: 42
+Total number of FQDN Search hits since server start: 33
+Overall Hit ratio: 0.7857142857142857
+Total Cache Size: 5
+
+03/31/2018 10:11:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 750
+Total number of Get Hits since server start: 732
+Overall Hit ratio: 0.976
+Total number of Search requests since server start: 42
+Total number of FQDN Search hits since server start: 33
+Overall Hit ratio: 0.7857142857142857
+Total Cache Size: 5
+
+03/31/2018 10:12:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 750
+Total number of Get Hits since server start: 732
+Overall Hit ratio: 0.976
+Total number of Search requests since server start: 42
+Total number of FQDN Search hits since server start: 33
+Overall Hit ratio: 0.7857142857142857
+Total Cache Size: 5
+
+03/31/2018 10:13:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 3.0
+Number of Hits during this interval: 3
+Hit ratio for this interval: 1.0
+Total number of Get requests since server start: 753
+Total number of Get Hits since server start: 735
+Overall Hit ratio: 0.9760956175298805
+Total number of Search requests since server start: 42
+Total number of FQDN Search hits since server start: 33
+Overall Hit ratio: 0.7857142857142857
+Total Cache Size: 5
+
+03/31/2018 10:14:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 17.0
+Number of Hits during this interval: 17
+Hit ratio for this interval: 1.0
+Total number of Get requests since server start: 767
+Total number of Get Hits since server start: 749
+Overall Hit ratio: 0.9765319426336375
+Total number of Search requests since server start: 45
+Total number of FQDN Search hits since server start: 36
+Overall Hit ratio: 0.8
+Total Cache Size: 5
+
+03/31/2018 10:15:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 17.0
+Number of Hits during this interval: 17
+Hit ratio for this interval: 1.0
+Total number of Get requests since server start: 781
+Total number of Get Hits since server start: 763
+Overall Hit ratio: 0.9769526248399488
+Total number of Search requests since server start: 48
+Total number of FQDN Search hits since server start: 39
+Overall Hit ratio: 0.8125
+Total Cache Size: 5
+
+03/31/2018 10:16:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 2.0
+Number of Hits during this interval: 2
+Hit ratio for this interval: 1.0
+Total number of Get requests since server start: 783
+Total number of Get Hits since server start: 765
+Overall Hit ratio: 0.9770114942528736
+Total number of Search requests since server start: 48
+Total number of FQDN Search hits since server start: 39
+Overall Hit ratio: 0.8125
+Total Cache Size: 5
+
+03/31/2018 10:17:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 783
+Total number of Get Hits since server start: 765
+Overall Hit ratio: 0.9770114942528736
+Total number of Search requests since server start: 48
+Total number of FQDN Search hits since server start: 39
+Overall Hit ratio: 0.8125
+Total Cache Size: 5
+
+03/31/2018 10:18:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 783
+Total number of Get Hits since server start: 765
+Overall Hit ratio: 0.9770114942528736
+Total number of Search requests since server start: 48
+Total number of FQDN Search hits since server start: 39
+Overall Hit ratio: 0.8125
+Total Cache Size: 5
+
+03/31/2018 10:19:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 783
+Total number of Get Hits since server start: 765
+Overall Hit ratio: 0.9770114942528736
+Total number of Search requests since server start: 48
+Total number of FQDN Search hits since server start: 39
+Overall Hit ratio: 0.8125
+Total Cache Size: 5
+
+03/31/2018 10:20:55:001 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 783
+Total number of Get Hits since server start: 765
+Overall Hit ratio: 0.9770114942528736
+Total number of Search requests since server start: 48
+Total number of FQDN Search hits since server start: 39
+Overall Hit ratio: 0.8125
+Total Cache Size: 5
+
+03/31/2018 10:21:55:000 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 783
+Total number of Get Hits since server start: 765
+Overall Hit ratio: 0.9770114942528736
+Total number of Search requests since server start: 48
+Total number of FQDN Search hits since server start: 39
+Overall Hit ratio: 0.8125
+Total Cache Size: 5
+
+03/31/2018 10:22:55:002 PM EDT: Thread[SystemTimer,5,main]
+Idm  Cache Statistics: idRepoCacheStat
+--------------------
+Number of Get and Search requests during this interval: 0.0
+Number of Hits during this interval: 0
+Hit ratio for this interval: NaN
+Total number of Get requests since server start: 783
+Total number of Get Hits since server start: 765
+Overall Hit ratio: 0.9770114942528736
+Total number of Search requests since server start: 48
+Total number of FQDN Search hits since server start: 39
+Overall Hit ratio: 0.8125
+Total Cache Size: 5
+

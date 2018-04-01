@@ -37,7 +37,7 @@ public class BackendApplication implements CommandLineRunner{
 		userRoles.add(new UserRole(user1, role1));
 		userService.createUser(user1, userRoles);
 
-		userRoles.clear();
+		userRoles = new HashSet<>();
 		User user2 = new User();
 		user2.setFirstName("Ben");
 		user2.setLastName("Franklin");
