@@ -41,8 +41,8 @@ public class AuthenticationSuccessHandler extends SavedRequestAwareAuthenticatio
 
         String username = (String) authentication.getPrincipal();
         String sessionId = httpSession.getId();
-        String tokenId = CustomAuthenticationProvider.getTokenId();
-        Session session = userService.setUserSession(username, sessionId, tokenId);
+        String token = CustomAuthenticationProvider.getToken();
+        Session session = userService.setUserSession(username, sessionId, token);
         System.out.println(session);
         //super.onAuthenticationSuccess( request, response, authentication );
         /*SavedRequest savedRequest = requestCache.getRequest(request, response);

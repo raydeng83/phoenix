@@ -1,7 +1,10 @@
 package com.ldeng.backend.fr.openam.impl;
 
 import com.ldeng.backend.fr.openam.AMUserService;
+import com.ldeng.backend.model.OtpRef;
 import com.ldeng.backend.model.User;
+import com.ldeng.backend.service.OtpRefService;
+import com.ldeng.backend.service.UserService;
 import com.ldeng.backend.utility.MyJSONResponseHandler;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
@@ -16,7 +19,9 @@ import org.apache.http.message.BasicHeader;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.protocol.HTTP;
 import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
@@ -32,6 +37,12 @@ public class AMUserServiceImpl implements AMUserService {
 
     @Value("${openam-server.address}")
     private String openamUrl;
+
+    @Autowired
+    private OtpRefService otpRefService;
+
+    @Autowired
+    private UserService userService;
 
     @Override
     public void createUser(User user) {
@@ -62,7 +73,7 @@ public class AMUserServiceImpl implements AMUserService {
     public String authenticateUser(String username, String password) {
         boolean status = false;
 
-        String tokenId = null;
+        String token = null;
 
         String authenticateUserUrl = openamUrl+"/json/realms/phoenix-dev/authenticate";
 
@@ -87,10 +98,18 @@ public class AMUserServiceImpl implements AMUserService {
             JSONObject o = new JSONObject(result.toString());
 
             if (o.has("tokenId")) {
-                tokenId = (String) o.getString("tokenId");
-                System.out.println(tokenId);
+                token = (String) o.getString("tokenId");
+
+            } else if (o.has("authId")){
+                OtpRef otpRef = new OtpRef();
+                otpRef.setOtpString(o.toString());
+                User user = userService.getUserByUsername(username);
+                otpRef.setUser(user);
+                otpRef = otpRefService.save(otpRef);
+                token = "OTP-" + otpRef.getId();
+
             } else {
-                tokenId = null;
+                token = null;
             }
 
         } catch(IOException e) {
@@ -103,7 +122,7 @@ public class AMUserServiceImpl implements AMUserService {
             }
         }
 
-        return tokenId;
+        return token;
     }
 
     @Override

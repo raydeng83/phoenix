@@ -27,6 +27,10 @@ public class User{
     @JsonIgnore
     private Set<Session> sessions = new HashSet<>();
 
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
+    @JsonIgnore
+    private Set<OtpRef> otpRefs = new HashSet<>();
+
     public Long getId() {
         return id;
     }
@@ -89,5 +93,13 @@ public class User{
 
     public void setSessions(Set<Session> sessions) {
         this.sessions = sessions;
+    }
+
+    public Set<OtpRef> getOtpRefs() {
+        return otpRefs;
+    }
+
+    public void setOtpRefs(Set<OtpRef> otpRefs) {
+        this.otpRefs = otpRefs;
     }
 }

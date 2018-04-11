@@ -19,5 +19,8 @@ public class RestAuthenticationEntryPoint
             AuthenticationException authException) throws IOException {
 
         response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Unauthorized");
+//        response.setContentType("application/json");
+//        response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+//        response.getOutputStream().println("{ \"error\": \"" + authException.getMessage() + "\" }");
     }
 }

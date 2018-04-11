@@ -129,7 +129,7 @@
                 </AttributeSchema>
                 <AttributeSchema name="iplanet-am-auth-hmac-signing-shared-secret" type="single" syntax="password" i18nKey="a160" order="4000" validator="RequiredValueValidator" resourceName="sharedSecret" cosQualifier="default" listOrder="natural" isSearchable="no">
                     <DefaultValues>
-                        <Value>PQyaNLewll67J9mRi4naPaMWndWgA1ET3BXM+OdrNmM=</Value>
+                        <Value>ZXRk5dtUfbC77yLqzoVcem9tHf4rJ/MT4crcMidmYAQ=</Value>
                     </DefaultValues>
                 </AttributeSchema>
                 <AttributeSchema name="iplanet-am-auth-default-role" type="list" syntax="string" i18nKey="a105" order="300" resourceName="defaultRole" cosQualifier="default" listOrder="natural" isSearchable="no">

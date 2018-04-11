@@ -1,365 +1,365 @@
-03/31/2018 08:16:57:055 PM EDT: Checking license acceptance...
-03/31/2018 08:16:57:055 PM EDT: License terms accepted.
+04/10/2018 07:24:00:143 PM EDT: Checking license acceptance...
+04/10/2018 07:24:00:143 PM EDT: License terms accepted.
 License, legal-notices/Forgerock_License.txt, has been accepted.
 License Hash: Yalwb9SLaQCqu0NjseRm+vqup41ucHzs83eS3VP3uZI=.
-03/31/2018 08:16:57:087 PM EDT: Checking configuration directory c:/projects/phoenix/forgerock/openam-cfg.
-03/31/2018 08:16:57:146 PM EDT: ...Success.
-03/31/2018 08:16:57:193 PM EDT: Extracting OpenDJ, please wait...
-03/31/2018 08:18:35:213 PM EDT: Complete
-03/31/2018 08:18:35:213 PM EDT: Running OpenDJ setup
-03/31/2018 08:19:00:672 PM EDT: ...Success
-03/31/2018 08:19:00:672 PM EDT: Starting OpenDJ for serverRoot c:/projects/phoenix/forgerock/openam-cfg/opends
-03/31/2018 08:19:31:081 PM EDT: ...Success.
-03/31/2018 08:19:31:081 PM EDT: ...Success.
-03/31/2018 08:19:31:084 PM EDT: Installing OpenAM configuration store in c:/projects/phoenix/forgerock/openam-cfg/opends
-03/31/2018 08:19:33:779 PM EDT: Creating OpenAM suffix
-Import task 20180331201935535 scheduled to start immediately
-[31/Mar/2018:20:19:35 -0400] severity="NOTICE" msgCount=0 msgID=org.opends.messages.backend-413 message="Import task 20180331201935535 started execution"
-[31/Mar/2018:20:19:36 -0400] severity="NOTICE" msgCount=1 msgID=org.opends.messages.backend-370 message="The backend userRoot is now taken offline"
-[31/Mar/2018:20:19:36 -0400] severity="NOTICE" msgCount=2 msgID=org.opends.messages.runtime-21 message="Installation Directory:  C:\projects\phoenix\forgerock\openam-cfg\opends"
-[31/Mar/2018:20:19:36 -0400] severity="NOTICE" msgCount=3 msgID=org.opends.messages.runtime-23 message="Instance Directory:      C:\projects\phoenix\forgerock\openam-cfg\opends"
-[31/Mar/2018:20:19:36 -0400] severity="NOTICE" msgCount=4 msgID=org.opends.messages.runtime-17 message="JVM Information: 1.8.0_151-b12 by Oracle Corporation, 64-bit architecture, 9408348160 bytes heap size"
-[31/Mar/2018:20:19:41 -0400] severity="NOTICE" msgCount=5 msgID=org.opends.messages.runtime-18 message="JVM Host: LDENGIBM-01.ikasystems.com, running Windows 10 10.0 amd64, 42331430912 bytes physical memory size, number of processors available 8"
-[31/Mar/2018:20:19:41 -0400] severity="NOTICE" msgCount=6 msgID=org.opends.messages.runtime-19 message="JVM Arguments: "-Djava.util.logging.config.file=C:\projects\phoenix\forgerock\openam\conf\logging.properties", "-Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager", "-Djdk.tls.ephemeralDHKeySize=2048", "-Djava.protocol.handler.pkgs=org.apache.catalina.webresources", "-Dignore.endorsed.dirs=", "-Dcatalina.base=C:\projects\phoenix\forgerock\openam", "-Dcatalina.home=C:\projects\phoenix\forgerock\openam", "-Djava.io.tmpdir=C:\projects\phoenix\forgerock\openam\temp""
-[31/Mar/2018:20:19:41 -0400] severity="INFORMATION" msgCount=7 msgID=org.opends.messages.backend-410 message="JE backend 'userRoot' does not specify the number of cleaner threads: defaulting to 8 threads"
-[31/Mar/2018:20:19:41 -0400] severity="INFORMATION" msgCount=8 msgID=org.opends.messages.backend-411 message="JE backend 'userRoot' does not specify the number of lock tables: defaulting to 53"
-[31/Mar/2018:20:19:41 -0400] severity="NOTICE" msgCount=9 msgID=org.opends.messages.backend-533 message="ForgeRock Directory Services 5.5.0 starting import (build 20171019141329, R3cc42334c8c36135c3098d963e09665ae0a3ea24)"
-[31/Mar/2018:20:19:41 -0400] severity="NOTICE" msgCount=10 msgID=org.opends.messages.backend-528 message="The amount of free memory available to the import task is 3906650988 bytes. The number of phase one buffers required is 84 buffers"
-[31/Mar/2018:20:19:42 -0400] severity="NOTICE" msgCount=11 msgID=org.opends.messages.backend-520 message="Setting DB cache size to 33554432 bytes and phase one buffer size to 4194304 bytes"
-[31/Mar/2018:20:19:42 -0400] severity="NOTICE" msgCount=12 msgID=org.opends.messages.backend-534 message="Import Thread Count: 4 threads"
-[31/Mar/2018:20:19:46 -0400] severity="NOTICE" msgCount=13 msgID=org.opends.messages.backend-531 message="Total import time was 2 seconds. Phase one processing completed in 1 seconds, phase two processing completed in 0 seconds"
-[31/Mar/2018:20:19:46 -0400] severity="NOTICE" msgCount=14 msgID=org.opends.messages.backend-519 message="Processed 3 entries, imported 3, skipped 0, rejected 0 and migrated 0 in 4 seconds (average rate 0.7/sec)"
-[31/Mar/2018:20:19:46 -0400] severity="NOTICE" msgCount=15 msgID=org.opends.messages.backend-526 message="Import LDIF environment close took 0 seconds"
-[31/Mar/2018:20:19:46 -0400] severity="NOTICE" msgCount=16 msgID=org.opends.messages.backend-518 message="Flushing data to disk"
-[31/Mar/2018:20:19:46 -0400] severity="INFORMATION" msgCount=17 msgID=org.opends.messages.backend-410 message="JE backend 'userRoot' does not specify the number of cleaner threads: defaulting to 8 threads"
-[31/Mar/2018:20:19:46 -0400] severity="INFORMATION" msgCount=18 msgID=org.opends.messages.backend-411 message="JE backend 'userRoot' does not specify the number of lock tables: defaulting to 53"
-[31/Mar/2018:20:19:47 -0400] severity="NOTICE" msgCount=19 msgID=org.opends.messages.backend-513 message="The database backend userRoot containing 3 entries has started"
-[31/Mar/2018:20:19:47 -0400] severity="INFORMATION" msgCount=20 msgID=org.opends.messages.access_control-50 message="Added 1 Access Control Instruction (ACI) attribute types found in context "dc=openam,dc=forgerock,dc=org" to the access control evaluation engine"
-[31/Mar/2018:20:19:47 -0400] severity="NOTICE" msgCount=21 msgID=org.opends.messages.backend-414 message="Import task 20180331201935535 finished execution in the state Completed successfully"
-Import task 20180331201935535 has been successfully completed
-03/31/2018 08:19:49:024 PM EDT: ...Success
-03/31/2018 08:19:49:308 PM EDT: Tag swapping schema files.
-03/31/2018 08:19:51:286 PM EDT: ...Success.
-03/31/2018 08:19:51:287 PM EDT: Loading Schema opendj_config_schema.ldif
-03/31/2018 08:19:52:003 PM EDT: ...Success.
-03/31/2018 08:19:52:003 PM EDT: Loading Schema opendj_user_schema.ldif
-03/31/2018 08:19:52:591 PM EDT: ...Success.
-03/31/2018 08:19:52:591 PM EDT: Loading Schema opendj_embinit.ldif
-03/31/2018 08:19:52:660 PM EDT: ...Success.
-03/31/2018 08:19:52:660 PM EDT: Loading Schema opendj_user_index.ldif
-03/31/2018 08:19:53:705 PM EDT: ...Success.
-03/31/2018 08:19:53:705 PM EDT: Loading Schema cts-container.ldif
-03/31/2018 08:19:53:802 PM EDT: ...Success.
-03/31/2018 08:19:53:802 PM EDT: Loading Schema cts-add-schema.ldif
-03/31/2018 08:19:54:727 PM EDT: ...Success.
-03/31/2018 08:19:54:727 PM EDT: Loading Schema cts-add-multivalue.ldif
-03/31/2018 08:19:55:880 PM EDT: ...Success.
-03/31/2018 08:19:55:880 PM EDT: Loading Schema cts-indices.ldif
-03/31/2018 08:20:03:300 PM EDT: ...Success.
-03/31/2018 08:20:03:300 PM EDT: Loading Schema cts-add-multivalue-indices.ldif
-03/31/2018 08:20:04:179 PM EDT: ...Success.
-03/31/2018 08:20:04:179 PM EDT: Loading Schema opendj_dashboard.ldif
-03/31/2018 08:20:04:712 PM EDT: ...Success.
-03/31/2018 08:20:04:712 PM EDT: Loading Schema opendj_deviceprint.ldif
-03/31/2018 08:20:05:199 PM EDT: ...Success.
-03/31/2018 08:20:05:199 PM EDT: Loading Schema opendj_kba.ldif
-03/31/2018 08:20:05:785 PM EDT: ...Success.
-03/31/2018 08:20:05:785 PM EDT: Loading Schema opendj_uma_audit.ldif
-03/31/2018 08:20:05:809 PM EDT: ...Success.
-03/31/2018 08:20:05:810 PM EDT: Loading Schema opendj_uma_resource_sets.ldif
-03/31/2018 08:20:05:836 PM EDT: ...Success.
-03/31/2018 08:20:05:836 PM EDT: Loading Schema opendj_uma_labels_schema.ldif
-03/31/2018 08:20:06:407 PM EDT: ...Success.
-03/31/2018 08:20:06:407 PM EDT: Loading Schema opendj_uma_resource_set_labels.ldif
-03/31/2018 08:20:06:429 PM EDT: ...Success.
-03/31/2018 08:20:06:429 PM EDT: Loading Schema opendj_uma_pending_requests.ldif
-03/31/2018 08:20:06:453 PM EDT: ...Success.
-03/31/2018 08:20:06:453 PM EDT: Loading Schema opendj_oathdevices.ldif
-03/31/2018 08:20:07:018 PM EDT: ...Success.
-03/31/2018 08:20:07:018 PM EDT: Loading Schema opendj_pushdevices.ldif
-03/31/2018 08:20:07:677 PM EDT: ...Success.
-03/31/2018 08:20:07:677 PM EDT: Stopping OpenDJ for serverRoot c:/projects/phoenix/forgerock/openam-cfg/opends
-03/31/2018 08:20:14:062 PM EDT: ...Success.
-03/31/2018 08:20:14:062 PM EDT: Rebuilding OpenDJ indexes for baseDN dc=openam,dc=forgerock,dc=org
-[31/Mar/2018:20:20:18 -0400] category=BACKEND severity=INFORMATION msgID=410 msg=JE backend 'userRoot' does not specify the number of cleaner threads: defaulting to 8 threads
-[31/Mar/2018:20:20:18 -0400] category=BACKEND severity=INFORMATION msgID=411 msg=JE backend 'userRoot' does not specify the number of lock tables: defaulting to 53
-[31/Mar/2018:20:20:18 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenString08 is currently operating in a degraded state and must be rebuilt before it can be used
-[31/Mar/2018:20:20:18 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenString09 is currently operating in a degraded state and must be rebuilt before it can be used
-[31/Mar/2018:20:20:18 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenString01 is currently operating in a degraded state and must be rebuilt before it can be used
-[31/Mar/2018:20:20:18 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenString02 is currently operating in a degraded state and must be rebuilt before it can be used
-[31/Mar/2018:20:20:18 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenString03 is currently operating in a degraded state and must be rebuilt before it can be used
-[31/Mar/2018:20:20:18 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_sun-fm-saml2-nameid-infokey is currently operating in a degraded state and must be rebuilt before it can be used
-[31/Mar/2018:20:20:18 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_iplanet-am-user-federation-info-key is currently operating in a degraded state and must be rebuilt before it can be used
-[31/Mar/2018:20:20:18 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenInteger04 is currently operating in a degraded state and must be rebuilt before it can be used
-[31/Mar/2018:20:20:18 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenMultiString01 is currently operating in a degraded state and must be rebuilt before it can be used
-[31/Mar/2018:20:20:18 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenInteger03 is currently operating in a degraded state and must be rebuilt before it can be used
-[31/Mar/2018:20:20:18 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenMultiString02 is currently operating in a degraded state and must be rebuilt before it can be used
-[31/Mar/2018:20:20:18 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenDate02 is currently operating in a degraded state and must be rebuilt before it can be used
-[31/Mar/2018:20:20:18 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenInteger02 is currently operating in a degraded state and must be rebuilt before it can be used
-[31/Mar/2018:20:20:18 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenMultiString03 is currently operating in a degraded state and must be rebuilt before it can be used
-[31/Mar/2018:20:20:19 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenDate01 is currently operating in a degraded state and must be rebuilt before it can be used
-[31/Mar/2018:20:20:19 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenInteger01 is currently operating in a degraded state and must be rebuilt before it can be used
-[31/Mar/2018:20:20:19 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenUserId is currently operating in a degraded state and must be rebuilt before it can be used
-[31/Mar/2018:20:20:19 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenDate04 is currently operating in a degraded state and must be rebuilt before it can be used
-[31/Mar/2018:20:20:19 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenDate03 is currently operating in a degraded state and must be rebuilt before it can be used
-[31/Mar/2018:20:20:19 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenDate05 is currently operating in a degraded state and must be rebuilt before it can be used
-[31/Mar/2018:20:20:19 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_sunxmlKeyValue is currently operating in a degraded state and must be rebuilt before it can be used
-[31/Mar/2018:20:20:19 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenExpirationDate is currently operating in a degraded state and must be rebuilt before it can be used
-[31/Mar/2018:20:20:19 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_etag is currently operating in a degraded state and must be rebuilt before it can be used
-[31/Mar/2018:20:20:19 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenString15 is currently operating in a degraded state and must be rebuilt before it can be used
-[31/Mar/2018:20:20:19 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenInteger05 is currently operating in a degraded state and must be rebuilt before it can be used
-[31/Mar/2018:20:20:19 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenString14 is currently operating in a degraded state and must be rebuilt before it can be used
-[31/Mar/2018:20:20:19 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_memberof is currently operating in a degraded state and must be rebuilt before it can be used
-[31/Mar/2018:20:20:19 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenString10 is currently operating in a degraded state and must be rebuilt before it can be used
-[31/Mar/2018:20:20:19 -0400] category=BACKEND severity=NOTICE msgID=537 msg=Rebuild of all indexes started with 10 total entries to process
-[31/Mar/2018:20:20:20 -0400] category=BACKEND severity=NOTICE msgID=528 msg=The amount of free memory available to the import task is 3906798708 bytes. The number of phase one buffers required is 416 buffers
-[31/Mar/2018:20:20:20 -0400] category=BACKEND severity=NOTICE msgID=520 msg=Setting DB cache size to 33554432 bytes and phase one buffer size to 9391343 bytes
-[31/Mar/2018:20:20:23 -0400] category=BACKEND severity=NOTICE msgID=523 msg=Index /dc=org,dc=forgerock,dc=openam/aci.presence phase two started processing 1 buffers in 1 batches
-[31/Mar/2018:20:20:23 -0400] category=BACKEND severity=NOTICE msgID=522 msg=Index /dc=org,dc=forgerock,dc=openam/aci.presence phase two processing completed
-[31/Mar/2018:20:20:23 -0400] category=BACKEND severity=NOTICE msgID=523 msg=Index /dc=org,dc=forgerock,dc=openam/objectClass.objectIdentifierMatch phase two started processing 1 buffers in 1 batches
-[31/Mar/2018:20:20:23 -0400] category=BACKEND severity=NOTICE msgID=522 msg=Index /dc=org,dc=forgerock,dc=openam/objectClass.objectIdentifierMatch phase two processing completed
-[31/Mar/2018:20:20:23 -0400] category=BACKEND severity=NOTICE msgID=523 msg=Index /dc=org,dc=forgerock,dc=openam/entryUUID.uuidMatch phase two started processing 1 buffers in 1 batches
-[31/Mar/2018:20:20:23 -0400] category=BACKEND severity=NOTICE msgID=522 msg=Index /dc=org,dc=forgerock,dc=openam/entryUUID.uuidMatch phase two processing completed
-[31/Mar/2018:20:20:24 -0400] category=BACKEND severity=NOTICE msgID=523 msg=Index /dc=org,dc=forgerock,dc=openam/dn2id phase two started processing 1 buffers in 1 batches
-[31/Mar/2018:20:20:24 -0400] category=BACKEND severity=NOTICE msgID=522 msg=Index /dc=org,dc=forgerock,dc=openam/dn2id phase two processing completed
-[31/Mar/2018:20:20:24 -0400] category=BACKEND severity=NOTICE msgID=523 msg=Index /dc=org,dc=forgerock,dc=openam/id2childrencount phase two started processing 1 buffers in 1 batches
-[31/Mar/2018:20:20:24 -0400] category=BACKEND severity=NOTICE msgID=522 msg=Index /dc=org,dc=forgerock,dc=openam/id2childrencount phase two processing completed
-[31/Mar/2018:20:20:25 -0400] category=BACKEND severity=NOTICE msgID=540 msg=Rebuild complete. Processed 10 entries in 3 seconds (average rate 2.7/sec)
-03/31/2018 08:20:25:287 PM EDT: ...Success.
-03/31/2018 08:20:25:287 PM EDT: Starting OpenDJ for serverRoot c:/projects/phoenix/forgerock/openam-cfg/opends
-[31/Mar/2018:20:20:25 -0400] category=CORE severity=INFORMATION msgID=132 msg=The Directory Server is beginning the configuration bootstrapping process
-[31/Mar/2018:20:20:25 -0400] category=CORE severity=NOTICE msgID=134 msg=ForgeRock Directory Services 5.5.0 (build 20171019141329, revision number 3cc42334c8c36135c3098d963e09665ae0a3ea24) starting up
-[31/Mar/2018:20:20:25 -0400] category=JVM severity=NOTICE msgID=21 msg=Installation Directory:  C:\projects\phoenix\forgerock\openam-cfg\opends
-[31/Mar/2018:20:20:25 -0400] category=JVM severity=NOTICE msgID=23 msg=Instance Directory:      C:\projects\phoenix\forgerock\openam-cfg\opends
-[31/Mar/2018:20:20:25 -0400] category=JVM severity=NOTICE msgID=17 msg=JVM Information: 1.8.0_151-b12 by Oracle Corporation, 64-bit architecture, 9408348160 bytes heap size
-[31/Mar/2018:20:20:29 -0400] category=JVM severity=NOTICE msgID=18 msg=JVM Host: LDENGIBM-01.ikasystems.com, running Windows 10 10.0 amd64, 42331430912 bytes physical memory size, number of processors available 8
-[31/Mar/2018:20:20:29 -0400] category=JVM severity=NOTICE msgID=19 msg=JVM Arguments: "-Djava.util.logging.config.file=C:\projects\phoenix\forgerock\openam\conf\logging.properties", "-Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager", "-Djdk.tls.ephemeralDHKeySize=2048", "-Djava.protocol.handler.pkgs=org.apache.catalina.webresources", "-Dignore.endorsed.dirs=", "-Dcatalina.base=C:\projects\phoenix\forgerock\openam", "-Dcatalina.home=C:\projects\phoenix\forgerock\openam", "-Djava.io.tmpdir=C:\projects\phoenix\forgerock\openam\temp"
-[31/Mar/2018:20:20:29 -0400] category=ACCESS_CONTROL severity=INFORMATION msgID=66 msg=Added 9 Global Access Control Instruction (ACI) attribute types to the access control evaluation engine
-[31/Mar/2018:20:20:30 -0400] category=BACKEND severity=INFORMATION msgID=410 msg=JE backend 'userRoot' does not specify the number of cleaner threads: defaulting to 8 threads
-[31/Mar/2018:20:20:30 -0400] category=BACKEND severity=INFORMATION msgID=411 msg=JE backend 'userRoot' does not specify the number of lock tables: defaulting to 53
-[31/Mar/2018:20:20:30 -0400] category=BACKEND severity=NOTICE msgID=513 msg=The database backend userRoot containing 10 entries has started
-[31/Mar/2018:20:20:30 -0400] category=ACCESS_CONTROL severity=INFORMATION msgID=50 msg=Added 2 Access Control Instruction (ACI) attribute types found in context "dc=openam,dc=forgerock,dc=org" to the access control evaluation engine
-[31/Mar/2018:20:20:30 -0400] category=EXTENSIONS severity=NOTICE msgID=221 msg=DIGEST-MD5 SASL mechanism using a server fully qualified domain name of: openam.example.com
-[31/Mar/2018:20:20:34 -0400] category=CORE severity=INFORMATION msgID=720 msg=No worker queue thread pool size specified: sizing automatically to use 16 threads
-[31/Mar/2018:20:20:34 -0400] category=PROTOCOL severity=NOTICE msgID=276 msg=Started listening for new connections on Administration Connector 0.0.0.0 port 5444
-[31/Mar/2018:20:20:34 -0400] category=PROTOCOL severity=NOTICE msgID=276 msg=Started listening for new connections on LDAP Connection Handler 0.0.0.0 port 50389
-[31/Mar/2018:20:20:34 -0400] category=CORE severity=NOTICE msgID=135 msg=The Directory Server has started successfully
-[31/Mar/2018:20:20:34 -0400] category=CORE severity=NOTICE msgID=139 msg=The Directory Server has sent an alert notification generated by class org.opends.server.core.DirectoryServer (alert type org.opends.server.DirectoryServerStarted, alert ID org.opends.messages.core-135): The Directory Server has started successfully
-[31/Mar/2018:20:20:38 -0400] category=org.forgerock.opendj.rest2ldap.rest2ldap severity=INFORMATION msgID=81 msg=Rest2Ldap created endpoint 'api' version 1.0
-03/31/2018 08:20:38:847 PM EDT: ...Success.
-03/31/2018 08:20:38:907 PM EDT: Reinitializing system properties.
-03/31/2018 08:20:39:664 PM EDT: ...Done
-03/31/2018 08:20:39:690 PM EDT: Registering service dashboardService.xml
-03/31/2018 08:20:39:948 PM EDT: ...Success.
-03/31/2018 08:20:39:948 PM EDT: Registering service amAuthConfig.xml
-03/31/2018 08:20:40:125 PM EDT: ...Success.
-03/31/2018 08:20:40:125 PM EDT: Registering service amAuthHTTPBasic.xml
-03/31/2018 08:20:40:218 PM EDT: ...Success.
-03/31/2018 08:20:40:218 PM EDT: Registering service amAdminConsole.xml
-03/31/2018 08:20:40:342 PM EDT: ...Success.
-03/31/2018 08:20:40:342 PM EDT: Registering service idRepoService.xml
-03/31/2018 08:20:40:851 PM EDT: ...Success.
-03/31/2018 08:20:40:852 PM EDT: Registering service amAuth.xml
-03/31/2018 08:20:41:069 PM EDT: ...Success.
-03/31/2018 08:20:41:069 PM EDT: Registering service amAuthAD.xml
-03/31/2018 08:20:41:184 PM EDT: ...Success.
-03/31/2018 08:20:41:184 PM EDT: Registering service amAuthAdaptive.xml
-03/31/2018 08:20:41:280 PM EDT: ...Success.
-03/31/2018 08:20:41:280 PM EDT: Registering service amAuthAnonymous.xml
-03/31/2018 08:20:41:360 PM EDT: ...Success.
-03/31/2018 08:20:41:360 PM EDT: Registering service amAuthCert.xml
-03/31/2018 08:20:41:544 PM EDT: ...Success.
-03/31/2018 08:20:41:545 PM EDT: Registering service amAuthDataStore.xml
-03/31/2018 08:20:41:700 PM EDT: ...Success.
-03/31/2018 08:20:41:700 PM EDT: Registering service amAuthPersistentCookie.xml
-03/31/2018 08:20:41:772 PM EDT: ...Success.
-03/31/2018 08:20:41:772 PM EDT: Registering service amAuthJDBC.xml
-03/31/2018 08:20:41:865 PM EDT: ...Success.
-03/31/2018 08:20:41:865 PM EDT: Registering service amAuthLDAP.xml
-03/31/2018 08:20:42:061 PM EDT: ...Success.
-03/31/2018 08:20:42:061 PM EDT: Registering service amAuthMSISDN.xml
-03/31/2018 08:20:42:174 PM EDT: ...Success.
-03/31/2018 08:20:42:174 PM EDT: Registering service amAuthMembership.xml
-03/31/2018 08:20:42:286 PM EDT: ...Success.
-03/31/2018 08:20:42:287 PM EDT: Registering service amAuthNT.xml
-03/31/2018 08:20:42:479 PM EDT: ...Success.
-03/31/2018 08:20:42:479 PM EDT: Registering service amAuthOAuth.xml
-03/31/2018 08:20:42:619 PM EDT: ...Success.
-03/31/2018 08:20:42:619 PM EDT: Registering service amAuthWindowsDesktopSSO.xml
-03/31/2018 08:20:42:750 PM EDT: ...Success.
-03/31/2018 08:20:42:750 PM EDT: Registering service amAuthOpenIdConnect.xml
-03/31/2018 08:20:42:833 PM EDT: ...Success.
-03/31/2018 08:20:42:833 PM EDT: Registering service amDelegation.xml
-03/31/2018 08:20:43:351 PM EDT: ...Success.
-03/31/2018 08:20:43:351 PM EDT: Registering service amFilteredRole.xml
-03/31/2018 08:20:43:435 PM EDT: ...Success.
-03/31/2018 08:20:43:435 PM EDT: Registering service amG11NSettings.xml
-03/31/2018 08:20:43:596 PM EDT: ...Success.
-03/31/2018 08:20:43:596 PM EDT: Registering service amLogging.xml
-03/31/2018 08:20:43:784 PM EDT: ...Success.
-03/31/2018 08:20:43:784 PM EDT: Registering service amNaming.xml
-03/31/2018 08:20:44:024 PM EDT: ...Success.
-03/31/2018 08:20:44:024 PM EDT: Registering service amPlatform.xml
-03/31/2018 08:20:44:275 PM EDT: ...Success.
-03/31/2018 08:20:44:275 PM EDT: Registering service amPolicy.xml
-03/31/2018 08:20:44:799 PM EDT: ...Success.
-03/31/2018 08:20:44:799 PM EDT: Registering service amPolicyConfig.xml
-03/31/2018 08:20:44:968 PM EDT: ...Success.
-03/31/2018 08:20:44:968 PM EDT: Registering service amRealmService.xml
-03/31/2018 08:20:45:075 PM EDT: ...Success.
-03/31/2018 08:20:45:075 PM EDT: Registering service amSession.xml
-03/31/2018 08:20:45:472 PM EDT: ...Success.
-03/31/2018 08:20:45:472 PM EDT: Registering service amWebAgent.xml
-03/31/2018 08:20:45:643 PM EDT: ...Success.
-03/31/2018 08:20:45:644 PM EDT: Registering service crestPolicyService.xml
-03/31/2018 08:20:45:760 PM EDT: ...Success.
-03/31/2018 08:20:45:761 PM EDT: Registering service amUser.xml
-03/31/2018 08:20:45:856 PM EDT: ...Success.
-03/31/2018 08:20:45:856 PM EDT: Registering service identityLocaleService.xml
-03/31/2018 08:20:45:994 PM EDT: ...Success.
-03/31/2018 08:20:45:994 PM EDT: Registering service amAgent70.xml
-03/31/2018 08:20:46:106 PM EDT: ...Success.
-03/31/2018 08:20:46:106 PM EDT: Registering service amAuthRadius.xml
-03/31/2018 08:20:46:218 PM EDT: ...Success.
-03/31/2018 08:20:46:218 PM EDT: Registering service amAuthHOTP.xml
-03/31/2018 08:20:46:405 PM EDT: ...Success.
-03/31/2018 08:20:46:405 PM EDT: Registering service amAuthSecurID.xml
-03/31/2018 08:20:46:494 PM EDT: ...Success.
-03/31/2018 08:20:46:494 PM EDT: Registering service amMonitoring.xml
-03/31/2018 08:20:46:673 PM EDT: ...Success.
-03/31/2018 08:20:46:673 PM EDT: Registering service AgentService.xml
-03/31/2018 08:20:47:197 PM EDT: ...Success.
-03/31/2018 08:20:47:197 PM EDT: Registering service policyIndex.xml
-03/31/2018 08:20:47:341 PM EDT: ...Success.
-03/31/2018 08:20:47:341 PM EDT: Registering service entitlement.xml
-03/31/2018 08:20:47:571 PM EDT: ...Success.
-03/31/2018 08:20:47:571 PM EDT: Registering service openProvisioning.xml
-03/31/2018 08:20:47:693 PM EDT: ...Success.
-03/31/2018 08:20:47:693 PM EDT: Registering service banking.xml
-03/31/2018 08:20:47:796 PM EDT: ...Success.
-03/31/2018 08:20:47:796 PM EDT: Registering service amAuthAuthenticatorOATH.xml
-03/31/2018 08:20:47:902 PM EDT: ...Success.
-03/31/2018 08:20:47:902 PM EDT: Registering service AuthenticatorOATH.xml
-03/31/2018 08:20:47:992 PM EDT: ...Success.
-03/31/2018 08:20:47:993 PM EDT: Registering service fmAuthFederation.xml
-03/31/2018 08:20:48:147 PM EDT: ...Success.
-03/31/2018 08:20:48:147 PM EDT: Registering service fmAuthSAE.xml
-03/31/2018 08:20:48:262 PM EDT: ...Success.
-03/31/2018 08:20:48:262 PM EDT: Registering service fmAuthnSvc.xml
-03/31/2018 08:20:48:346 PM EDT: ...Success.
-03/31/2018 08:20:48:346 PM EDT: Registering service fmDisco.xml
-03/31/2018 08:20:48:430 PM EDT: ...Success.
-03/31/2018 08:20:48:430 PM EDT: Registering service fmIDFF.xml
-03/31/2018 08:20:48:514 PM EDT: ...Success.
-03/31/2018 08:20:48:514 PM EDT: Registering service fmLibertyPersonalProfile.xml
-03/31/2018 08:20:48:627 PM EDT: ...Success.
-03/31/2018 08:20:48:628 PM EDT: Registering service fmCOTConfig.xml
-03/31/2018 08:20:48:729 PM EDT: ...Success.
-03/31/2018 08:20:48:730 PM EDT: Registering service fmSAML2.xml
-03/31/2018 08:20:48:817 PM EDT: ...Success.
-03/31/2018 08:20:48:817 PM EDT: Registering service fmSAML.xml
-03/31/2018 08:20:48:972 PM EDT: ...Success.
-03/31/2018 08:20:48:972 PM EDT: Registering service fmSOAPBinding.xml
-03/31/2018 08:20:49:090 PM EDT: ...Success.
-03/31/2018 08:20:49:090 PM EDT: Registering service fmSAML2SOAPBinding.xml
-03/31/2018 08:20:49:199 PM EDT: ...Success.
-03/31/2018 08:20:49:199 PM EDT: Registering service fmWSFederation.xml
-03/31/2018 08:20:49:299 PM EDT: ...Success.
-03/31/2018 08:20:49:299 PM EDT: Registering service fmMultiProtocol.xml
-03/31/2018 08:20:49:411 PM EDT: ...Success.
-03/31/2018 08:20:49:411 PM EDT: Registering service famFederationCommon.xml
-03/31/2018 08:20:49:547 PM EDT: ...Success.
-03/31/2018 08:20:49:547 PM EDT: Registering service famSAML2Config.xml
-03/31/2018 08:20:49:683 PM EDT: ...Success.
-03/31/2018 08:20:49:684 PM EDT: Registering service OAuth2Provider.xml
-03/31/2018 08:20:49:845 PM EDT: ...Success.
-03/31/2018 08:20:49:845 PM EDT: Registering service UmaProvider.xml
-03/31/2018 08:20:49:960 PM EDT: ...Success.
-03/31/2018 08:20:49:961 PM EDT: Registering service MailServer.xml
-03/31/2018 08:20:50:065 PM EDT: ...Success.
-03/31/2018 08:20:50:065 PM EDT: Registering service RestSecurity.xml
-03/31/2018 08:20:50:146 PM EDT: ...Success.
-03/31/2018 08:20:50:146 PM EDT: Registering service amAuthScripted.xml
-03/31/2018 08:20:50:228 PM EDT: ...Success.
-03/31/2018 08:20:50:228 PM EDT: Registering service amAuthDeviceIdMatch.xml
-03/31/2018 08:20:50:315 PM EDT: ...Success.
-03/31/2018 08:20:50:316 PM EDT: Registering service amAuthDeviceIdSave.xml
-03/31/2018 08:20:50:405 PM EDT: ...Success.
-03/31/2018 08:20:50:405 PM EDT: Registering service restSTS.xml
-03/31/2018 08:20:50:592 PM EDT: ...Success.
-03/31/2018 08:20:50:592 PM EDT: Registering service soapSTS.xml
-03/31/2018 08:20:50:722 PM EDT: ...Success.
-03/31/2018 08:20:50:723 PM EDT: Registering service validationService.xml
-03/31/2018 08:20:50:872 PM EDT: ...Success.
-03/31/2018 08:20:50:872 PM EDT: Registering service RestApis.xml
-03/31/2018 08:20:50:985 PM EDT: ...Success.
-03/31/2018 08:20:50:986 PM EDT: Registering service socialAuthN.xml
-03/31/2018 08:20:51:136 PM EDT: ...Success.
-03/31/2018 08:20:51:137 PM EDT: Registering service amBaseURL.xml
-03/31/2018 08:20:51:242 PM EDT: ...Success.
-03/31/2018 08:20:51:242 PM EDT: Registering service scripting.xml
-03/31/2018 08:20:51:626 PM EDT: ...Success.
-03/31/2018 08:20:51:626 PM EDT: Registering service amAuthOATH.xml
-03/31/2018 08:20:51:746 PM EDT: ...Success.
-03/31/2018 08:20:51:746 PM EDT: Registering service amAuthSAML2.xml
-03/31/2018 08:20:51:836 PM EDT: ...Success.
-03/31/2018 08:20:51:836 PM EDT: Registering service audit.xml
-03/31/2018 08:20:52:089 PM EDT: ...Success.
-03/31/2018 08:20:52:089 PM EDT: Registering service RadiusServerService.xml
-03/31/2018 08:20:52:148 PM EDT: ...Success.
-03/31/2018 08:20:52:148 PM EDT: Registering service amSessionPropertyWhitelist.xml
-03/31/2018 08:20:52:238 PM EDT: ...Success.
-03/31/2018 08:20:52:238 PM EDT: Registering service selfService.xml
-03/31/2018 08:20:52:345 PM EDT: ...Success.
-03/31/2018 08:20:52:345 PM EDT: Registering service amPushNotification.xml
-03/31/2018 08:20:52:454 PM EDT: ...Success.
-03/31/2018 08:20:52:455 PM EDT: Registering service amAuthAuthenticatorPush.xml
-03/31/2018 08:20:52:533 PM EDT: ...Success.
-03/31/2018 08:20:52:533 PM EDT: Registering service AuthenticatorPush.xml
-03/31/2018 08:20:52:611 PM EDT: ...Success.
-03/31/2018 08:20:52:611 PM EDT: Registering service amAuthAuthenticatorPushRegistration.xml
-03/31/2018 08:20:52:687 PM EDT: ...Success.
-03/31/2018 08:20:52:687 PM EDT: Registering service amAuthAmster.xml
-03/31/2018 08:20:52:785 PM EDT: ...Success.
-03/31/2018 08:20:52:785 PM EDT: Registering service amAuthTrees.xml
-03/31/2018 08:20:52:892 PM EDT: ...Success.
-03/31/2018 08:20:52:892 PM EDT: Registering service amPlugins.xml
-03/31/2018 08:20:52:993 PM EDT: ...Success.
-03/31/2018 08:20:52:993 PM EDT: Registering service amTransaction.xml
-03/31/2018 08:20:53:047 PM EDT: ...Success.
-03/31/2018 08:20:53:047 PM EDT: Registering service amAuthSocialAuthOAuth2.xml
-03/31/2018 08:20:53:226 PM EDT: ...Success.
-03/31/2018 08:20:53:226 PM EDT: Registering service amAuthSocialAuthVK.xml
-03/31/2018 08:20:53:343 PM EDT: ...Success.
-03/31/2018 08:20:53:343 PM EDT: Registering service amAuthSocialAuthWeChat.xml
-03/31/2018 08:20:53:596 PM EDT: ...Success.
-03/31/2018 08:20:53:596 PM EDT: Registering service amAuthSocialAuthWeChatMobile.xml
-03/31/2018 08:20:53:687 PM EDT: ...Success.
-03/31/2018 08:20:53:687 PM EDT: Registering service amAuthSocialAuthOpenID.xml
-03/31/2018 08:20:53:835 PM EDT: ...Success.
-03/31/2018 08:20:53:835 PM EDT: Registering service amAuthSocialAuthInstagram.xml
-03/31/2018 08:20:53:902 PM EDT: ...Success.
-03/31/2018 08:20:53:902 PM EDT: Registering service amAuthJwtProofOfPossession.xml
-03/31/2018 08:20:53:965 PM EDT: ...Success.
-03/31/2018 08:20:53:965 PM EDT: Registering service amAuthEdgeRegistration.xml
-03/31/2018 08:20:54:027 PM EDT: ...Success.
-03/31/2018 08:20:54:028 PM EDT: Registering service amAuthEdgeAuthentication.xml
-03/31/2018 08:20:54:100 PM EDT: ...Success.
-03/31/2018 08:20:54:100 PM EDT: Registering service IdmIntegrationService.xml
-03/31/2018 08:20:54:164 PM EDT: ...Success.
-03/31/2018 08:20:54:164 PM EDT: Registering service DeviceId.xml
-03/31/2018 08:20:54:235 PM EDT: ...Success.
-03/31/2018 08:20:54:337 PM EDT: Configuring system.
-03/31/2018 08:20:57:081 PM EDT: ...Done
-03/31/2018 08:20:57:082 PM EDT: Configuring server instance.
-03/31/2018 08:20:57:164 PM EDT: ...Done
-03/31/2018 08:21:08:552 PM EDT: Installing new plugins...
-03/31/2018 08:21:10:335 PM EDT: Plugin installation complete.
-[31/Mar/2018:20:21:11 -0400] category=PROTOCOL severity=INFORMATION msgID=-1 msg=Ignoring 3 unused trailing bytes in ASN.1 SEQUENCE
-[31/Mar/2018:20:21:11 -0400] category=PROTOCOL severity=INFORMATION msgID=-1 msg=Ignoring 3 unused trailing bytes in ASN.1 SEQUENCE
-03/31/2018 08:21:12:268 PM EDT: Creating demo user.
-03/31/2018 08:21:12:304 PM EDT: ...Done
-03/31/2018 08:21:12:337 PM EDT: Setting up monitoring authentication file.
+04/10/2018 07:24:00:150 PM EDT: Checking configuration directory /Users/lede/projects/phoenix/forgerock/openam-cfg.
+04/10/2018 07:24:00:152 PM EDT: ...Success.
+04/10/2018 07:24:00:176 PM EDT: Extracting OpenDJ, please wait...
+04/10/2018 07:24:00:979 PM EDT: Complete
+04/10/2018 07:24:00:980 PM EDT: Running OpenDJ setup
+04/10/2018 07:24:04:293 PM EDT: ...Success
+04/10/2018 07:24:04:293 PM EDT: Starting OpenDJ for serverRoot /Users/lede/projects/phoenix/forgerock/openam-cfg/opends
+04/10/2018 07:24:10:924 PM EDT: ...Success.
+04/10/2018 07:24:10:925 PM EDT: ...Success.
+04/10/2018 07:24:10:931 PM EDT: Installing OpenAM configuration store in /Users/lede/projects/phoenix/forgerock/openam-cfg/opends
+04/10/2018 07:24:11:025 PM EDT: Creating OpenAM suffix
+Import task 20180410192412002 scheduled to start immediately
+[10/Apr/2018:19:24:11 -0400] severity="NOTICE" msgCount=0 msgID=org.opends.messages.backend-413 message="Import task 20180410192412002 started execution"
+[10/Apr/2018:19:24:12 -0400] severity="NOTICE" msgCount=1 msgID=org.opends.messages.backend-370 message="The backend userRoot is now taken offline"
+[10/Apr/2018:19:24:12 -0400] severity="NOTICE" msgCount=2 msgID=org.opends.messages.runtime-21 message="Installation Directory:  /Users/lede/projects/phoenix/forgerock/openam-cfg/opends"
+[10/Apr/2018:19:24:12 -0400] severity="NOTICE" msgCount=3 msgID=org.opends.messages.runtime-23 message="Instance Directory:      /Users/lede/projects/phoenix/forgerock/openam-cfg/opends"
+[10/Apr/2018:19:24:12 -0400] severity="NOTICE" msgCount=4 msgID=org.opends.messages.runtime-17 message="JVM Information: 1.8.0_73-b02 by Oracle Corporation, 64-bit architecture, 1908932608 bytes heap size"
+[10/Apr/2018:19:24:12 -0400] severity="NOTICE" msgCount=5 msgID=org.opends.messages.runtime-18 message="JVM Host: 10.0.0.93, running Mac OS X 10.11.6 x86_64, 8589934592 bytes physical memory size, number of processors available 4"
+[10/Apr/2018:19:24:12 -0400] severity="NOTICE" msgCount=6 msgID=org.opends.messages.runtime-19 message="JVM Arguments: "-Djava.util.logging.config.file=/Users/lede/projects/phoenix/forgerock/openam/conf/logging.properties", "-Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager", "-Djdk.tls.ephemeralDHKeySize=2048", "-Djava.protocol.handler.pkgs=org.apache.catalina.webresources", "-Dignore.endorsed.dirs=", "-Dcatalina.base=/Users/lede/projects/phoenix/forgerock/openam", "-Dcatalina.home=/Users/lede/projects/phoenix/forgerock/openam", "-Djava.io.tmpdir=/Users/lede/projects/phoenix/forgerock/openam/temp""
+[10/Apr/2018:19:24:12 -0400] severity="INFORMATION" msgCount=7 msgID=org.opends.messages.backend-410 message="JE backend 'userRoot' does not specify the number of cleaner threads: defaulting to 8 threads"
+[10/Apr/2018:19:24:12 -0400] severity="INFORMATION" msgCount=8 msgID=org.opends.messages.backend-411 message="JE backend 'userRoot' does not specify the number of lock tables: defaulting to 53"
+[10/Apr/2018:19:24:12 -0400] severity="NOTICE" msgCount=9 msgID=org.opends.messages.backend-533 message="ForgeRock Directory Services 5.5.0 starting import (build 20171019141329, R3cc42334c8c36135c3098d963e09665ae0a3ea24)"
+[10/Apr/2018:19:24:12 -0400] severity="NOTICE" msgCount=10 msgID=org.opends.messages.backend-528 message="The amount of free memory available to the import task is 659505856 bytes. The number of phase one buffers required is 42 buffers"
+[10/Apr/2018:19:24:12 -0400] severity="NOTICE" msgCount=11 msgID=org.opends.messages.backend-520 message="Setting DB cache size to 33554432 bytes and phase one buffer size to 4194304 bytes"
+[10/Apr/2018:19:24:12 -0400] severity="NOTICE" msgCount=12 msgID=org.opends.messages.backend-534 message="Import Thread Count: 2 threads"
+[10/Apr/2018:19:24:13 -0400] severity="NOTICE" msgCount=13 msgID=org.opends.messages.backend-531 message="Total import time was 0 seconds. Phase one processing completed in 0 seconds, phase two processing completed in 0 seconds"
+[10/Apr/2018:19:24:13 -0400] severity="NOTICE" msgCount=14 msgID=org.opends.messages.backend-519 message="Processed 3 entries, imported 3, skipped 0, rejected 0 and migrated 0 in 0 seconds (average rate 3.1/sec)"
+[10/Apr/2018:19:24:13 -0400] severity="NOTICE" msgCount=15 msgID=org.opends.messages.backend-526 message="Import LDIF environment close took 0 seconds"
+[10/Apr/2018:19:24:13 -0400] severity="NOTICE" msgCount=16 msgID=org.opends.messages.backend-518 message="Flushing data to disk"
+[10/Apr/2018:19:24:13 -0400] severity="INFORMATION" msgCount=17 msgID=org.opends.messages.backend-410 message="JE backend 'userRoot' does not specify the number of cleaner threads: defaulting to 8 threads"
+[10/Apr/2018:19:24:13 -0400] severity="INFORMATION" msgCount=18 msgID=org.opends.messages.backend-411 message="JE backend 'userRoot' does not specify the number of lock tables: defaulting to 53"
+[10/Apr/2018:19:24:13 -0400] severity="NOTICE" msgCount=19 msgID=org.opends.messages.backend-513 message="The database backend userRoot containing 3 entries has started"
+[10/Apr/2018:19:24:13 -0400] severity="INFORMATION" msgCount=20 msgID=org.opends.messages.access_control-50 message="Added 1 Access Control Instruction (ACI) attribute types found in context "dc=openam,dc=forgerock,dc=org" to the access control evaluation engine"
+[10/Apr/2018:19:24:13 -0400] severity="NOTICE" msgCount=21 msgID=org.opends.messages.backend-414 message="Import task 20180410192412002 finished execution in the state Completed successfully"
+Import task 20180410192412002 has been successfully completed
+04/10/2018 07:24:15:111 PM EDT: ...Success
+04/10/2018 07:24:15:230 PM EDT: Tag swapping schema files.
+04/10/2018 07:24:15:256 PM EDT: ...Success.
+04/10/2018 07:24:15:257 PM EDT: Loading Schema opendj_config_schema.ldif
+04/10/2018 07:24:15:480 PM EDT: ...Success.
+04/10/2018 07:24:15:481 PM EDT: Loading Schema opendj_user_schema.ldif
+04/10/2018 07:24:15:570 PM EDT: ...Success.
+04/10/2018 07:24:15:572 PM EDT: Loading Schema opendj_embinit.ldif
+04/10/2018 07:24:15:616 PM EDT: ...Success.
+04/10/2018 07:24:15:616 PM EDT: Loading Schema opendj_user_index.ldif
+04/10/2018 07:24:15:769 PM EDT: ...Success.
+04/10/2018 07:24:15:769 PM EDT: Loading Schema cts-container.ldif
+04/10/2018 07:24:15:874 PM EDT: ...Success.
+04/10/2018 07:24:15:874 PM EDT: Loading Schema cts-add-schema.ldif
+04/10/2018 07:24:15:948 PM EDT: ...Success.
+04/10/2018 07:24:15:948 PM EDT: Loading Schema cts-add-multivalue.ldif
+04/10/2018 07:24:16:034 PM EDT: ...Success.
+04/10/2018 07:24:16:034 PM EDT: Loading Schema cts-indices.ldif
+04/10/2018 07:24:16:711 PM EDT: ...Success.
+04/10/2018 07:24:16:711 PM EDT: Loading Schema cts-add-multivalue-indices.ldif
+04/10/2018 07:24:16:809 PM EDT: ...Success.
+04/10/2018 07:24:16:809 PM EDT: Loading Schema opendj_dashboard.ldif
+04/10/2018 07:24:16:879 PM EDT: ...Success.
+04/10/2018 07:24:16:879 PM EDT: Loading Schema opendj_deviceprint.ldif
+04/10/2018 07:24:16:985 PM EDT: ...Success.
+04/10/2018 07:24:16:985 PM EDT: Loading Schema opendj_kba.ldif
+04/10/2018 07:24:17:063 PM EDT: ...Success.
+04/10/2018 07:24:17:063 PM EDT: Loading Schema opendj_uma_audit.ldif
+04/10/2018 07:24:17:098 PM EDT: ...Success.
+04/10/2018 07:24:17:098 PM EDT: Loading Schema opendj_uma_resource_sets.ldif
+04/10/2018 07:24:17:127 PM EDT: ...Success.
+04/10/2018 07:24:17:127 PM EDT: Loading Schema opendj_uma_labels_schema.ldif
+04/10/2018 07:24:17:199 PM EDT: ...Success.
+04/10/2018 07:24:17:199 PM EDT: Loading Schema opendj_uma_resource_set_labels.ldif
+04/10/2018 07:24:17:228 PM EDT: ...Success.
+04/10/2018 07:24:17:228 PM EDT: Loading Schema opendj_uma_pending_requests.ldif
+04/10/2018 07:24:17:255 PM EDT: ...Success.
+04/10/2018 07:24:17:255 PM EDT: Loading Schema opendj_oathdevices.ldif
+04/10/2018 07:24:17:323 PM EDT: ...Success.
+04/10/2018 07:24:17:323 PM EDT: Loading Schema opendj_pushdevices.ldif
+04/10/2018 07:24:17:392 PM EDT: ...Success.
+04/10/2018 07:24:17:392 PM EDT: Stopping OpenDJ for serverRoot /Users/lede/projects/phoenix/forgerock/openam-cfg/opends
+04/10/2018 07:24:22:477 PM EDT: ...Success.
+04/10/2018 07:24:22:477 PM EDT: Rebuilding OpenDJ indexes for baseDN dc=openam,dc=forgerock,dc=org
+[10/Apr/2018:19:24:22 -0400] category=BACKEND severity=INFORMATION msgID=410 msg=JE backend 'userRoot' does not specify the number of cleaner threads: defaulting to 8 threads
+[10/Apr/2018:19:24:22 -0400] category=BACKEND severity=INFORMATION msgID=411 msg=JE backend 'userRoot' does not specify the number of lock tables: defaulting to 53
+[10/Apr/2018:19:24:22 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenString08 is currently operating in a degraded state and must be rebuilt before it can be used
+[10/Apr/2018:19:24:22 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenString09 is currently operating in a degraded state and must be rebuilt before it can be used
+[10/Apr/2018:19:24:22 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenString01 is currently operating in a degraded state and must be rebuilt before it can be used
+[10/Apr/2018:19:24:22 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenString02 is currently operating in a degraded state and must be rebuilt before it can be used
+[10/Apr/2018:19:24:22 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenString03 is currently operating in a degraded state and must be rebuilt before it can be used
+[10/Apr/2018:19:24:22 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_sun-fm-saml2-nameid-infokey is currently operating in a degraded state and must be rebuilt before it can be used
+[10/Apr/2018:19:24:22 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_iplanet-am-user-federation-info-key is currently operating in a degraded state and must be rebuilt before it can be used
+[10/Apr/2018:19:24:22 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenInteger04 is currently operating in a degraded state and must be rebuilt before it can be used
+[10/Apr/2018:19:24:22 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenMultiString01 is currently operating in a degraded state and must be rebuilt before it can be used
+[10/Apr/2018:19:24:22 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenInteger03 is currently operating in a degraded state and must be rebuilt before it can be used
+[10/Apr/2018:19:24:22 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenMultiString02 is currently operating in a degraded state and must be rebuilt before it can be used
+[10/Apr/2018:19:24:22 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenDate02 is currently operating in a degraded state and must be rebuilt before it can be used
+[10/Apr/2018:19:24:22 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenInteger02 is currently operating in a degraded state and must be rebuilt before it can be used
+[10/Apr/2018:19:24:22 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenMultiString03 is currently operating in a degraded state and must be rebuilt before it can be used
+[10/Apr/2018:19:24:22 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenDate01 is currently operating in a degraded state and must be rebuilt before it can be used
+[10/Apr/2018:19:24:22 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenInteger01 is currently operating in a degraded state and must be rebuilt before it can be used
+[10/Apr/2018:19:24:22 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenUserId is currently operating in a degraded state and must be rebuilt before it can be used
+[10/Apr/2018:19:24:22 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenDate04 is currently operating in a degraded state and must be rebuilt before it can be used
+[10/Apr/2018:19:24:22 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenDate03 is currently operating in a degraded state and must be rebuilt before it can be used
+[10/Apr/2018:19:24:22 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenDate05 is currently operating in a degraded state and must be rebuilt before it can be used
+[10/Apr/2018:19:24:22 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_sunxmlKeyValue is currently operating in a degraded state and must be rebuilt before it can be used
+[10/Apr/2018:19:24:22 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenExpirationDate is currently operating in a degraded state and must be rebuilt before it can be used
+[10/Apr/2018:19:24:22 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_etag is currently operating in a degraded state and must be rebuilt before it can be used
+[10/Apr/2018:19:24:22 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenString15 is currently operating in a degraded state and must be rebuilt before it can be used
+[10/Apr/2018:19:24:22 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenInteger05 is currently operating in a degraded state and must be rebuilt before it can be used
+[10/Apr/2018:19:24:22 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenString14 is currently operating in a degraded state and must be rebuilt before it can be used
+[10/Apr/2018:19:24:22 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_memberof is currently operating in a degraded state and must be rebuilt before it can be used
+[10/Apr/2018:19:24:22 -0400] category=BACKEND severity=WARNING msgID=535 msg=Due to changes in the configuration, index dc=org,dc=forgerock,dc=openam_coreTokenString10 is currently operating in a degraded state and must be rebuilt before it can be used
+[10/Apr/2018:19:24:22 -0400] category=BACKEND severity=NOTICE msgID=537 msg=Rebuild of all indexes started with 10 total entries to process
+[10/Apr/2018:19:24:23 -0400] category=BACKEND severity=NOTICE msgID=528 msg=The amount of free memory available to the import task is 631893049 bytes. The number of phase one buffers required is 104 buffers
+[10/Apr/2018:19:24:23 -0400] category=BACKEND severity=NOTICE msgID=520 msg=Setting DB cache size to 33554432 bytes and phase one buffer size to 4194304 bytes
+[10/Apr/2018:19:24:23 -0400] category=BACKEND severity=NOTICE msgID=523 msg=Index /dc=org,dc=forgerock,dc=openam/objectClass.objectIdentifierMatch phase two started processing 1 buffers in 1 batches
+[10/Apr/2018:19:24:23 -0400] category=BACKEND severity=NOTICE msgID=523 msg=Index /dc=org,dc=forgerock,dc=openam/aci.presence phase two started processing 1 buffers in 1 batches
+[10/Apr/2018:19:24:23 -0400] category=BACKEND severity=NOTICE msgID=523 msg=Index /dc=org,dc=forgerock,dc=openam/entryUUID.uuidMatch phase two started processing 1 buffers in 1 batches
+[10/Apr/2018:19:24:23 -0400] category=BACKEND severity=NOTICE msgID=523 msg=Index /dc=org,dc=forgerock,dc=openam/dn2id phase two started processing 1 buffers in 1 batches
+[10/Apr/2018:19:24:23 -0400] category=BACKEND severity=NOTICE msgID=522 msg=Index /dc=org,dc=forgerock,dc=openam/aci.presence phase two processing completed
+[10/Apr/2018:19:24:23 -0400] category=BACKEND severity=NOTICE msgID=522 msg=Index /dc=org,dc=forgerock,dc=openam/objectClass.objectIdentifierMatch phase two processing completed
+[10/Apr/2018:19:24:23 -0400] category=BACKEND severity=NOTICE msgID=522 msg=Index /dc=org,dc=forgerock,dc=openam/entryUUID.uuidMatch phase two processing completed
+[10/Apr/2018:19:24:23 -0400] category=BACKEND severity=NOTICE msgID=522 msg=Index /dc=org,dc=forgerock,dc=openam/dn2id phase two processing completed
+[10/Apr/2018:19:24:23 -0400] category=BACKEND severity=NOTICE msgID=523 msg=Index /dc=org,dc=forgerock,dc=openam/id2childrencount phase two started processing 1 buffers in 1 batches
+[10/Apr/2018:19:24:23 -0400] category=BACKEND severity=NOTICE msgID=522 msg=Index /dc=org,dc=forgerock,dc=openam/id2childrencount phase two processing completed
+[10/Apr/2018:19:24:24 -0400] category=BACKEND severity=NOTICE msgID=540 msg=Rebuild complete. Processed 10 entries in 0 seconds (average rate 74.6/sec)
+04/10/2018 07:24:24:038 PM EDT: ...Success.
+04/10/2018 07:24:24:039 PM EDT: Starting OpenDJ for serverRoot /Users/lede/projects/phoenix/forgerock/openam-cfg/opends
+[10/Apr/2018:19:24:24 -0400] category=CORE severity=INFORMATION msgID=132 msg=The Directory Server is beginning the configuration bootstrapping process
+[10/Apr/2018:19:24:24 -0400] category=CORE severity=NOTICE msgID=134 msg=ForgeRock Directory Services 5.5.0 (build 20171019141329, revision number 3cc42334c8c36135c3098d963e09665ae0a3ea24) starting up
+[10/Apr/2018:19:24:24 -0400] category=JVM severity=NOTICE msgID=21 msg=Installation Directory:  /Users/lede/projects/phoenix/forgerock/openam-cfg/opends
+[10/Apr/2018:19:24:24 -0400] category=JVM severity=NOTICE msgID=23 msg=Instance Directory:      /Users/lede/projects/phoenix/forgerock/openam-cfg/opends
+[10/Apr/2018:19:24:24 -0400] category=JVM severity=NOTICE msgID=17 msg=JVM Information: 1.8.0_73-b02 by Oracle Corporation, 64-bit architecture, 1908932608 bytes heap size
+[10/Apr/2018:19:24:24 -0400] category=JVM severity=NOTICE msgID=18 msg=JVM Host: 10.0.0.93, running Mac OS X 10.11.6 x86_64, 8589934592 bytes physical memory size, number of processors available 4
+[10/Apr/2018:19:24:24 -0400] category=JVM severity=NOTICE msgID=19 msg=JVM Arguments: "-Djava.util.logging.config.file=/Users/lede/projects/phoenix/forgerock/openam/conf/logging.properties", "-Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager", "-Djdk.tls.ephemeralDHKeySize=2048", "-Djava.protocol.handler.pkgs=org.apache.catalina.webresources", "-Dignore.endorsed.dirs=", "-Dcatalina.base=/Users/lede/projects/phoenix/forgerock/openam", "-Dcatalina.home=/Users/lede/projects/phoenix/forgerock/openam", "-Djava.io.tmpdir=/Users/lede/projects/phoenix/forgerock/openam/temp"
+[10/Apr/2018:19:24:24 -0400] category=ACCESS_CONTROL severity=INFORMATION msgID=66 msg=Added 9 Global Access Control Instruction (ACI) attribute types to the access control evaluation engine
+[10/Apr/2018:19:24:24 -0400] category=BACKEND severity=INFORMATION msgID=410 msg=JE backend 'userRoot' does not specify the number of cleaner threads: defaulting to 8 threads
+[10/Apr/2018:19:24:24 -0400] category=BACKEND severity=INFORMATION msgID=411 msg=JE backend 'userRoot' does not specify the number of lock tables: defaulting to 53
+[10/Apr/2018:19:24:24 -0400] category=BACKEND severity=NOTICE msgID=513 msg=The database backend userRoot containing 10 entries has started
+[10/Apr/2018:19:24:24 -0400] category=ACCESS_CONTROL severity=INFORMATION msgID=50 msg=Added 2 Access Control Instruction (ACI) attribute types found in context "dc=openam,dc=forgerock,dc=org" to the access control evaluation engine
+[10/Apr/2018:19:24:24 -0400] category=EXTENSIONS severity=NOTICE msgID=221 msg=DIGEST-MD5 SASL mechanism using a server fully qualified domain name of: openam.example.com
+[10/Apr/2018:19:24:24 -0400] category=CORE severity=INFORMATION msgID=720 msg=No worker queue thread pool size specified: sizing automatically to use 16 threads
+[10/Apr/2018:19:24:24 -0400] category=PROTOCOL severity=NOTICE msgID=276 msg=Started listening for new connections on Administration Connector 0.0.0.0 port 4444
+[10/Apr/2018:19:24:24 -0400] category=PROTOCOL severity=NOTICE msgID=276 msg=Started listening for new connections on LDAP Connection Handler 0.0.0.0 port 50389
+[10/Apr/2018:19:24:24 -0400] category=CORE severity=NOTICE msgID=135 msg=The Directory Server has started successfully
+[10/Apr/2018:19:24:24 -0400] category=CORE severity=NOTICE msgID=139 msg=The Directory Server has sent an alert notification generated by class org.opends.server.core.DirectoryServer (alert type org.opends.server.DirectoryServerStarted, alert ID org.opends.messages.core-135): The Directory Server has started successfully
+[10/Apr/2018:19:24:25 -0400] category=org.forgerock.opendj.rest2ldap.rest2ldap severity=INFORMATION msgID=81 msg=Rest2Ldap created endpoint 'api' version 1.0
+04/10/2018 07:24:25:094 PM EDT: ...Success.
+04/10/2018 07:24:25:098 PM EDT: Reinitializing system properties.
+04/10/2018 07:24:25:550 PM EDT: ...Done
+04/10/2018 07:24:25:561 PM EDT: Registering service dashboardService.xml
+04/10/2018 07:24:25:783 PM EDT: ...Success.
+04/10/2018 07:24:25:783 PM EDT: Registering service amAuthConfig.xml
+04/10/2018 07:24:25:932 PM EDT: ...Success.
+04/10/2018 07:24:25:932 PM EDT: Registering service amAuthHTTPBasic.xml
+04/10/2018 07:24:25:972 PM EDT: ...Success.
+04/10/2018 07:24:25:973 PM EDT: Registering service amAdminConsole.xml
+04/10/2018 07:24:26:013 PM EDT: ...Success.
+04/10/2018 07:24:26:013 PM EDT: Registering service idRepoService.xml
+04/10/2018 07:24:26:531 PM EDT: ...Success.
+04/10/2018 07:24:26:531 PM EDT: Registering service amAuth.xml
+04/10/2018 07:24:26:738 PM EDT: ...Success.
+04/10/2018 07:24:26:738 PM EDT: Registering service amAuthAD.xml
+04/10/2018 07:24:26:782 PM EDT: ...Success.
+04/10/2018 07:24:26:782 PM EDT: Registering service amAuthAdaptive.xml
+04/10/2018 07:24:26:849 PM EDT: ...Success.
+04/10/2018 07:24:26:849 PM EDT: Registering service amAuthAnonymous.xml
+04/10/2018 07:24:26:876 PM EDT: ...Success.
+04/10/2018 07:24:26:876 PM EDT: Registering service amAuthCert.xml
+04/10/2018 07:24:26:914 PM EDT: ...Success.
+04/10/2018 07:24:26:914 PM EDT: Registering service amAuthDataStore.xml
+04/10/2018 07:24:27:068 PM EDT: ...Success.
+04/10/2018 07:24:27:068 PM EDT: Registering service amAuthPersistentCookie.xml
+04/10/2018 07:24:27:094 PM EDT: ...Success.
+04/10/2018 07:24:27:094 PM EDT: Registering service amAuthJDBC.xml
+04/10/2018 07:24:27:127 PM EDT: ...Success.
+04/10/2018 07:24:27:127 PM EDT: Registering service amAuthLDAP.xml
+04/10/2018 07:24:27:252 PM EDT: ...Success.
+04/10/2018 07:24:27:252 PM EDT: Registering service amAuthMSISDN.xml
+04/10/2018 07:24:27:280 PM EDT: ...Success.
+04/10/2018 07:24:27:280 PM EDT: Registering service amAuthMembership.xml
+04/10/2018 07:24:27:305 PM EDT: ...Success.
+04/10/2018 07:24:27:306 PM EDT: Registering service amAuthNT.xml
+04/10/2018 07:24:27:328 PM EDT: ...Success.
+04/10/2018 07:24:27:328 PM EDT: Registering service amAuthOAuth.xml
+04/10/2018 07:24:27:368 PM EDT: ...Success.
+04/10/2018 07:24:27:368 PM EDT: Registering service amAuthWindowsDesktopSSO.xml
+04/10/2018 07:24:27:394 PM EDT: ...Success.
+04/10/2018 07:24:27:394 PM EDT: Registering service amAuthOpenIdConnect.xml
+04/10/2018 07:24:27:422 PM EDT: ...Success.
+04/10/2018 07:24:27:422 PM EDT: Registering service amDelegation.xml
+04/10/2018 07:24:27:999 PM EDT: ...Success.
+04/10/2018 07:24:27:999 PM EDT: Registering service amFilteredRole.xml
+04/10/2018 07:24:28:021 PM EDT: ...Success.
+04/10/2018 07:24:28:021 PM EDT: Registering service amG11NSettings.xml
+04/10/2018 07:24:28:038 PM EDT: ...Success.
+04/10/2018 07:24:28:039 PM EDT: Registering service amLogging.xml
+04/10/2018 07:24:28:074 PM EDT: ...Success.
+04/10/2018 07:24:28:074 PM EDT: Registering service amNaming.xml
+04/10/2018 07:24:28:126 PM EDT: ...Success.
+04/10/2018 07:24:28:126 PM EDT: Registering service amPlatform.xml
+04/10/2018 07:24:28:222 PM EDT: ...Success.
+04/10/2018 07:24:28:223 PM EDT: Registering service amPolicy.xml
+04/10/2018 07:24:28:893 PM EDT: ...Success.
+04/10/2018 07:24:28:893 PM EDT: Registering service amPolicyConfig.xml
+04/10/2018 07:24:29:010 PM EDT: ...Success.
+04/10/2018 07:24:29:010 PM EDT: Registering service amRealmService.xml
+04/10/2018 07:24:29:028 PM EDT: ...Success.
+04/10/2018 07:24:29:029 PM EDT: Registering service amSession.xml
+04/10/2018 07:24:29:136 PM EDT: ...Success.
+04/10/2018 07:24:29:136 PM EDT: Registering service amWebAgent.xml
+04/10/2018 07:24:29:154 PM EDT: ...Success.
+04/10/2018 07:24:29:155 PM EDT: Registering service crestPolicyService.xml
+04/10/2018 07:24:29:171 PM EDT: ...Success.
+04/10/2018 07:24:29:171 PM EDT: Registering service amUser.xml
+04/10/2018 07:24:29:199 PM EDT: ...Success.
+04/10/2018 07:24:29:199 PM EDT: Registering service identityLocaleService.xml
+04/10/2018 07:24:29:275 PM EDT: ...Success.
+04/10/2018 07:24:29:275 PM EDT: Registering service amAgent70.xml
+04/10/2018 07:24:29:294 PM EDT: ...Success.
+04/10/2018 07:24:29:294 PM EDT: Registering service amAuthRadius.xml
+04/10/2018 07:24:29:314 PM EDT: ...Success.
+04/10/2018 07:24:29:314 PM EDT: Registering service amAuthHOTP.xml
+04/10/2018 07:24:29:420 PM EDT: ...Success.
+04/10/2018 07:24:29:421 PM EDT: Registering service amAuthSecurID.xml
+04/10/2018 07:24:29:441 PM EDT: ...Success.
+04/10/2018 07:24:29:441 PM EDT: Registering service amMonitoring.xml
+04/10/2018 07:24:29:539 PM EDT: ...Success.
+04/10/2018 07:24:29:539 PM EDT: Registering service AgentService.xml
+04/10/2018 07:24:29:791 PM EDT: ...Success.
+04/10/2018 07:24:29:791 PM EDT: Registering service policyIndex.xml
+04/10/2018 07:24:29:892 PM EDT: ...Success.
+04/10/2018 07:24:29:892 PM EDT: Registering service entitlement.xml
+04/10/2018 07:24:30:097 PM EDT: ...Success.
+04/10/2018 07:24:30:097 PM EDT: Registering service openProvisioning.xml
+04/10/2018 07:24:30:114 PM EDT: ...Success.
+04/10/2018 07:24:30:114 PM EDT: Registering service banking.xml
+04/10/2018 07:24:30:132 PM EDT: ...Success.
+04/10/2018 07:24:30:132 PM EDT: Registering service amAuthAuthenticatorOATH.xml
+04/10/2018 07:24:30:157 PM EDT: ...Success.
+04/10/2018 07:24:30:157 PM EDT: Registering service AuthenticatorOATH.xml
+04/10/2018 07:24:30:174 PM EDT: ...Success.
+04/10/2018 07:24:30:174 PM EDT: Registering service fmAuthFederation.xml
+04/10/2018 07:24:30:257 PM EDT: ...Success.
+04/10/2018 07:24:30:257 PM EDT: Registering service fmAuthSAE.xml
+04/10/2018 07:24:30:339 PM EDT: ...Success.
+04/10/2018 07:24:30:339 PM EDT: Registering service fmAuthnSvc.xml
+04/10/2018 07:24:30:356 PM EDT: ...Success.
+04/10/2018 07:24:30:356 PM EDT: Registering service fmDisco.xml
+04/10/2018 07:24:30:381 PM EDT: ...Success.
+04/10/2018 07:24:30:381 PM EDT: Registering service fmIDFF.xml
+04/10/2018 07:24:30:396 PM EDT: ...Success.
+04/10/2018 07:24:30:397 PM EDT: Registering service fmLibertyPersonalProfile.xml
+04/10/2018 07:24:30:427 PM EDT: ...Success.
+04/10/2018 07:24:30:427 PM EDT: Registering service fmCOTConfig.xml
+04/10/2018 07:24:30:444 PM EDT: ...Success.
+04/10/2018 07:24:30:444 PM EDT: Registering service fmSAML2.xml
+04/10/2018 07:24:30:459 PM EDT: ...Success.
+04/10/2018 07:24:30:459 PM EDT: Registering service fmSAML.xml
+04/10/2018 07:24:30:479 PM EDT: ...Success.
+04/10/2018 07:24:30:479 PM EDT: Registering service fmSOAPBinding.xml
+04/10/2018 07:24:30:498 PM EDT: ...Success.
+04/10/2018 07:24:30:499 PM EDT: Registering service fmSAML2SOAPBinding.xml
+04/10/2018 07:24:30:516 PM EDT: ...Success.
+04/10/2018 07:24:30:516 PM EDT: Registering service fmWSFederation.xml
+04/10/2018 07:24:30:539 PM EDT: ...Success.
+04/10/2018 07:24:30:540 PM EDT: Registering service fmMultiProtocol.xml
+04/10/2018 07:24:30:560 PM EDT: ...Success.
+04/10/2018 07:24:30:560 PM EDT: Registering service famFederationCommon.xml
+04/10/2018 07:24:30:586 PM EDT: ...Success.
+04/10/2018 07:24:30:586 PM EDT: Registering service famSAML2Config.xml
+04/10/2018 07:24:30:604 PM EDT: ...Success.
+04/10/2018 07:24:30:605 PM EDT: Registering service OAuth2Provider.xml
+04/10/2018 07:24:30:649 PM EDT: ...Success.
+04/10/2018 07:24:30:649 PM EDT: Registering service UmaProvider.xml
+04/10/2018 07:24:30:666 PM EDT: ...Success.
+04/10/2018 07:24:30:666 PM EDT: Registering service MailServer.xml
+04/10/2018 07:24:30:682 PM EDT: ...Success.
+04/10/2018 07:24:30:682 PM EDT: Registering service RestSecurity.xml
+04/10/2018 07:24:30:698 PM EDT: ...Success.
+04/10/2018 07:24:30:698 PM EDT: Registering service amAuthScripted.xml
+04/10/2018 07:24:30:719 PM EDT: ...Success.
+04/10/2018 07:24:30:719 PM EDT: Registering service amAuthDeviceIdMatch.xml
+04/10/2018 07:24:30:738 PM EDT: ...Success.
+04/10/2018 07:24:30:738 PM EDT: Registering service amAuthDeviceIdSave.xml
+04/10/2018 07:24:30:753 PM EDT: ...Success.
+04/10/2018 07:24:30:753 PM EDT: Registering service restSTS.xml
+04/10/2018 07:24:30:787 PM EDT: ...Success.
+04/10/2018 07:24:30:787 PM EDT: Registering service soapSTS.xml
+04/10/2018 07:24:30:835 PM EDT: ...Success.
+04/10/2018 07:24:30:836 PM EDT: Registering service validationService.xml
+04/10/2018 07:24:30:870 PM EDT: ...Success.
+04/10/2018 07:24:30:870 PM EDT: Registering service RestApis.xml
+04/10/2018 07:24:30:886 PM EDT: ...Success.
+04/10/2018 07:24:30:886 PM EDT: Registering service socialAuthN.xml
+04/10/2018 07:24:30:903 PM EDT: ...Success.
+04/10/2018 07:24:30:903 PM EDT: Registering service amBaseURL.xml
+04/10/2018 07:24:30:919 PM EDT: ...Success.
+04/10/2018 07:24:30:919 PM EDT: Registering service scripting.xml
+04/10/2018 07:24:31:143 PM EDT: ...Success.
+04/10/2018 07:24:31:143 PM EDT: Registering service amAuthOATH.xml
+04/10/2018 07:24:31:233 PM EDT: ...Success.
+04/10/2018 07:24:31:233 PM EDT: Registering service amAuthSAML2.xml
+04/10/2018 07:24:31:255 PM EDT: ...Success.
+04/10/2018 07:24:31:255 PM EDT: Registering service audit.xml
+04/10/2018 07:24:31:410 PM EDT: ...Success.
+04/10/2018 07:24:31:410 PM EDT: Registering service RadiusServerService.xml
+04/10/2018 07:24:31:433 PM EDT: ...Success.
+04/10/2018 07:24:31:433 PM EDT: Registering service amSessionPropertyWhitelist.xml
+04/10/2018 07:24:31:447 PM EDT: ...Success.
+04/10/2018 07:24:31:447 PM EDT: Registering service selfService.xml
+04/10/2018 07:24:31:506 PM EDT: ...Success.
+04/10/2018 07:24:31:506 PM EDT: Registering service amPushNotification.xml
+04/10/2018 07:24:31:521 PM EDT: ...Success.
+04/10/2018 07:24:31:521 PM EDT: Registering service amAuthAuthenticatorPush.xml
+04/10/2018 07:24:31:542 PM EDT: ...Success.
+04/10/2018 07:24:31:542 PM EDT: Registering service AuthenticatorPush.xml
+04/10/2018 07:24:31:560 PM EDT: ...Success.
+04/10/2018 07:24:31:560 PM EDT: Registering service amAuthAuthenticatorPushRegistration.xml
+04/10/2018 07:24:31:582 PM EDT: ...Success.
+04/10/2018 07:24:31:582 PM EDT: Registering service amAuthAmster.xml
+04/10/2018 07:24:31:661 PM EDT: ...Success.
+04/10/2018 07:24:31:661 PM EDT: Registering service amAuthTrees.xml
+04/10/2018 07:24:31:745 PM EDT: ...Success.
+04/10/2018 07:24:31:745 PM EDT: Registering service amPlugins.xml
+04/10/2018 07:24:31:815 PM EDT: ...Success.
+04/10/2018 07:24:31:816 PM EDT: Registering service amTransaction.xml
+04/10/2018 07:24:31:832 PM EDT: ...Success.
+04/10/2018 07:24:31:832 PM EDT: Registering service amAuthSocialAuthOAuth2.xml
+04/10/2018 07:24:31:864 PM EDT: ...Success.
+04/10/2018 07:24:31:864 PM EDT: Registering service amAuthSocialAuthVK.xml
+04/10/2018 07:24:31:891 PM EDT: ...Success.
+04/10/2018 07:24:31:891 PM EDT: Registering service amAuthSocialAuthWeChat.xml
+04/10/2018 07:24:31:921 PM EDT: ...Success.
+04/10/2018 07:24:31:921 PM EDT: Registering service amAuthSocialAuthWeChatMobile.xml
+04/10/2018 07:24:31:948 PM EDT: ...Success.
+04/10/2018 07:24:31:948 PM EDT: Registering service amAuthSocialAuthOpenID.xml
+04/10/2018 07:24:31:979 PM EDT: ...Success.
+04/10/2018 07:24:31:979 PM EDT: Registering service amAuthSocialAuthInstagram.xml
+04/10/2018 07:24:32:005 PM EDT: ...Success.
+04/10/2018 07:24:32:005 PM EDT: Registering service amAuthJwtProofOfPossession.xml
+04/10/2018 07:24:32:022 PM EDT: ...Success.
+04/10/2018 07:24:32:022 PM EDT: Registering service amAuthEdgeRegistration.xml
+04/10/2018 07:24:32:037 PM EDT: ...Success.
+04/10/2018 07:24:32:037 PM EDT: Registering service amAuthEdgeAuthentication.xml
+04/10/2018 07:24:32:052 PM EDT: ...Success.
+04/10/2018 07:24:32:053 PM EDT: Registering service IdmIntegrationService.xml
+04/10/2018 07:24:32:070 PM EDT: ...Success.
+04/10/2018 07:24:32:070 PM EDT: Registering service DeviceId.xml
+04/10/2018 07:24:32:087 PM EDT: ...Success.
+04/10/2018 07:24:32:145 PM EDT: Configuring system.
+04/10/2018 07:24:34:182 PM EDT: ...Done
+04/10/2018 07:24:34:183 PM EDT: Configuring server instance.
+04/10/2018 07:24:34:253 PM EDT: ...Done
+04/10/2018 07:24:35:066 PM EDT: Installing new plugins...
+04/10/2018 07:24:36:215 PM EDT: Plugin installation complete.
+[10/Apr/2018:19:24:36 -0400] category=PROTOCOL severity=INFORMATION msgID=-1 msg=Ignoring 3 unused trailing bytes in ASN.1 SEQUENCE
+[10/Apr/2018:19:24:36 -0400] category=PROTOCOL severity=INFORMATION msgID=-1 msg=Ignoring 3 unused trailing bytes in ASN.1 SEQUENCE
+04/10/2018 07:24:37:492 PM EDT: Creating demo user.
+04/10/2018 07:24:37:587 PM EDT: ...Done
+04/10/2018 07:24:37:594 PM EDT: Setting up monitoring authentication file.
 
 
 Dumping all configuration parameters...
@@ -370,17 +370,17 @@ actionLink = createConfig
 ADMIN_CONFIRM_PWD = #########
 ADMIN_PWD = #########
 AM_ENC_KEY = #########
-BASE_DIR = c:/projects/phoenix/forgerock/openam-cfg
+BASE_DIR = /Users/lede/projects/phoenix/forgerock/openam-cfg
 COOKIE_DOMAIN = .example.com
 DATA_STORE = embedded
-DIRECTORY_ADMIN_PORT = 5444
+DIRECTORY_ADMIN_PORT = 4444
 DIRECTORY_JMX_PORT = 1689
 DIRECTORY_PORT = 50389
 DIRECTORY_SERVER = localhost
 DIRECTORY_SSL = SIMPLE
 DS_DIRMGRDN = cn=Directory Manager
 DS_DIRMGRPASSWD = #########
-ie7fix = 18
+ie7fix = 23
 locale = en_US
 PLATFORM_LOCALE = en_US
 ROOT_SUFFIX = dc=openam,dc=forgerock,dc=org
@@ -402,7 +402,7 @@ AUTH_DEFAULT_CONFIG = ldapService
 AUTHNSVC_CRAMMD5_MECHANISM_HANDLER = com.sun.identity.liberty.ws.authnsvc.mechanism.CramMD5MechanismHandler
 AUTHNSVC_PLAIN_MECHANISM_HANDLER = com.sun.identity.liberty.ws.authnsvc.mechanism.PlainMechanismHandler
 AUTHNSVC_SSOTOKEN_MECHANISM_HANDLER = com.sun.identity.liberty.ws.authnsvc.mechanism.SSOTokenMechanismHandler
-BASE_DIR = c:/projects/phoenix/forgerock/openam-cfg
+BASE_DIR = /Users/lede/projects/phoenix/forgerock/openam-cfg
 CONFIGURATION_PROVIDER_CLASS = com.sun.identity.plugin.configuration.impl.ConfigurationInstanceImpl
 CONSOLE_URI = /openam
 COOKIE_DOMAIN = .example.com
@@ -415,7 +415,7 @@ DEBUG_DIR = debug
 DEBUG_SUBDIR = debug
 DEFAULT_AUTH_MODULE = DataStore
 DEFAULT_ORG = dc=openam,dc=forgerock,dc=org
-DIRECTORY_ADMIN_PORT = 5444
+DIRECTORY_ADMIN_PORT = 4444
 DIRECTORY_JMX_PORT = 1689
 DIRECTORY_PORT = 50389
 DIRECTORY_SERVER = localhost
@@ -442,7 +442,7 @@ GlobalServerSideAuthModuleScriptId = 7e3d7067-d50f-4674-8c76-a3e13a810c33
 GlobalServerSideDeviceIdMatchScriptId = 703dab1a-1921-4981-98dd-b8e5349d8548
 HASHADMINPASSWD = #########
 IDPP_AUTHORIZER = com.sun.identity.liberty.ws.idpp.plugin.IDPPAuthorizer
-ie7fix = 18
+ie7fix = 23
 IS_INSTALL_VARDIR = baseDir
 IS_PRODNAME = /openam
 LDAP_CONNECTION_MODE = LDAP
@@ -487,7 +487,7 @@ UM_DS_DIRMGRPASSWD = #########
 UM_ENABLED = true
 UM_NORMALIZED_ORGBASE = dc=openam,dc=forgerock,dc=org
 UM_SSL = false
-USER_HOME = C:\Users\ldeng
+USER_HOME = /var/root
 USER_NAMING_ATTR = uid
 USER_OBJECT_CLASS = inetorgperson
 USER_PROFILE_CHOICE = false

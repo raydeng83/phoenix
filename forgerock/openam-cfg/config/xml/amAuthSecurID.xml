@@ -46,7 +46,7 @@
                     i18nKey="a1"
 					resourceName="serverConfigPath">
 		    <DefaultValues>
-                        <Value>c:/projects/phoenix/forgerock/openam-cfg/openam/auth/ace/data</Value>
+                        <Value>/Users/lede/projects/phoenix/forgerock/openam-cfg/openam/auth/ace/data</Value>
 		    </DefaultValues>
                 </AttributeSchema>
                 <AttributeSchema name="iplanet-am-auth-securid-auth-level"
@@ -83,7 +83,7 @@
                         i18nKey="a1"
 						resourceName="serverConfigPath">
     		    <DefaultValues>
-                            <Value>c:/projects/phoenix/forgerock/openam-cfg/openam/auth/ace/data</Value>
+                            <Value>/Users/lede/projects/phoenix/forgerock/openam-cfg/openam/auth/ace/data</Value>
     		    </DefaultValues>
                     </AttributeSchema>
                     <AttributeSchema name="iplanet-am-auth-securid-auth-level"

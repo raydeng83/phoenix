@@ -60,5 +60,8 @@ public class LoginController {
         return "Session Active";
     }
 
-
+    @RequestMapping("/otp")
+    public String otp(@RequestParam("otpId") String otpId) {
+        return "otpId:"+otpId;
+    }
 }

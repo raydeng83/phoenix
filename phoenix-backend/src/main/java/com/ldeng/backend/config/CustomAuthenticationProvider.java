@@ -4,6 +4,7 @@ import com.ldeng.backend.fr.openam.AMUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
@@ -15,7 +16,7 @@ import java.util.ArrayList;
 public class CustomAuthenticationProvider
         implements AuthenticationProvider {
 
-    static private String tokenId = null;
+    static private String token = null;
 
     @Autowired
     private AMUserService amUserService;
@@ -27,10 +28,15 @@ public class CustomAuthenticationProvider
         String username = authentication.getName();
         String password = authentication.getCredentials().toString();
 
-        tokenId = (amUserService.authenticateUser(username, password));
-        if ( tokenId !=null) {
-            return new UsernamePasswordAuthenticationToken(
-                    username, password, new ArrayList<>());
+        token = (amUserService.authenticateUser(username, password));
+        if ( token !=null) {
+            if(token.startsWith("OTP")) {
+                throw new BadCredentialsException("otpId:"+token.substring(4));
+            } else {
+                return new UsernamePasswordAuthenticationToken(
+                        username, password, new ArrayList<>());
+            }
+
         } else {
             return null;
         }
@@ -42,7 +48,7 @@ public class CustomAuthenticationProvider
                 UsernamePasswordAuthenticationToken.class);
     }
 
-    public static String getTokenId (){
-        return tokenId;
+    public static String getToken (){
+        return token;
     }
 }

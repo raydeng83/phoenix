@@ -3934,7 +3934,7 @@
                         i18nKey="a3020"
                         order="6200">
                         <DefaultValues>
-                            <Value>c:/projects/phoenix/forgerock/openam-cfg/openam/idRepo/flatfiles</Value>
+                            <Value>/Users/lede/projects/phoenix/forgerock/openam-cfg/openam/idRepo/flatfiles</Value>
                         </DefaultValues>
                     </AttributeSchema>
                     <AttributeSchema name="sunFilesMonitorForChanges"
@@ -4379,7 +4379,7 @@
                         id="user">
                         <AttributeValuePair>
                             <Attribute name="userPassword" />
-                            <Value>{SSHA-512}FFdJQ9nQFhovz5XlpbTzncEvkR5ygQLeWIJHh+fK1t/BM5K34DeDDiV6C/MWjjTRPk8Xk0ciypBn76kKBFtusBGZmvZeCIcjD5uewDEA4EPbblstig==</Value>
+                            <Value>{SSHA-512}FPf75+W8jcFNGwMDDjJRooiFc0uoiLAhB+OkV4Lcnmw0+Ic0/Ez1SYHdrVqsSnuxbTaFd6oBaX3JjMaJdKME/gf57QzJkNEIq7rROyBEFwHmg2X2Iw==</Value>
                         </AttributeValuePair>
                         <AttributeValuePair>
                             <Attribute name="inetUserStatus" />
@@ -4438,7 +4438,7 @@
                         id="user">
                         <AttributeValuePair>
                             <Attribute name="userPassword" />
-                            <Value>{SSHA-512}FFdJQ9nQFhovz5XlpbTzncEvkR5ygQLeWIJHh+fK1t/BM5K34DeDDiV6C/MWjjTRPk8Xk0ciypBn76kKBFtusBGZmvZeCIcjD5uewDEA4EPbblstig==</Value>
+                            <Value>{SSHA-512}FPf75+W8jcFNGwMDDjJRooiFc0uoiLAhB+OkV4Lcnmw0+Ic0/Ez1SYHdrVqsSnuxbTaFd6oBaX3JjMaJdKME/gf57QzJkNEIq7rROyBEFwHmg2X2Iw==</Value>
                         </AttributeValuePair>
                        <AttributeValuePair>
                             <Attribute name="inetUserStatus" />

@@ -23,6 +23,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private AuthenticationSuccessHandler authenticationSuccessHandler;
 
+    @Autowired
+    private CustomAuthenticationFailureHandler customAuthenticationFailureHandler;
+
     private static final String[] PUBLIC_MATCHERS = {
             "/css/**",
             "/js/**",
@@ -30,7 +33,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/login/**",
             "/logout/**",
             "/user",
-            "/user/forgetpassword"
+            "/user/forgetpassword",
+            "/authenticate",
+            "/otp"
     };
 
     @Override
@@ -48,7 +53,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin()
                 .successHandler(authenticationSuccessHandler)
-                .failureHandler(new SimpleUrlAuthenticationFailureHandler())
+                .failureHandler(customAuthenticationFailureHandler)
                 .and()
                 .logout();
     }

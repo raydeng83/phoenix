@@ -1,8 +1,0 @@
-SystemTimer:03/31/2018 10:23:44:254 PM EDT: Thread[localhost-startStop-2,5,main]: TransactionId[81d9a2bb-2cb9-4322-bd58-0e5cf5bee91c-46250]
-ERROR: TimerPool:shutdown() terminating remaining worker thread[284]
-SystemTimerPool:03/31/2018 10:23:52:612 PM EDT: Thread[localhost-startStop-2,5,main]: TransactionId[81d9a2bb-2cb9-4322-bd58-0e5cf5bee91c-46250]
-ERROR: TimerPool:shutdown() terminating remaining worker thread[398]
-SystemTimerPool:03/31/2018 10:23:52:613 PM EDT: Thread[localhost-startStop-2,5,main]: TransactionId[81d9a2bb-2cb9-4322-bd58-0e5cf5bee91c-46250]
-ERROR: TimerPool:shutdown() terminating remaining worker thread[399]
-SystemTimerPool:03/31/2018 10:23:52:694 PM EDT: Thread[localhost-startStop-2,5,main]: TransactionId[81d9a2bb-2cb9-4322-bd58-0e5cf5bee91c-46250]
-ERROR: TimerPool:shutdown() terminating remaining worker thread[400]

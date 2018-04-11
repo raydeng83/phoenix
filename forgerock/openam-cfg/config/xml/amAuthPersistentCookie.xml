@@ -75,7 +75,7 @@
                     i18nKey="a006"
                     order="600" resourceName="hmacKey">
                     <DefaultValues>
-                        <Value>t3sD0g8o0QYpZScb3bNAyy5OQJTrQa6z4BAvF/Dv3JQ=</Value>
+                        <Value>FCDocEq85K0048WzUEmmt6IGV2Hy8YYlN9TIpresrsA=</Value>
                     </DefaultValues>
                 </AttributeSchema>
                 <AttributeSchema name="openam-auth-persistent-cookie-name"
@@ -143,7 +143,7 @@
                         i18nKey="a006"
                         order="600" resourceName="hmacKey">
                         <DefaultValues>
-                            <Value>t3sD0g8o0QYpZScb3bNAyy5OQJTrQa6z4BAvF/Dv3JQ=</Value>
+                            <Value>FCDocEq85K0048WzUEmmt6IGV2Hy8YYlN9TIpresrsA=</Value>
                         </DefaultValues>
                     </AttributeSchema>
                     <AttributeSchema name="openam-auth-persistent-cookie-name"

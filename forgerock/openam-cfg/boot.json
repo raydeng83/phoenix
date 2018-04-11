@@ -3,10 +3,10 @@
   "dsameUser" : "cn=dsameuser,ou=DSAME Users,dc=openam,dc=forgerock,dc=org",
   "keystores" : {
     "default" : {
-      "keyStorePasswordFile" : "c:/projects/phoenix/forgerock/openam-cfg/openam/.storepass",
-      "keyPasswordFile" : "c:/projects/phoenix/forgerock/openam-cfg/openam/.keypass",
+      "keyStorePasswordFile" : "/Users/lede/projects/phoenix/forgerock/openam-cfg/openam/.storepass",
+      "keyPasswordFile" : "/Users/lede/projects/phoenix/forgerock/openam-cfg/openam/.keypass",
       "keyStoreType" : "JCEKS",
-      "keyStoreFile" : "c:/projects/phoenix/forgerock/openam-cfg/openam/keystore.jceks"
+      "keyStoreFile" : "/Users/lede/projects/phoenix/forgerock/openam-cfg/openam/keystore.jceks"
     }
   },
   "configStoreList" : [ {

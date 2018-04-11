@@ -66,7 +66,7 @@
                                  i18nKey="idTokenAuthenticitySecret"
                                  order="3">
                     <DefaultValues>
-                        <Value>bl4C3S6X5S3z+d2xBJ5cmfV1YcWv7PPGGaGVSbI0Km0=</Value>
+                        <Value>ZnFCKopchIDd1h+uEhfct9G7oi/fB5Nidx99SbqAAGk=</Value>
                     </DefaultValues>
                 </AttributeSchema>
                 <AttributeSchema name="agentIdTokenSigningKeyAlias"
@@ -413,7 +413,7 @@
                                  i18nKey="a113b"
                                  order="230">
                     <DefaultValues>
-                        <Value>bl4C3S6X5S3z+d2xBJ5cmfV1YcWv7PPGGaGVSbI0Km0=</Value>
+                        <Value>ZnFCKopchIDd1h+uEhfct9G7oi/fB5Nidx99SbqAAGk=</Value>
                     </DefaultValues>
                 </AttributeSchema>
                 <AttributeSchema name="forgerock-oauth2-provider-keypair-name"

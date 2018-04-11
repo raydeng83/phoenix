@@ -18,7 +18,7 @@ objectClass: top
 objectClass: untypedObject
 cn: Recurring Tasks
 
-dn: ds-task-id=20180331201935535,cn=Scheduled Tasks,cn=Tasks
+dn: ds-task-id=20180410192412002,cn=Scheduled Tasks,cn=Tasks
 objectClass: ds-task-import
 objectClass: ds-task
 objectClass: top
@@ -27,11 +27,11 @@ ds-task-state: RUNNING
 ds-task-class-name: org.opends.server.tasks.ImportTask
 ds-task-import-random-seed: 0
 ds-task-import-backend-id: userRoot
-ds-task-actual-start-time: 20180401001935Z
-ds-task-id: 20180331201935535
-ds-task-import-ldif-file: c:/projects/phoenix/forgerock/openam-cfg/opends/ldif/openam_suffix.ldif
-ds-task-log-message: [31/Mar/2018:20:19:35 -0400] severity="NOTICE" msgCount=0 msgID=org.opends.messages.backend-413 message="Import task 20180331201935535 started execution"
+ds-task-actual-start-time: 20180410232411Z
+ds-task-id: 20180410192412002
+ds-task-import-ldif-file: /Users/lede/projects/phoenix/forgerock/openam-cfg/opends/ldif/openam_suffix.ldif
+ds-task-log-message: [10/Apr/2018:19:24:11 -0400] severity="NOTICE" msgCount=0 msgID=org.opends.messages.backend-413 message="Import task 20180410192412002 started execution"
 creatorsName: cn=Directory Manager,cn=Root DNs,cn=config
-entryUUID: 5939bb3f-713c-4d32-b610-008f66c69bd6
-createTimestamp: 20180401001935Z
+entryUUID: a01ea582-e4ad-4ac5-8ac3-076be375454f
+createTimestamp: 20180410232411Z
 

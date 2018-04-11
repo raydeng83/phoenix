@@ -51,7 +51,7 @@
                     order="300"
                     resourceName="deviceIdSettingsEncryptionKeystore">
                     <DefaultValues>
-                <Value>c:/projects/phoenix/forgerock/openam-cfg/openam/keystore.jks</Value>
+                <Value>/Users/lede/projects/phoenix/forgerock/openam-cfg/openam/keystore.jks</Value>
             </DefaultValues>
                 </AttributeSchema>
 

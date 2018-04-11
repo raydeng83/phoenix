@@ -42,7 +42,7 @@
                                  order="100"
                                  resourceName="authorizedKeys">
                     <DefaultValues>
-                        <Value>c:/projects/phoenix/forgerock/openam-cfg/authorized_keys</Value>
+                        <Value>/Users/lede/projects/phoenix/forgerock/openam-cfg/authorized_keys</Value>
                     </DefaultValues>
                 </AttributeSchema>
                 <AttributeSchema name="forgerock-am-auth-amster-enabled"
@@ -81,7 +81,7 @@
                                      order="100"
                                      resourceName="authorizedKeys">
                         <DefaultValues>
-                            <Value>c:/projects/phoenix/forgerock/openam-cfg/authorized_keys</Value>
+                            <Value>/Users/lede/projects/phoenix/forgerock/openam-cfg/authorized_keys</Value>
                         </DefaultValues>
                     </AttributeSchema>
                     <AttributeSchema name="forgerock-am-auth-amster-enabled"
@@ -106,7 +106,7 @@
             <OrganizationConfiguration name="/">
                 <AttributeValuePair>
                     <Attribute name="forgerock-am-auth-amster-authorized-keys"/>
-                    <Value>c:/projects/phoenix/forgerock/openam-cfg/authorized_keys</Value>
+                    <Value>/Users/lede/projects/phoenix/forgerock/openam-cfg/authorized_keys</Value>
                 </AttributeValuePair>
             </OrganizationConfiguration>
         </Configuration>
