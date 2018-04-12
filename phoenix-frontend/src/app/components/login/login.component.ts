@@ -3,6 +3,7 @@ import {AppConst} from '../../app-const';
 import {Router} from "@angular/router";
 import {LoginService} from "../../services/login.service";
 import {UserService} from "../../services/user.service";
+import {OauthService} from '../../services/oauth.service';
 
 @Component({
   selector: 'app-login',
@@ -26,7 +27,12 @@ export class LoginComponent implements OnInit {
   private forgetPasswordEmailSent: boolean = false;
   private recoverEmail:string;
 
-  constructor (private loginService: LoginService, private userService: UserService, private router: Router){
+  constructor (
+    private loginService: LoginService, 
+    private userService: UserService, 
+    private router: Router,
+    private oauthService: OauthService
+    ){
   }
 
   onLogin() {
@@ -59,6 +65,19 @@ export class LoginComponent implements OnInit {
     );
   }
 
+  onGoogleLogin() {
+    let url = "https://accounts.google.com/o/oauth2/v2/auth?client_id=705445061234-hg27gdnem5jnfqlob55a0eb3as885lfh.apps.googleusercontent.com&response_type=code&scope=openid%20email%20profile&redirect_uri=http://localhost:4200/code&state=security_token%3DLmpiEjTkLqqgr_Q9Qs87KJ4g%26";
+
+    window.location.href=url;
+    // this.oauthService.getAuthCode().subscribe(
+    //   res => {
+    //     console.log(res.json());
+    //   },
+    //   error => {
+    //     console.log(error);
+    //   }
+    // );
+  }
 
 
   // onForgetPassword() {

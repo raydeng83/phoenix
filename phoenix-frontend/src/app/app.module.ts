@@ -9,13 +9,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
+import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassword.component';
+import { OtpComponent } from './components/otp/otp.component';
 
 import { LoginService } from './services/login.service';
 import { UserService } from './services/user.service';
 import { RegistrationService } from './services/registration.service';
 import { LoginGuardService } from './services/login-guard.service';
-import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassword.component';
-import { OtpComponent } from './components/otp/otp.component';
+import { OauthService } from './services/oauth.service';
+import { CodeComponent } from './components/code/code.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { OtpComponent } from './components/otp/otp.component';
     LoginComponent,
     RegistrationComponent,
     ForgetpasswordComponent,
-    OtpComponent
+    OtpComponent,
+    CodeComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,8 @@ import { OtpComponent } from './components/otp/otp.component';
   	LoginService,
     UserService,
     RegistrationService,
-    LoginGuardService
+    LoginGuardService,
+    OauthService
   ],
   bootstrap: [AppComponent]
 })
