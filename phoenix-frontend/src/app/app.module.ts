@@ -15,6 +15,7 @@ import { UserService } from './services/user.service';
 import { RegistrationService } from './services/registration.service';
 import { LoginGuardService } from './services/login-guard.service';
 import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassword.component';
+import { OtpComponent } from './components/otp/otp.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassw
     HomeComponent,
     LoginComponent,
     RegistrationComponent,
-    ForgetpasswordComponent
+    ForgetpasswordComponent,
+    OtpComponent
   ],
   imports: [
     BrowserModule,

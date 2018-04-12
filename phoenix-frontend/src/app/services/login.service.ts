@@ -65,4 +65,17 @@ export class LoginService {
     return this.http.get(url, {withCredentials:true, headers : headers});
   }
 
+  sendOtp(otpId, passcode) {
+    let url = this.serverPath+"/otp";
+
+    let otpInfo = {
+      "otpId": otpId,
+      "passcode" : passcode
+    };
+    
+    let tokenHeader = new Headers ({
+      'Content-Type': 'application/json',
+    });
+    return this.http.post(url, otpInfo, {withCredentials:true,headers : tokenHeader});
+  }
 }

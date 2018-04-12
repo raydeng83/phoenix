@@ -250,4 +250,69 @@ public class AMUserServiceImpl implements AMUserService {
 
         return null;
     }
+
+    @Override
+    public String sendOtp(String otpId, String passcode) {
+        OtpRef otpRef = otpRefService.findById(Long.parseLong(otpId));
+//        JSONObject joLevel1 = new JSONObject(otpRef.getOtpString());
+//        System.out.println(joLevel1.get("callbacks").toString());
+//
+//        String str = joLevel1.get("callbacks").toString();
+//        JSONObject joLevel2 = new JSONObject(str.substring(1, str.length()-1));
+//
+//        str = joLevel2.get("input").toString();
+//        JSONObject joLevel3 = new JSONObject(str.substring(1, str.length()-1));
+//
+//        joLevel3.put("value", passcode);
+        String otpString = otpRef.getOtpString();
+
+        int index = otpString.indexOf("IDToken1");
+        String original = otpString.substring(index-1, index+20);
+        String newString = otpString.substring(0,index+19)+passcode+otpString.substring(index+19);
+        System.out.println(newString);
+
+        String token = null;
+
+        String authenticateUserUrl = openamUrl+"/json/realms/phoenix-dev/authenticate";
+
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+
+        try {
+            HttpPost httpPost = new HttpPost(authenticateUserUrl);
+            httpPost.setHeader("Content-Type", "application/json");
+
+            String body = newString;
+            StringEntity entity = new StringEntity(body);
+            httpPost.setEntity(entity);
+
+            HttpResponse httpResponse = httpClient.execute(httpPost);
+
+            BufferedReader rd = new BufferedReader(new InputStreamReader(httpResponse.getEntity().getContent()));
+
+            StringBuffer result = new StringBuffer();
+            String line = "";
+            while ((line = rd.readLine()) != null) {
+                result.append(line);
+            }
+
+            JSONObject o = new JSONObject(result.toString());
+
+            if (o.has("tokenId")) {
+                token = (String) o.getString("tokenId");
+            } else {
+                token = null;
+            }
+
+        } catch(IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                httpClient.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return token;
+    }
 }

@@ -28,7 +28,7 @@ public class CustomAuthenticationProvider
         String username = authentication.getName();
         String password = authentication.getCredentials().toString();
 
-        token = (amUserService.authenticateUser(username, password));
+        token = amUserService.authenticateUser(username, password);
         if ( token !=null) {
             if(token.startsWith("OTP")) {
                 throw new BadCredentialsException("otpId:"+token.substring(4));

@@ -15,4 +15,9 @@ public class OtpRefServiceImpl implements OtpRefService {
     public OtpRef save(OtpRef otpRef) {
         return otpRefRepository.save(otpRef);
     }
+
+    @Override
+    public OtpRef findById(Long otpId) {
+        return otpRefRepository.findById(otpId).get();
+    }
 }

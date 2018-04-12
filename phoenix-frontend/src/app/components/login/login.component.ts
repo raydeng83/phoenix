@@ -32,8 +32,14 @@ export class LoginComponent implements OnInit {
   onLogin() {
     this.loginService.sendCredential(this.credential.username, this.credential.password).subscribe(
       res=>{
-        this.loggedIn=true;
-        this.router.navigate(['/home']);
+        let message = res.text();
+        let otpId = message.substring(6);
+        if(message.startsWith("otp")) {
+          this.router.navigate(['/otp', otpId]);
+        } else {
+          this.loggedIn=true;
+          this.router.navigate(['/home']);
+        }
       },
       error=>{
         this.loggedIn=false;
@@ -74,7 +80,6 @@ export class LoginComponent implements OnInit {
   // }
 
   ngOnInit() {
-    console.log("test");
     this.onCheckSession();
   }
 

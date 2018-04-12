@@ -5,6 +5,7 @@ import {LoginComponent} from './components/login/login.component';
 import {RegistrationComponent} from './components/registration/registration.component';
 import {HomeComponent} from './components/home/home.component';
 import {ForgetpasswordComponent} from './components/forgetpassword/forgetpassword.component';
+import {OtpComponent} from './components/otp/otp.component';
 
 import {LoginGuardService} from './services/login-guard.service';
 
@@ -30,6 +31,10 @@ const appRoutes: Routes = [
   {
     path: 'forgetPassword',
     component: ForgetpasswordComponent
+  },
+  {
+    path: 'otp/:otpId',
+    component: OtpComponent
   }
 ];
 

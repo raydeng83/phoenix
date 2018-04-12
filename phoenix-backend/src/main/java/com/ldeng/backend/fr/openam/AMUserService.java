@@ -13,4 +13,6 @@ public interface AMUserService {
     String fetchOIDCToken(String tokenId);
 
     String forgetPassword (String username);
+
+    String sendOtp(String otpId, String passcode);
 }
