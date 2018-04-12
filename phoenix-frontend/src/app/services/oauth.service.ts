@@ -35,4 +35,15 @@ export class OauthService {
     return this.http.post(url, body.toString(), {withCredentials: true, headers: headers});
   }
 
+  oauthUser(profile){
+    let url = this.serverPath+"/user/oauthUser";
+    
+    let tokenHeader = new Headers ({
+      'Content-Type': 'application/json',
+    });
+    return this.http.post(url, profile, {withCredentials: true,headers : tokenHeader});
+  }
+
+  
+
 }

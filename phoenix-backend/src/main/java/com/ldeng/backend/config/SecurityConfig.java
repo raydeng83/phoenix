@@ -34,6 +34,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/logout/**",
             "/user",
             "/user/forgetpassword",
+            "/user/oauthUser",
             "/authenticate",
             "/otp"
     };

@@ -37,7 +37,7 @@ public class UserServiceImpl implements UserService{
     private SessionRepository sessionRepository;
 
     @Override
-    public User createUser(User user, Set<UserRole> userRoles) {
+    public User createUser(User user, Set<UserRole> userRoles, String accountType) {
         User localUser = userRepository.findByEmail(user.getEmail());
 
         if (localUser != null) {
@@ -48,6 +48,8 @@ public class UserServiceImpl implements UserService{
             }
 
             user.getUserRoles().addAll(userRoles);
+
+            user.setAccountType(accountType);
 
             localUser = userRepository.save(user);
 
@@ -60,6 +62,11 @@ public class UserServiceImpl implements UserService{
     @Override
     public User getUserByUsername(String username) {
         return userRepository.findByUsername(username);
+    }
+
+    @Override
+    public User getUserByEmail(String email) {
+        return userRepository.findByEmail(email);
     }
 
     @Override
@@ -80,6 +87,11 @@ public class UserServiceImpl implements UserService{
         SecurityContextHolder.clearContext();
         sessionRepository.delete(session);
         return amUserService.invalidateSession(tokenId);
+    }
+
+    @Override
+    public User getUserByEmailAndAccountType(String email, String accountType) {
+        return userRepository.findByEmailAndAccountType(email, accountType);
     }
 
 }

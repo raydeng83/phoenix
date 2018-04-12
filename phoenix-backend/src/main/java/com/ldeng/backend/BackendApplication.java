@@ -3,6 +3,7 @@ package com.ldeng.backend;
 import com.ldeng.backend.model.Role;
 import com.ldeng.backend.model.User;
 import com.ldeng.backend.model.UserRole;
+import com.ldeng.backend.repository.RoleRepository;
 import com.ldeng.backend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -18,6 +19,9 @@ public class BackendApplication implements CommandLineRunner{
 	@Autowired
 	private UserService userService;
 
+	@Autowired
+	private RoleRepository roleRepository;
+
 	public static void main(String[] args) {
 		SpringApplication.run(BackendApplication.class, args);
 	}
@@ -32,10 +36,9 @@ public class BackendApplication implements CommandLineRunner{
 		user1.setEmail("Admin@gmail.com");
 		Set<UserRole> userRoles = new HashSet<>();
 		Role role1 = new Role();
-		role1.setRoleId(0);
 		role1.setName("ROLE_ADMIN");
 		userRoles.add(new UserRole(user1, role1));
-		userService.createUser(user1, userRoles);
+		userService.createUser(user1, userRoles, "regular");
 
 		userRoles = new HashSet<>();
 		User user2 = new User();
@@ -45,10 +48,9 @@ public class BackendApplication implements CommandLineRunner{
 		user2.setPassword("password");
 		user2.setEmail("BFranklin@gmail.com");
 		Role role2 = new Role();
-		role2.setRoleId(1);
 		role2.setName("ROLE_USER");
 		userRoles.add(new UserRole(user2, role2));
-		userService.createUser(user2, userRoles);
+		userService.createUser(user2, userRoles, "regular");
 
 	}
 }

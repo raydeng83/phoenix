@@ -2,18 +2,24 @@ package com.ldeng.backend.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ldeng.backend.fr.openam.AMUserService;
-import com.ldeng.backend.model.Role;
-import com.ldeng.backend.model.User;
-import com.ldeng.backend.model.UserRole;
+import com.ldeng.backend.model.*;
 import com.ldeng.backend.service.UserService;
 import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/user")
@@ -28,11 +34,10 @@ public class UserController {
     @RequestMapping(method = RequestMethod.POST)
     public User createUser (@RequestBody User user) {
         Role role = new Role();
-        role.setRoleId(1);
         role.setName("ROLE_USER");
         Set<UserRole> userRoles = new HashSet<>();
         userRoles.add(new UserRole(user, role));
-        return userService.createUser(user, userRoles);
+        return userService.createUser(user, userRoles, "regular");
     }
 
     @RequestMapping("/{username}")
@@ -53,6 +58,38 @@ public class UserController {
         }
 
         return amUserService.forgetPassword(username);
+    }
+
+    @RequestMapping(value = "/oauthUser", method = RequestMethod.POST)
+    public void oauthLogin(@RequestBody User tempUser, HttpServletRequest request) throws Exception {
+        User user = userService.getUserByEmailAndAccountType(tempUser.getEmail(), "google");
+
+        if(user == null) {
+
+            String password = UUID.randomUUID().toString();
+            tempUser.setPassword(password);
+            Role role = new Role();
+            role.setName("ROLE_USER");
+            Set<UserRole> userRoles = new HashSet<>();
+            userRoles.add(new UserRole(tempUser, role));
+            user = userService.createUser(tempUser, userRoles, "google");
+        }
+
+        String token = amUserService.authenticateUser(user.getUsername(), user.getPassword());
+
+        if (token != null && !token.startsWith("otp")) {
+            HttpSession httpSession = request.getSession();
+            Set<GrantedAuthority> authorities = new HashSet<>();
+            Set<UserRole> userRoles = user.getUserRoles();
+            userRoles.forEach(ur -> authorities.add(new Authority(ur.getRole().getName())));
+            Authentication authentication = new UsernamePasswordAuthenticationToken(user, null, authorities);
+            SecurityContextHolder.getContext().setAuthentication(authentication);
+            String sessionId = httpSession.getId();
+            Session session = userService.setUserSession(user.getUsername(), sessionId, token);
+        } else {
+            throw new Exception("Google authentication failed.");
+        }
+
     }
 }
 

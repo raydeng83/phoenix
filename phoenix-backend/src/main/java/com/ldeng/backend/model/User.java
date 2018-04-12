@@ -19,6 +19,8 @@ public class User{
     private String password;
     private String username;
 
+    private String accountType;
+
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JsonIgnore
     private Set<UserRole> userRoles = new HashSet<>();
@@ -101,5 +103,13 @@ public class User{
 
     public void setOtpRefs(Set<OtpRef> otpRefs) {
         this.otpRefs = otpRefs;
+    }
+
+    public String getAccountType() {
+        return accountType;
+    }
+
+    public void setAccountType(String accountType) {
+        this.accountType = accountType;
     }
 }

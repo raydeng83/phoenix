@@ -35,6 +35,23 @@ export class CodeComponent implements OnInit {
         let base64 = base64Url.replace('-', '+').replace('_', '/');
         let userInfo = JSON.parse(window.atob(base64));
         console.log(userInfo);
+
+        let profile = {
+          "username" : userInfo["name"],
+          "firstName" : userInfo["given_name"],
+          "lastName" : userInfo["family_name"],
+          "email" : userInfo["email"]
+        }
+
+        this.oauthService.oauthUser(profile).subscribe(
+          res => {
+            window.location.href="http://localhost:4200/home";
+          },
+          error => {
+            console.log(error);
+          }
+        );
+
       },
       error => {
         console.log(error);
