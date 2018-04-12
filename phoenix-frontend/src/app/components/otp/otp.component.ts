@@ -14,6 +14,7 @@ export class OtpComponent implements OnInit {
   private serverPath = AppConst.serverPath;
   private passcode: string;
   private otpId: string;
+  private passcodeError: boolean = false;
 
   constructor (private loginService: LoginService, private userService: UserService, private router: Router, private route: ActivatedRoute){
   }
@@ -24,6 +25,7 @@ export class OtpComponent implements OnInit {
         this.router.navigate(['/home']);
       },
       error => {
+      	this.passcodeError = true;
       	console.log(error);
       }
     );

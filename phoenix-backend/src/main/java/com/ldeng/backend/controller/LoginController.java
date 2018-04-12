@@ -10,6 +10,7 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -85,17 +86,23 @@ public class LoginController {
 
 
         String token = amUserService.sendOtp(otpId, passcode);
+        if (token != null) {
 
-        OtpRef otpRef = otpRefService.findById(Long.parseLong(otpId));
-        User user = otpRef.getUser();
+            OtpRef otpRef = otpRefService.findById(Long.parseLong(otpId));
+            User user = otpRef.getUser();
 
-        HttpSession httpSession = request.getSession();
-        Set<GrantedAuthority> authorities = new HashSet<>();
-        Set<UserRole> userRoles = user.getUserRoles();
-        userRoles.forEach(ur -> authorities.add(new Authority(ur.getRole().getName())));
-        Authentication authentication =  new UsernamePasswordAuthenticationToken(user, null, authorities);
-        SecurityContextHolder.getContext().setAuthentication(authentication);
-        String sessionId = httpSession.getId();
-        Session session = userService.setUserSession(user.getUsername(), sessionId, token);
+            HttpSession httpSession = request.getSession();
+            Set<GrantedAuthority> authorities = new HashSet<>();
+            Set<UserRole> userRoles = user.getUserRoles();
+            userRoles.forEach(ur -> authorities.add(new Authority(ur.getRole().getName())));
+            Authentication authentication = new UsernamePasswordAuthenticationToken(user, null, authorities);
+            SecurityContextHolder.getContext().setAuthentication(authentication);
+            String sessionId = httpSession.getId();
+            Session session = userService.setUserSession(user.getUsername(), sessionId, token);
+
+            otpRefService.deleteById(otpRef.getId());
+        } else {
+            throw new BadCredentialsException("Passcode is not valid");
+        }
     }
 }

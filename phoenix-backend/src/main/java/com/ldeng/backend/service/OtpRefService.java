@@ -6,4 +6,6 @@ public interface OtpRefService {
     OtpRef save(OtpRef otpRef);
 
     OtpRef findById(Long otpId);
+
+    void deleteById(Long otpId);
 }

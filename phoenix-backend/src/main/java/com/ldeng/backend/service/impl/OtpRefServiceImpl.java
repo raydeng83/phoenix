@@ -4,6 +4,7 @@ import com.ldeng.backend.model.OtpRef;
 import com.ldeng.backend.repository.OtpRefRepository;
 import com.ldeng.backend.service.OtpRefService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -19,5 +20,10 @@ public class OtpRefServiceImpl implements OtpRefService {
     @Override
     public OtpRef findById(Long otpId) {
         return otpRefRepository.findById(otpId).get();
+    }
+
+    @Override
+    public void deleteById(Long otpId) {
+        otpRefRepository.deleteById(otpId);
     }
 }
