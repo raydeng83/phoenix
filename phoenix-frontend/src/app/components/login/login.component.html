@@ -1,4 +1,4 @@
-<div style="margin:20px 200px 0 200px">
+<div *ngIf="!busy" style="margin:20px 200px 0 200px">
 	<div *ngIf="loginError" style="color:red;">Incorrect username or password.</div>
 	<form (ngSubmit)="onLogin()">
 		<div class="form-group">
@@ -16,5 +16,11 @@
 	</form>
 	<div><a routerLink="/register" routerLinkActive="active"><span style="font-size: 1.2em;">Create a new account</span></a></div>
 	<div><a routerLink="/forgetPassword" routerLinkActive="active"><span style="font-size: 1.2em;">Forgot Password</span></a></div>
-	<button class="btn btn-info" (click)="onGoogleLogin()">Google Login</button>
+	<br/><hr>
+	<div (click)="onGoogleLogin()" style="cursor: pointer;color:tomato;">
+	<i class="fab fa-google-plus-g fa-3x faa-pulse animated-hover"></i>
+	</div>
+</div>
+<div *ngIf="busy" class="text-center" style="margin:150px 200px 0 200px">
+	<i class="fas fa-spinner fa-5x faa-spin animated"></i>
 </div>

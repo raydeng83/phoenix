@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { routing }  from './app.routing';
+import {BusyModule} from 'angular2-busy';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -34,7 +35,8 @@ import { CodeComponent } from './components/code/code.component';
     BrowserAnimationsModule,
     FormsModule,
     HttpModule,
-    routing
+    routing,
+    BusyModule
   ],
   providers: [
   	LoginService,

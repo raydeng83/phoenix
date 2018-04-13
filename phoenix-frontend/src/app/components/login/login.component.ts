@@ -4,6 +4,7 @@ import {Router} from "@angular/router";
 import {LoginService} from "../../services/login.service";
 import {UserService} from "../../services/user.service";
 import {OauthService} from '../../services/oauth.service';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -11,6 +12,7 @@ import {OauthService} from '../../services/oauth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  private busy:boolean =false;
 
   private serverPath = AppConst.serverPath;
   private loginError:boolean = false;
@@ -36,6 +38,7 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin() {
+    this.busy=true;
     this.loginService.sendCredential(this.credential.username, this.credential.password).subscribe(
       res=>{
         let message = res.text();
