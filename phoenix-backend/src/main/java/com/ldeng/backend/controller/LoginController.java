@@ -84,7 +84,6 @@ public class LoginController {
         String otpId = (String) mapper.get("otpId");
         String passcode = (String) mapper.get("passcode");
 
-
         String token = amUserService.sendOtp(otpId, passcode);
         if (token != null) {
 

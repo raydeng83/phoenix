@@ -51,6 +51,7 @@ export class LoginComponent implements OnInit {
         }
       },
       error=>{
+        this.busy=false;
         this.loggedIn=false;
         this.loginError=true;
       }

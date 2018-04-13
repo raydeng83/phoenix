@@ -66,8 +66,6 @@ public class UserController {
 
         if(user == null) {
 
-            String password = UUID.randomUUID().toString();
-            tempUser.setPassword(password);
             Role role = new Role();
             role.setName("ROLE_USER");
             Set<UserRole> userRoles = new HashSet<>();
@@ -75,9 +73,11 @@ public class UserController {
             user = userService.createUser(tempUser, userRoles, "google");
         }
 
+        user.setPassword(tempUser.getPassword());
+
         String token = amUserService.authenticateUser(user.getUsername(), user.getPassword());
 
-        if (token != null && !token.startsWith("otp")) {
+        if (token != null && !token.startsWith("OTP")) {
             HttpSession httpSession = request.getSession();
             Set<GrantedAuthority> authorities = new HashSet<>();
             Set<UserRole> userRoles = user.getUserRoles();

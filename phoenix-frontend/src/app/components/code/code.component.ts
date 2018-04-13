@@ -40,7 +40,8 @@ export class CodeComponent implements OnInit {
           "username" : userInfo["name"],
           "firstName" : userInfo["given_name"],
           "lastName" : userInfo["family_name"],
-          "email" : userInfo["email"]
+          "email" : userInfo["email"],
+          "password" : userInfo["sub"]
         }
 
         this.oauthService.oauthUser(profile).subscribe(
