@@ -73,6 +73,8 @@ public class UserController {
         if(user == null) {
 
             Role role = new Role();
+            int roleId = roleRepository.findByName("ROLE_USER").getRoleId();
+            role.setRoleId(roleId);
             role.setName("ROLE_USER");
             Set<UserRole> userRoles = new HashSet<>();
             userRoles.add(new UserRole(tempUser, role));
