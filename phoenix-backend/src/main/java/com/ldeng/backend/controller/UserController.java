@@ -3,6 +3,7 @@ package com.ldeng.backend.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ldeng.backend.fr.openam.AMUserService;
 import com.ldeng.backend.model.*;
+import com.ldeng.backend.repository.RoleRepository;
 import com.ldeng.backend.service.UserService;
 import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,12 +30,17 @@ public class UserController {
     private UserService userService;
 
     @Autowired
+    private RoleRepository roleRepository;
+
+    @Autowired
     private AMUserService amUserService;
 
     @RequestMapping(method = RequestMethod.POST)
     public User createUser (@RequestBody User user) {
         Role role = new Role();
         role.setName("ROLE_USER");
+        int roleId = roleRepository.findByName("ROLE_USER").getRoleId();
+        role.setRoleId(roleId);
         Set<UserRole> userRoles = new HashSet<>();
         userRoles.add(new UserRole(user, role));
         return userService.createUser(user, userRoles, "regular");

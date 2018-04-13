@@ -44505,3 +44505,80 @@ NetworkMonitor: dblookupreferrals
 Response Time(ms): 0.0
 Throughput: 0.0
 -----------------------------
+04/13/2018 02:51:33:002 PM EDT: Thread[SystemTimer,5,main]
+Entitlements statistics:
+-----------------------------
+NetworkMonitor: dblookupprivileges
+Response Time(ms): 0.0
+Throughput: 0.0
+-----------------------------
+NetworkMonitor: dblookupreferrals
+Response Time(ms): 0.0
+Throughput: 0.0
+-----------------------------
+04/13/2018 02:52:33:003 PM EDT: Thread[SystemTimer,5,main]
+Entitlements statistics:
+-----------------------------
+NetworkMonitor: dblookupprivileges
+Response Time(ms): 0.0
+Throughput: 0.0
+-----------------------------
+NetworkMonitor: dblookupreferrals
+Response Time(ms): 0.0
+Throughput: 0.0
+-----------------------------
+04/13/2018 02:53:33:004 PM EDT: Thread[SystemTimer,5,main]
+Entitlements statistics:
+-----------------------------
+NetworkMonitor: dblookupprivileges
+Response Time(ms): 0.0
+Throughput: 0.0
+-----------------------------
+NetworkMonitor: dblookupreferrals
+Response Time(ms): 0.0
+Throughput: 0.0
+-----------------------------
+04/13/2018 02:54:33:007 PM EDT: Thread[SystemTimer,5,main]
+Entitlements statistics:
+-----------------------------
+NetworkMonitor: dblookupprivileges
+Response Time(ms): 0.0
+Throughput: 0.0
+-----------------------------
+NetworkMonitor: dblookupreferrals
+Response Time(ms): 0.0
+Throughput: 0.0
+-----------------------------
+04/13/2018 02:55:33:008 PM EDT: Thread[SystemTimer,5,main]
+Entitlements statistics:
+-----------------------------
+NetworkMonitor: dblookupprivileges
+Response Time(ms): 0.0
+Throughput: 0.0
+-----------------------------
+NetworkMonitor: dblookupreferrals
+Response Time(ms): 0.0
+Throughput: 0.0
+-----------------------------
+04/13/2018 02:56:33:006 PM EDT: Thread[SystemTimer,5,main]
+Entitlements statistics:
+-----------------------------
+NetworkMonitor: dblookupprivileges
+Response Time(ms): 0.0
+Throughput: 0.0
+-----------------------------
+NetworkMonitor: dblookupreferrals
+Response Time(ms): 0.0
+Throughput: 0.0
+-----------------------------
+04/13/2018 02:57:33:011 PM EDT: Thread[SystemTimer,5,main]
+Entitlements statistics:
+-----------------------------
+NetworkMonitor: dblookupprivileges
+Response Time(ms): 0.0
+Throughput: 0.0
+-----------------------------
+NetworkMonitor: dblookupreferrals
+Response Time(ms): 0.0
+Throughput: 0.0
+-----------------------------
