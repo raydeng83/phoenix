@@ -158,7 +158,7 @@ public class LoginController {
         }
 
         mapper.put("ORIG_URL", ORIG_URL);
-        mapper.put("NTID", ORIG_URL);
+        mapper.put("NTID", NTID);
 
 
         amUserService.googleLoginPost(mapper);

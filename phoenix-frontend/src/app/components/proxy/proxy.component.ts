@@ -24,23 +24,23 @@ export class ProxyComponent implements OnInit {
 	  console.log(session_state);
     console.log(authId);
 
-    // this.oauthService.getSession(authId, code, session_state, state).subscribe(
-    //   res => {
-    //     console.log(res);
-    //   },
-    //   error => {
-    //     console.log(error);
-    //   }
-    // );
+    this.oauthService.getSession(authId, code, session_state, state).subscribe(
+      res => {
+        console.log(res);
+      },
+      error => {
+        console.log(error);
+      }
+    );
 
 
 	// let newUrl = "http://openam.example.com:18080/openam/XUI/?realm=/phoenix-dev&service=GoogleSocialAuthenticationService&=&authIndexType=service&authIndexValue=GoogleSocialAuthenticationService&state="+state+"&code="+code+"&authuser=0&session_state="+session_state+"&prompt=none&goto=http://localhost:4200";
 
-  let newUrl = "http://phoenix-dev.example.com:18080/openam/?goto=http://localhost:4200&service=GoogleSocialAuthenticationService&=&authIndexType=service&authIndexValue=GoogleSocialAuthenticationService&state="+state+"&code="+code+"&authuser=0&session_state="+session_state+"&prompt=none";
+ //  let newUrl = "http://phoenix-dev.example.com:18080/openam/?service=GoogleSocialAuthenticationService&=&authIndexType=service&authIndexValue=GoogleSocialAuthenticationService&state="+state+"&code="+code+"&authuser=0&session_state="+session_state+"&prompt=none";
 
-	console.log(newUrl);
+	// console.log(newUrl);
 
-	window.location.href = newUrl;
+	// window.location.href = newUrl;
   }
 
   ngOnInit() {

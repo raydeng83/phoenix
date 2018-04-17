@@ -16,6 +16,7 @@ import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.protocol.HttpClientContext;
+import org.apache.http.cookie.ClientCookie;
 import org.apache.http.cookie.Cookie;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.BasicCookieStore;
@@ -25,7 +26,9 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.cookie.BasicClientCookie;
 import org.apache.http.message.BasicHeader;
 import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.protocol.BasicHttpContext;
 import org.apache.http.protocol.HTTP;
+import org.apache.http.protocol.HttpContext;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -393,17 +396,20 @@ public class AMUserServiceImpl implements AMUserService {
         String state = map.get("state").toString();
         String ORIG_URL = map.get("ORIG_URL").toString();
 
-        String googleSocialLoginUrl = openamUrl+"/json/realms/root/realms/phoenix-dev/authenticate";
+        String googleSocialLoginUrl = openamUrl+"/json/realms/root/realms/phoenix-dev/authenticate?service=GoogleSocialAuthenticationService&=&authIndexType=service&authIndexValue=GoogleSocialAuthenticationService&state="+state+"&code="+code+
+        "&authuser=0&session_state="+session_state+"&prompt=none";
 
         String googleSsoUrl = null;
 
         BasicCookieStore cookieStore = new BasicCookieStore();
         BasicClientCookie ntidCookie = new BasicClientCookie("NTID", NTID);
         ntidCookie.setDomain(".example.com");
+        ntidCookie.setAttribute(ClientCookie.DOMAIN_ATTR,"true");
         cookieStore.addCookie(ntidCookie);
 
         BasicClientCookie origUrlCookie = new BasicClientCookie("ORIG_URL", ORIG_URL);
-        ntidCookie.setDomain(".example.com");
+        origUrlCookie.setDomain(".example.com");
+        origUrlCookie.setAttribute(ClientCookie.DOMAIN_ATTR,"true");
         cookieStore.addCookie(origUrlCookie);
 
         JSONObject jo = new JSONObject();
@@ -417,18 +423,19 @@ public class AMUserServiceImpl implements AMUserService {
         jo.put("session_state", session_state);
         jo.put("state", state);
         String content = jo.toString();
-        String entityStr = StringEscapeUtils.escapeJava(content);
-        StringEntity entity = new StringEntity(entityStr);
+//        String entityStr = StringEscapeUtils.escapeJava(content);
+        StringEntity entity = new StringEntity(content);
 
-        HttpClient httpClient = HttpClientBuilder.create().setDefaultCookieStore(cookieStore).build();
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+        HttpContext localContext = new BasicHttpContext();
+        localContext.setAttribute(HttpClientContext.COOKIE_STORE, cookieStore);
 
         try {
             HttpPost httpPost = new HttpPost(googleSocialLoginUrl);
             httpPost.setHeader("Content-Type", "application/json");
             httpPost.setEntity(entity);
 
-            HttpResponse httpResponse = httpClient.execute(httpPost);
-
+            HttpResponse httpResponse = httpClient.execute(httpPost, localContext);
 
             BufferedReader rd = new BufferedReader(new InputStreamReader(httpResponse.getEntity().getContent()));
 
@@ -438,14 +445,16 @@ public class AMUserServiceImpl implements AMUserService {
                 rb.append(line);
             }
 
+            System.out.println(rb.toString());
+
         } catch(IOException e) {
             e.printStackTrace();
         } finally {
-//            try {
-//                httpClient.close();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
+            try {
+                httpClient.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
 
