@@ -53,7 +53,7 @@ export class OauthService {
   }
 
   getSession(authId, code, session_state, state){
-    let url = "http://openam.example.com:18080/openam/json/realms/root/realms/phoenix-dev/authenticate";
+    let url = this.serverPath+"/googleLogin";
 
     let info = {
       "authId": authId,

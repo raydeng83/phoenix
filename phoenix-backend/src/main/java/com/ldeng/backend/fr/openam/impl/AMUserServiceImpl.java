@@ -6,18 +6,23 @@ import com.ldeng.backend.model.User;
 import com.ldeng.backend.service.OtpRefService;
 import com.ldeng.backend.service.UserService;
 import com.ldeng.backend.utility.MyJSONResponseHandler;
+import org.apache.commons.text.StringEscapeUtils;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.CookieStore;
+import org.apache.http.client.HttpClient;
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.protocol.HttpClientContext;
 import org.apache.http.cookie.Cookie;
 import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.BasicCookieStore;
 import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
+import org.apache.http.impl.cookie.BasicClientCookie;
 import org.apache.http.message.BasicHeader;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.protocol.HTTP;
@@ -31,6 +36,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 
@@ -374,5 +380,75 @@ public class AMUserServiceImpl implements AMUserService {
         map.put("googleSsoUrl", googleSsoUrl);
 
         return map;
+    }
+
+    @Override
+    public String googleLoginPost(HashMap map) throws UnsupportedEncodingException {
+        JSONObject result = null;
+
+        String authId = map.get("authId").toString();
+        String NTID = map.get("NTID").toString();
+        String code = map.get("code").toString();
+        String session_state = map.get("session_state").toString();
+        String state = map.get("state").toString();
+        String ORIG_URL = map.get("ORIG_URL").toString();
+
+        String googleSocialLoginUrl = openamUrl+"/json/realms/root/realms/phoenix-dev/authenticate";
+
+        String googleSsoUrl = null;
+
+        BasicCookieStore cookieStore = new BasicCookieStore();
+        BasicClientCookie ntidCookie = new BasicClientCookie("NTID", NTID);
+        ntidCookie.setDomain(".example.com");
+        cookieStore.addCookie(ntidCookie);
+
+        BasicClientCookie origUrlCookie = new BasicClientCookie("ORIG_URL", ORIG_URL);
+        ntidCookie.setDomain(".example.com");
+        cookieStore.addCookie(origUrlCookie);
+
+        JSONObject jo = new JSONObject();
+        jo.put("authId", authId);
+        jo.put("authIndexType", "service");
+        jo.put("authIndexValue", "GoogleSocialAuthenticationService");
+        jo.put("authuser", 0);
+        jo.put("code", code);
+        jo.put("prompt", "none");
+        jo.put("realm", "/phoenix-dev");
+        jo.put("session_state", session_state);
+        jo.put("state", state);
+        String content = jo.toString();
+        String entityStr = StringEscapeUtils.escapeJava(content);
+        StringEntity entity = new StringEntity(entityStr);
+
+        HttpClient httpClient = HttpClientBuilder.create().setDefaultCookieStore(cookieStore).build();
+
+        try {
+            HttpPost httpPost = new HttpPost(googleSocialLoginUrl);
+            httpPost.setHeader("Content-Type", "application/json");
+            httpPost.setEntity(entity);
+
+            HttpResponse httpResponse = httpClient.execute(httpPost);
+
+
+            BufferedReader rd = new BufferedReader(new InputStreamReader(httpResponse.getEntity().getContent()));
+
+            StringBuffer rb = new StringBuffer();
+            String line = "";
+            while ((line = rd.readLine()) != null) {
+                rb.append(line);
+            }
+
+        } catch(IOException e) {
+            e.printStackTrace();
+        } finally {
+//            try {
+//                httpClient.close();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+        }
+
+
+        return null;
     }
 }

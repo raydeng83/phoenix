@@ -4,6 +4,7 @@ import com.ldeng.backend.model.User;
 import org.json.JSONObject;
 
 import javax.servlet.http.HttpServletResponse;
+import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 
 public interface AMUserService {
@@ -20,4 +21,6 @@ public interface AMUserService {
     String sendOtp(String otpId, String passcode);
 
     HashMap googleLogin();
+
+    String googleLoginPost(HashMap map)  throws UnsupportedEncodingException;
 }

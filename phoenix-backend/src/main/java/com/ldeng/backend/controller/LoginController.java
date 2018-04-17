@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.UnsupportedEncodingException;
 import java.security.Principal;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -137,5 +138,31 @@ public class LoginController {
         jo.put("authId", map.get("authId"));
         jo.put("googleSsoUrl", map.get("googleSsoUrl"));
         return jo.toString();
+    }
+
+    @RequestMapping(value = "/googleLogin", method = RequestMethod.POST)
+    public String googleLoginPost(HttpServletRequest request, @RequestBody HashMap mapper) throws UnsupportedEncodingException {
+
+        javax.servlet.http.Cookie[] cookies = request.getCookies();
+        String ORIG_URL = null;
+        String NTID = null;
+
+        for (int i = 0; i < cookies.length; i++) {
+            if(cookies[i].getName().equalsIgnoreCase("ORIG_URL")) {
+                ORIG_URL = cookies[i].getValue();
+            }
+
+            if(cookies[i].getName().equalsIgnoreCase("NTID")) {
+                NTID = cookies[i].getValue();
+            }
+        }
+
+        mapper.put("ORIG_URL", ORIG_URL);
+        mapper.put("NTID", ORIG_URL);
+
+
+        amUserService.googleLoginPost(mapper);
+
+        return null;
     }
 }
