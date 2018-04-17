@@ -36,7 +36,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/user/forgetpassword",
             "/user/oauthUser",
             "/authenticate",
-            "/otp"
+            "/otp",
+            "/googleLogin"
     };
 
     @Override

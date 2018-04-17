@@ -304,3 +304,43 @@ com.sun.identity.common.configuration.UnknownPropertyNameException: Unidentified
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:745)
+Configuration:04/14/2018 06:18:37:936 PM EDT: Thread[localhost-startStop-2,5,main]: TransactionId[733837c3-eb16-4ff3-a4b5-6b1d06e284c9-114]
+ERROR: Could not get iPlanetAMAdminConsoleService
+Message:: Error in accessing entry.
+
+	at com.sun.identity.sm.ldap.SMSEmbeddedLdapObject.read(SMSEmbeddedLdapObject.java:239)
+	at com.sun.identity.sm.SMSEntry.read(SMSEntry.java:636)
+	at com.sun.identity.sm.SMSEntry.read(SMSEntry.java:613)
+	at com.sun.identity.sm.SMSEntry.<init>(SMSEntry.java:406)
+	at com.sun.identity.sm.CachedSMSEntry.getInstance(CachedSMSEntry.java:355)
+	at com.sun.identity.sm.CachedSMSEntry.getInstance(CachedSMSEntry.java:339)
+	at com.sun.identity.sm.ServiceSchemaManagerImpl.<init>(ServiceSchemaManagerImpl.java:117)
+	at com.sun.identity.sm.ServiceSchemaManagerImpl.getInstance(ServiceSchemaManagerImpl.java:642)
+	at com.sun.identity.sm.ServiceSchemaManager.<init>(ServiceSchemaManager.java:111)
+	at com.sun.identity.sm.ServiceSchemaManager.<init>(ServiceSchemaManager.java:77)
+	at org.forgerock.openam.xui.XUIState$XUIMode.<init>(XUIState.java:43)
+	at org.forgerock.openam.xui.XUIState$XUIMode.<clinit>(XUIState.java:29)
+	at org.forgerock.openam.xui.XUIState.destroy(XUIState.java:101)
+	at org.forgerock.openam.xui.XUIFilter.destroy(XUIFilter.java:120)
+	at org.apache.catalina.core.ApplicationFilterConfig.release(ApplicationFilterConfig.java:318)
+	at org.apache.catalina.core.StandardContext.filterStop(StandardContext.java:4741)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5536)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:221)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1424)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1413)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+amSetupServlet:04/14/2018 07:55:15:761 PM EDT: Thread[localhost-startStop-1,5,main]: TransactionId[03c833ec-dcf4-44ac-9393-647a772d5be4-0]
+ERROR: AMSetupServlet.init: embedded replication sync failed.
+amSetupServlet:04/14/2018 07:59:57:089 PM EDT: Thread[localhost-startStop-1,5,main]: TransactionId[08ec1159-ab90-4c2e-9d20-7ecd62e6f9f4-0]
+ERROR: AMSetupServlet.init: embedded replication sync failed.
+amSetupServlet:04/14/2018 08:13:56:637 PM EDT: Thread[localhost-startStop-1,5,main]: TransactionId[280135e6-58a5-49e0-8484-8677e5f6df9f-0]
+ERROR: AMSetupServlet.init: embedded replication sync failed.
+amSetupServlet:04/14/2018 08:26:19:798 PM EDT: Thread[localhost-startStop-1,5,main]: TransactionId[52ab607c-f525-4c5a-950d-af275df3cb64-0]
+ERROR: AMSetupServlet.init: embedded replication sync failed.
+amSetupServlet:04/14/2018 08:27:57:034 PM EDT: Thread[localhost-startStop-2,5,main]: TransactionId[3d002aab-7a74-4866-b6b6-39c8a55d077f-0]
+ERROR: AMSetupServlet.init: embedded replication sync failed.
+amSetupServlet:04/14/2018 08:28:28:476 PM EDT: Thread[localhost-startStop-1,5,main]: TransactionId[03af1f5a-188b-43ba-8688-9d3b26797eb6-0]
+ERROR: AMSetupServlet.init: embedded replication sync failed.

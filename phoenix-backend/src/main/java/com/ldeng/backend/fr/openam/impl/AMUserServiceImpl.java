@@ -9,9 +9,12 @@ import com.ldeng.backend.utility.MyJSONResponseHandler;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.NameValuePair;
+import org.apache.http.client.CookieStore;
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.protocol.HttpClientContext;
+import org.apache.http.cookie.Cookie;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
@@ -24,13 +27,12 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletResponse;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.Base64;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class AMUserServiceImpl implements AMUserService {
@@ -314,5 +316,63 @@ public class AMUserServiceImpl implements AMUserService {
         }
 
         return token;
+    }
+
+    public HashMap googleLogin() {
+        JSONObject result = null;
+
+        String googleSocialLoginUrl = openamUrl+"/json/realms/root/realms/phoenix-dev/authenticate?authIndexType" +
+                "=service&authIndexValue=GoogleSocialAuthenticationService";
+
+        String googleSsoUrl = null;
+        HashMap map = new HashMap();
+
+
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+
+        try {
+            HttpPost httpPost = new HttpPost(googleSocialLoginUrl);
+            httpPost.setHeader("Content-Type", "application/json");
+
+            HttpClientContext context = HttpClientContext.create();
+
+            HttpResponse httpResponse = httpClient.execute(httpPost, context);
+
+            CookieStore cookieStore = context.getCookieStore();
+            List<Cookie> cookies = cookieStore.getCookies();
+            map.put("cookies", cookies);
+
+            BufferedReader rd = new BufferedReader(new InputStreamReader(httpResponse.getEntity().getContent()));
+
+            StringBuffer rb = new StringBuffer();
+            String line = "";
+            while ((line = rd.readLine()) != null) {
+                rb.append(line);
+            }
+
+            result = new JSONObject(rb.toString());
+            String authId = result.get("authId").toString();
+            map.put("authId", authId);
+
+            String str = result.get("callbacks").toString();
+            JSONObject jo1 = new JSONObject(str.substring(1,str.length()-1));
+            str = jo1.get("output").toString();
+            JSONObject jo2 = new JSONObject(str.substring(1,str.length()-1));
+            googleSsoUrl = jo2.get("value").toString();
+
+            System.out.println(googleSsoUrl);
+        } catch(IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                httpClient.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        map.put("googleSsoUrl", googleSsoUrl);
+
+        return map;
     }
 }

@@ -3,6 +3,9 @@ package com.ldeng.backend.fr.openam;
 import com.ldeng.backend.model.User;
 import org.json.JSONObject;
 
+import javax.servlet.http.HttpServletResponse;
+import java.util.HashMap;
+
 public interface AMUserService {
     void createUser (User user);
 
@@ -15,4 +18,6 @@ public interface AMUserService {
     String forgetPassword (String username);
 
     String sendOtp(String otpId, String passcode);
+
+    HashMap googleLogin();
 }

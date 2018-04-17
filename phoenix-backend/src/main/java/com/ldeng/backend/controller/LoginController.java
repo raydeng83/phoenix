@@ -6,6 +6,7 @@ import com.ldeng.backend.fr.openam.AMUserService;
 import com.ldeng.backend.model.*;
 import com.ldeng.backend.service.OtpRefService;
 import com.ldeng.backend.service.UserService;
+import org.apache.http.cookie.Cookie;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,10 +19,12 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.security.Principal;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @RestController
@@ -103,5 +106,36 @@ public class LoginController {
         } else {
             throw new BadCredentialsException("Passcode is not valid");
         }
+    }
+
+    @RequestMapping("/googleLogin")
+    public String googleLogin(HttpServletResponse response) {
+        HashMap map = amUserService.googleLogin();
+
+        List<Cookie> cookies = (List<Cookie>) map.get("cookies");
+        Cookie NTID = cookies.get(0);
+        Cookie ORIG_URL = cookies.get(2);
+
+        System.out.println(NTID.getValue());
+        System.out.println(ORIG_URL.getValue());
+        System.out.println(map.get("authId"));
+
+        javax.servlet.http.Cookie ntidCookie = new javax.servlet.http.Cookie("NTID", NTID.getValue());
+        javax.servlet.http.Cookie orig_urlCookie = new javax.servlet.http.Cookie("ORIG_URL", ORIG_URL
+                .getValue());
+        javax.servlet.http.Cookie authIdCookie = new javax.servlet.http.Cookie("authId", map.get("authId").toString
+                ());
+
+        ntidCookie.setDomain("example.com");
+        orig_urlCookie.setDomain("example.com");
+        authIdCookie.setDomain("example.com");
+        response.addCookie(ntidCookie);
+        response.addCookie(orig_urlCookie);
+        response.addCookie(authIdCookie);
+
+        JSONObject jo = new JSONObject();
+        jo.put("authId", map.get("authId"));
+        jo.put("googleSsoUrl", map.get("googleSsoUrl"));
+        return jo.toString();
     }
 }

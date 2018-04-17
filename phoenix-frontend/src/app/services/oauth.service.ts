@@ -44,6 +44,33 @@ export class OauthService {
     return this.http.post(url, profile, {withCredentials: true,headers : tokenHeader});
   }
 
-  
+  initialPost() {
+    let url = this.serverPath+"/googleLogin";
+    let tokenHeader = new Headers ({
+      'Content-Type': 'application/json',
+    });
+    return this.http.get(url, {withCredentials: true,headers : tokenHeader});
+  }
+
+  getSession(authId, code, session_state, state){
+    let url = "http://openam.example.com:18080/openam/json/realms/root/realms/phoenix-dev/authenticate";
+
+    let info = {
+      "authId": authId,
+      "authIndexType":"service",
+      "authIndexValue":"GoogleSocialAuthenticationService",
+      "authuser":"0",
+      "code":code,
+      "prompt":"none",
+      "realm":"/phoenix-dev",
+      "session_state":session_state,
+      "state":state
+    }
+
+    let tokenHeader = new Headers ({
+      'Content-Type': 'application/json',
+    });
+    return this.http.post(url, info, {withCredentials: true,headers : tokenHeader});
+  }
 
 }

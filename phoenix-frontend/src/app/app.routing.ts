@@ -7,6 +7,7 @@ import {HomeComponent} from './components/home/home.component';
 import {ForgetpasswordComponent} from './components/forgetpassword/forgetpassword.component';
 import {OtpComponent} from './components/otp/otp.component';
 import {CodeComponent} from './components/code/code.component';
+import {ProxyComponent} from './components/proxy/proxy.component';
 
 import {LoginGuardService} from './services/login-guard.service';
 
@@ -40,6 +41,10 @@ const appRoutes: Routes = [
   {
     path: 'code',
     component: CodeComponent
+  },
+  {
+    path: 'proxy'
+    component: ProxyComponent
   }
 ];
 

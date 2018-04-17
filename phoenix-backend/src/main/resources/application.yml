@@ -14,5 +14,6 @@ spring:
       ddl-auto: update
 server:
   port: 8181
+  address: phoenix.example.com
 
 openam-server.address: "http://openam.example.com:18080/openam"

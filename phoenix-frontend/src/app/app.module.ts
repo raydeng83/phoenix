@@ -19,6 +19,7 @@ import { RegistrationService } from './services/registration.service';
 import { LoginGuardService } from './services/login-guard.service';
 import { OauthService } from './services/oauth.service';
 import { CodeComponent } from './components/code/code.component';
+import { ProxyComponent } from './components/proxy/proxy.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CodeComponent } from './components/code/code.component';
     RegistrationComponent,
     ForgetpasswordComponent,
     OtpComponent,
-    CodeComponent
+    CodeComponent,
+    ProxyComponent
   ],
   imports: [
     BrowserModule,

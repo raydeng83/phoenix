@@ -70,17 +70,20 @@ export class LoginComponent implements OnInit {
   }
 
   onGoogleLogin() {
-    let url = "https://accounts.google.com/o/oauth2/v2/auth?client_id=705445061234-hg27gdnem5jnfqlob55a0eb3as885lfh.apps.googleusercontent.com&response_type=code&scope=openid%20email%20profile&redirect_uri=http://localhost:4200/code&state=security_token%3DLmpiEjTkLqqgr_Q9Qs87KJ4g%26";
+    // let url = "https://accounts.google.com/o/oauth2/v2/auth?client_id=705445061234-hg27gdnem5jnfqlob55a0eb3as885lfh.apps.googleusercontent.com&response_type=code&scope=openid%20email%20profile&redirect_uri=http://localhost:4200/code&state=security_token%3DLmpiEjTkLqqgr_Q9Qs87KJ4g%26";
 
-    window.location.href=url;
-    // this.oauthService.getAuthCode().subscribe(
-    //   res => {
-    //     console.log(res.json());
-    //   },
-    //   error => {
-    //     console.log(error);
-    //   }
-    // );
+    this.oauthService.initialPost().subscribe(
+      res => {
+        let response = res.json();
+        console.log(response.googleSsoUrl);
+        let googleSsoUrl = response.googleSsoUrl;
+        localStorage.setItem('authId', response.authId);
+        window.location.href=googleSsoUrl;
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 
 
