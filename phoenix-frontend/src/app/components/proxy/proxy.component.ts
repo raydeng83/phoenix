@@ -27,6 +27,7 @@ export class ProxyComponent implements OnInit {
     this.oauthService.getSession(authId, code, session_state, state).subscribe(
       res => {
         console.log(res);
+        window.location.href="http://localhost:4200";
       },
       error => {
         console.log(error);

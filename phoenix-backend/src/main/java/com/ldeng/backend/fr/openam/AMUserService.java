@@ -23,4 +23,6 @@ public interface AMUserService {
     HashMap googleLogin();
 
     JSONObject googleLoginPost(HashMap map)  throws UnsupportedEncodingException;
+
+    JSONObject retrieveIdFromSession(String tokeId);
 }

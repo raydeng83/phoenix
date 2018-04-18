@@ -4,6 +4,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ldeng.backend.config.CustomAuthenticationProvider;
 import com.ldeng.backend.fr.openam.AMUserService;
 import com.ldeng.backend.model.*;
+import com.ldeng.backend.repository.RoleRepository;
+import com.ldeng.backend.repository.UserRepository;
 import com.ldeng.backend.service.OtpRefService;
 import com.ldeng.backend.service.UserService;
 import org.apache.http.cookie.Cookie;
@@ -39,6 +41,12 @@ public class LoginController {
 
     @Autowired
     private OtpRefService otpRefService;
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
+    private RoleRepository roleRepository;
 
     @RequestMapping("/")
     public ResponseEntity<String> logout(
@@ -166,18 +174,38 @@ public class LoginController {
 
         if (tokenId != null) {
 
-//            HttpSession httpSession = request.getSession();
-//            Set<GrantedAuthority> authorities = new HashSet<>();
-//            Set<UserRole> userRoles = user.getUserRoles();
-//            userRoles.forEach(ur -> authorities.add(new Authority(ur.getRole().getName())));
-//            Authentication authentication = new UsernamePasswordAuthenticationToken(user, null, authorities);
-//            SecurityContextHolder.getContext().setAuthentication(authentication);
-//            String sessionId = httpSession.getId();
-//            Session session = userService.setUserSession(user.getUsername(), sessionId, token);
-//
-//            otpRefService.deleteById(otpRef.getId());
+            JSONObject sessionInfo = amUserService.retrieveIdFromSession(tokenId);
+            String userId = sessionInfo.get("id").toString();
+
+            User user = userService.getUserByUsername(userId);
+            Set<UserRole> userRoles = new HashSet<>();
+
+            if(user==null) {
+
+                User newUser = new User();
+                newUser.setUsername(userId);
+                newUser.setAccountType("regular");
+                Role role1 = new Role();
+                int roleId = roleRepository.findByName("ROLE_USER").getRoleId();
+                role1.setRoleId(roleId);
+                role1.setName("ROLE_USER");
+                userRoles.add(new UserRole(newUser, role1));
+                newUser.getUserRoles().addAll(userRoles);
+                user = userRepository.save(newUser);
+            } else {
+                userRoles=user.getUserRoles();
+            }
+
+            HttpSession httpSession = request.getSession();
+            Set<GrantedAuthority> authorities = new HashSet<>();
+            userRoles.forEach(ur -> authorities.add(new Authority(ur.getRole().getName())));
+            Authentication authentication = new UsernamePasswordAuthenticationToken(user, null, authorities);
+            SecurityContextHolder.getContext().setAuthentication(authentication);
+            String sessionId = httpSession.getId();
+            Session session = userService.setUserSession(user.getUsername(), sessionId, tokenId);
+
         } else {
-            throw new BadCredentialsException("Passcode is not valid");
+            throw new InternalError("Something went wrong. Can't create user session.");
         }
 
         return result.toString();

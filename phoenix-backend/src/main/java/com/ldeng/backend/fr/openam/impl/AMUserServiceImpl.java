@@ -464,4 +464,45 @@ public class AMUserServiceImpl implements AMUserService {
 
         return result;
     }
+
+    @Override
+    public JSONObject retrieveIdFromSession(String tokeId){
+        String stsUrl = openamUrl+"/json/users?_action=idFromSession";
+
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+
+        JSONObject result = null;
+
+        try {
+            HttpPost httpPost = new HttpPost(stsUrl);
+
+            httpPost.setHeader("Content-Type", "application/json");
+            httpPost.setHeader("iplanetDirectoryPro", tokeId);
+
+            HttpResponse httpResponse = httpClient.execute(httpPost);
+
+            BufferedReader rd = new BufferedReader(new InputStreamReader(httpResponse.getEntity().getContent()));
+
+            StringBuffer rb = new StringBuffer();
+            String line = "";
+            while ((line = rd.readLine()) != null) {
+                rb.append(line);
+            }
+
+            System.out.println(rb.toString());
+
+            result = new JSONObject(rb.toString());
+
+        } catch(IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                httpClient.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return result;
+    }
 }
