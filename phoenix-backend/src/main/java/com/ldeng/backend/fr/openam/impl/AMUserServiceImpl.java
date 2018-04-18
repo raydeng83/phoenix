@@ -386,8 +386,9 @@ public class AMUserServiceImpl implements AMUserService {
     }
 
     @Override
-    public String googleLoginPost(HashMap map) throws UnsupportedEncodingException {
+    public JSONObject googleLoginPost(HashMap map) throws UnsupportedEncodingException {
         JSONObject result = null;
+        String tokenId = null;
 
         String authId = map.get("authId").toString();
         String NTID = map.get("NTID").toString();
@@ -447,6 +448,9 @@ public class AMUserServiceImpl implements AMUserService {
 
             System.out.println(rb.toString());
 
+            result = new JSONObject(rb.toString());
+
+
         } catch(IOException e) {
             e.printStackTrace();
         } finally {
@@ -458,6 +462,6 @@ public class AMUserServiceImpl implements AMUserService {
         }
 
 
-        return null;
+        return result;
     }
 }

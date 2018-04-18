@@ -22,5 +22,5 @@ public interface AMUserService {
 
     HashMap googleLogin();
 
-    String googleLoginPost(HashMap map)  throws UnsupportedEncodingException;
+    JSONObject googleLoginPost(HashMap map)  throws UnsupportedEncodingException;
 }

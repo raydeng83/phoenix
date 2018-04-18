@@ -161,8 +161,25 @@ public class LoginController {
         mapper.put("NTID", NTID);
 
 
-        amUserService.googleLoginPost(mapper);
+        JSONObject result = amUserService.googleLoginPost(mapper);
+        String tokenId = result.get("tokenId").toString();
 
-        return null;
+        if (tokenId != null) {
+
+//            HttpSession httpSession = request.getSession();
+//            Set<GrantedAuthority> authorities = new HashSet<>();
+//            Set<UserRole> userRoles = user.getUserRoles();
+//            userRoles.forEach(ur -> authorities.add(new Authority(ur.getRole().getName())));
+//            Authentication authentication = new UsernamePasswordAuthenticationToken(user, null, authorities);
+//            SecurityContextHolder.getContext().setAuthentication(authentication);
+//            String sessionId = httpSession.getId();
+//            Session session = userService.setUserSession(user.getUsername(), sessionId, token);
+//
+//            otpRefService.deleteById(otpRef.getId());
+        } else {
+            throw new BadCredentialsException("Passcode is not valid");
+        }
+
+        return result.toString();
     }
 }
