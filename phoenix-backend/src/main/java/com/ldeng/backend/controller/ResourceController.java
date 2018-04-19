@@ -27,8 +27,9 @@ public class ResourceController {
     @RequestMapping("/{resource}")
     public String testResource(HttpServletRequest request, @PathVariable String resource) throws UnsupportedEncodingException {
         String sessionId = RequestContextHolder.currentRequestAttributes().getSessionId();
+        String adminTokenId = amUserService.authenticateUser("admin", "password");
         String tokenId = sessionService.getTokenIdBySessionId(sessionId);
-        JSONObject jo = amUserService.accessEvaluation(resource, tokenId);
+        JSONObject jo = amUserService.accessEvaluation(resource, adminTokenId, tokenId);
 
 
         return jo.toString();

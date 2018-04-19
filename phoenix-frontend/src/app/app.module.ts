@@ -12,15 +12,16 @@ import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassword.component';
 import { OtpComponent } from './components/otp/otp.component';
+import { CodeComponent } from './components/code/code.component';
+import { ProxyComponent } from './components/proxy/proxy.component';
+import { Resource1Component } from './components/resource1/resource1.component';
 
 import { LoginService } from './services/login.service';
 import { UserService } from './services/user.service';
 import { RegistrationService } from './services/registration.service';
 import { LoginGuardService } from './services/login-guard.service';
 import { OauthService } from './services/oauth.service';
-import { CodeComponent } from './components/code/code.component';
-import { ProxyComponent } from './components/proxy/proxy.component';
-import { Resource1Component } from './components/resource1/resource1.component';
+import { ResourceGuardService } from './services/resource-guard.service'
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { Resource1Component } from './components/resource1/resource1.component';
     UserService,
     RegistrationService,
     LoginGuardService,
-    OauthService
+    OauthService,
+    ResourceGuardService
   ],
   bootstrap: [AppComponent]
 })

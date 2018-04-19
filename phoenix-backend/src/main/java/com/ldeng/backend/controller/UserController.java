@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.security.Principal;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
@@ -98,6 +99,14 @@ public class UserController {
             throw new Exception("Google authentication failed.");
         }
 
+    }
+
+    @RequestMapping("/")
+    public User getUserByCurrentSession(Principal principal) {
+        String username = principal.getName();
+        User user = userService.getUserByUsername(username);
+
+        return user;
     }
 
 }

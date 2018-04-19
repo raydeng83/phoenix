@@ -509,7 +509,8 @@ public class AMUserServiceImpl implements AMUserService {
     }
 
     @Override
-    public JSONObject accessEvaluation(String resource, String tokenId) throws UnsupportedEncodingException {
+    public JSONObject accessEvaluation(String resource, String adminTokenId, String tokenId) throws
+            UnsupportedEncodingException {
         String stsUrl = openamUrl+"/json/phoenix-dev/policies?_action=evaluate";
 
         CloseableHttpClient httpClient = HttpClients.createDefault();
@@ -520,6 +521,9 @@ public class AMUserServiceImpl implements AMUserService {
         list.add(resource);
         jo.put("resources", list);
         jo.put("application", "phoenixPolicySet");
+        JSONObject ssoToken = new JSONObject();
+        ssoToken.put("ssoToken", tokenId);
+        jo.put("subject", ssoToken);
         String content = jo.toString();
         StringEntity entity = new StringEntity(content);
 
@@ -527,7 +531,7 @@ public class AMUserServiceImpl implements AMUserService {
             HttpPost httpPost = new HttpPost(stsUrl);
 
             httpPost.setHeader("Content-Type", "application/json");
-            httpPost.setHeader("iplanetDirectoryPro", tokenId);
+            httpPost.setHeader("iplanetDirectoryPro", adminTokenId);
             httpPost.setEntity(entity);
             HttpResponse httpResponse = httpClient.execute(httpPost);
 

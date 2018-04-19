@@ -29,9 +29,20 @@ export class UserService {
   accessResource1() {
     
     let url = this.serverPath+"/resource/resource1";
-    console.log(url);
+    let headers = new Headers(
+      {
+        'Accept': 'application/json',
+      });
     
-    return this.http.get(url, {withCredentials:true});
+    return this.http.get(url, {withCredentials: true,headers : headers}).map(
+      res => {
+        let result=res.json();
+        if (result.actions.GET) {
+          return true;
+        }
+        return false;
+      }
+    );
   }
 
   forgetPassword(username: string) {
@@ -47,6 +58,15 @@ export class UserService {
       'Content-Type': 'application/json',
     });
     return this.http.post(url, userInfo, {headers : tokenHeader});
+  }
+
+  getUserByCurrentSession(){
+    let url = this.serverPath+"/user/";
+
+    let tokenHeader = new Headers ({
+      'Content-Type': 'application/json',
+    });
+    return this.http.get(url, {withCredentials: true,headers : tokenHeader});
   }
 
 }

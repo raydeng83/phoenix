@@ -52,16 +52,7 @@ export class HomeComponent implements OnInit {
   }
 
   onAccessResource1(){
-    this.userService.accessResource1().subscribe(
-      res => {
-        console.log(res.json());
-        let result = res.json();
-        
-      },
-      error => {
-        console.log(error);
-      }
-    );
+    this.router.navigate(['/resource1']);
   }
 
   ngOnInit() {

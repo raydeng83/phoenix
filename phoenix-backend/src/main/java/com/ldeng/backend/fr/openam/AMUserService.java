@@ -26,5 +26,6 @@ public interface AMUserService {
 
     JSONObject retrieveIdFromSession(String tokeId);
 
-    JSONObject accessEvaluation(String resource, String tokenId) throws UnsupportedEncodingException;
+    JSONObject accessEvaluation(String resource, String adminTokenId, String tokenId) throws
+            UnsupportedEncodingException;
 }

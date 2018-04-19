@@ -11,6 +11,7 @@ import {ProxyComponent} from './components/proxy/proxy.component';
 import {Resource1Component} from './components/resource1/resource1.component';
 
 import {LoginGuardService} from './services/login-guard.service';
+import {ResourceGuardService} from './services/resource-guard.service';
 
 const appRoutes: Routes = [
   {
@@ -44,12 +45,13 @@ const appRoutes: Routes = [
     component: CodeComponent
   },
   {
-    path: 'proxy'
+    path: 'proxy',
     component: ProxyComponent
   },
   {
-    path: 'resource1'
-    component: Resource1Component
+    path: 'resource1',
+    component: Resource1Component,
+    canActivate: [ResourceGuardService]
   }
 ];
 
