@@ -26,6 +26,14 @@ export class UserService {
     return this.http.get(url, {withCredentials:true});
   }
 
+  accessResource1() {
+    
+    let url = this.serverPath+"/resource/resource1";
+    console.log(url);
+    
+    return this.http.get(url, {withCredentials:true});
+  }
+
   forgetPassword(username: string) {
     let url = this.serverPath+"/user/forgetpassword";
 

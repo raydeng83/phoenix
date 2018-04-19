@@ -20,6 +20,7 @@ import { LoginGuardService } from './services/login-guard.service';
 import { OauthService } from './services/oauth.service';
 import { CodeComponent } from './components/code/code.component';
 import { ProxyComponent } from './components/proxy/proxy.component';
+import { Resource1Component } from './components/resource1/resource1.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ProxyComponent } from './components/proxy/proxy.component';
     ForgetpasswordComponent,
     OtpComponent,
     CodeComponent,
-    ProxyComponent
+    ProxyComponent,
+    Resource1Component
   ],
   imports: [
     BrowserModule,

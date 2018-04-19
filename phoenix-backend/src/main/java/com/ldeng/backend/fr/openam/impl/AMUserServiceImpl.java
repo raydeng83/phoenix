@@ -41,6 +41,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
+import java.sql.Array;
 import java.util.*;
 
 @Service
@@ -473,6 +474,7 @@ public class AMUserServiceImpl implements AMUserService {
 
         JSONObject result = null;
 
+
         try {
             HttpPost httpPost = new HttpPost(stsUrl);
 
@@ -504,5 +506,54 @@ public class AMUserServiceImpl implements AMUserService {
         }
 
         return result;
+    }
+
+    @Override
+    public JSONObject accessEvaluation(String resource, String tokenId) throws UnsupportedEncodingException {
+        String stsUrl = openamUrl+"/json/phoenix-dev/policies?_action=evaluate";
+
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+
+        JSONObject result = null;
+        JSONObject jo = new JSONObject();
+        List <String> list = new ArrayList <String>();
+        list.add(resource);
+        jo.put("resources", list);
+        jo.put("application", "phoenixPolicySet");
+        String content = jo.toString();
+        StringEntity entity = new StringEntity(content);
+
+        try {
+            HttpPost httpPost = new HttpPost(stsUrl);
+
+            httpPost.setHeader("Content-Type", "application/json");
+            httpPost.setHeader("iplanetDirectoryPro", tokenId);
+            httpPost.setEntity(entity);
+            HttpResponse httpResponse = httpClient.execute(httpPost);
+
+            BufferedReader rd = new BufferedReader(new InputStreamReader(httpResponse.getEntity().getContent()));
+
+            StringBuffer rb = new StringBuffer();
+            String line = "";
+            while ((line = rd.readLine()) != null) {
+                rb.append(line);
+            }
+
+            System.out.println(rb.toString());
+            String rbStr = rb.toString();
+            result = new JSONObject(rbStr.substring(1, rbStr.length()-1));
+
+        } catch(IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                httpClient.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return result;
+
     }
 }
