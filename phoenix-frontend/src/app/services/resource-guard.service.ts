@@ -19,6 +19,7 @@ export class ResourceGuardService implements CanActivate{
   		},
   		error => {
   			console.log(error);
+        this.router.navigate(['/login']);
   		}
   	);
 
