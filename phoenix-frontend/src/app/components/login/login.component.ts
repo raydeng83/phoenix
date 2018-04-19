@@ -39,23 +39,30 @@ export class LoginComponent implements OnInit {
 
   onLogin() {
     this.busy=true;
-    this.loginService.sendCredential(this.credential.username, this.credential.password).subscribe(
-      res=>{
-        let message = res.text();
-        let otpId = message.substring(6);
-        if(message.startsWith("otp")) {
-          this.router.navigate(['/otp', otpId]);
-        } else {
-          this.loggedIn=true;
-          this.router.navigate(['/home']);
+
+    if(this.credential.username.trim()=="" || this.credential.password.trim()=="") {
+      this.busy=false;
+      this.loggedIn=false;
+      this.loginError=true;
+    } else {
+      this.loginService.sendCredential(this.credential.username, this.credential.password).subscribe(
+        res=>{
+          let message = res.text();
+          let otpId = message.substring(6);
+          if(message.startsWith("otp")) {
+            this.router.navigate(['/otp', otpId]);
+          } else {
+            this.loggedIn=true;
+            this.router.navigate(['/home']);
+          }
+        },
+        error=>{
+          this.busy=false;
+          this.loggedIn=false;
+          this.loginError=true;
         }
-      },
-      error=>{
-        this.busy=false;
-        this.loggedIn=false;
-        this.loginError=true;
-      }
-    );
+      );
+    }
   }
 
   onCheckSession() {
