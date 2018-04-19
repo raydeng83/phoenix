@@ -9,6 +9,7 @@ import {OtpComponent} from './components/otp/otp.component';
 import {CodeComponent} from './components/code/code.component';
 import {ProxyComponent} from './components/proxy/proxy.component';
 import {Resource1Component} from './components/resource1/resource1.component';
+import {ErrorPageComponent} from './components/error-page/error-page.component';
 
 import {LoginGuardService} from './services/login-guard.service';
 import {ResourceGuardService} from './services/resource-guard.service';
@@ -52,6 +53,10 @@ const appRoutes: Routes = [
     path: 'resource1',
     component: Resource1Component,
     canActivate: [ResourceGuardService]
+  },
+  {
+    path: '**',
+    component: ErrorPageComponent,
   }
 ];
 

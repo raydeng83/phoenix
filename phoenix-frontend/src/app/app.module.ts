@@ -21,7 +21,8 @@ import { UserService } from './services/user.service';
 import { RegistrationService } from './services/registration.service';
 import { LoginGuardService } from './services/login-guard.service';
 import { OauthService } from './services/oauth.service';
-import { ResourceGuardService } from './services/resource-guard.service'
+import { ResourceGuardService } from './services/resource-guard.service';
+import { ErrorPageComponent } from './components/error-page/error-page.component'
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ResourceGuardService } from './services/resource-guard.service'
     OtpComponent,
     CodeComponent,
     ProxyComponent,
-    Resource1Component
+    Resource1Component,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,

@@ -13,11 +13,16 @@ export class ResourceGuardService implements CanActivate{
   	res.subscribe (
   		res => {
   			console.log(res)
+  			if(!res) {
+  		this.router.navigate(['/error']);
+  	}
   		},
   		error => {
-  			this.router.navigate(['/home']);
+  			console.log(error);
   		}
   	);
+
+  	
   	return res;
   }
 }
