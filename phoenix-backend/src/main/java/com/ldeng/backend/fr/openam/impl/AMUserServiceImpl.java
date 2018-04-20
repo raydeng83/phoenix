@@ -7,6 +7,7 @@ import com.ldeng.backend.service.OtpRefService;
 import com.ldeng.backend.service.UserService;
 import com.ldeng.backend.utility.MyJSONResponseHandler;
 import org.apache.commons.text.StringEscapeUtils;
+import org.apache.http.HttpHeaders;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.NameValuePair;
@@ -40,6 +41,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.sql.Array;
 import java.util.*;
@@ -559,5 +561,56 @@ public class AMUserServiceImpl implements AMUserService {
 
         return result;
 
+    }
+
+    @Override
+    public JSONObject getOauthToken(String code) {
+        String stsUrl = openamUrl+"/oauth2/realms/phoenix-dev/access_token";
+
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+
+        JSONObject result = null;
+
+
+        try {
+            HttpPost httpPost = new HttpPost(stsUrl);
+            List <NameValuePair> nvps = new ArrayList <NameValuePair>();
+            nvps.add(new BasicNameValuePair("code", code));
+            nvps.add(new BasicNameValuePair("grant_type", "authorization_code"));
+            nvps.add(new BasicNameValuePair("client_id", "phoenix-client"));
+            nvps.add(new BasicNameValuePair("redirect_uri", "http://localhost:4200/oauth"));
+
+            httpPost.setEntity(new UrlEncodedFormEntity(nvps));
+
+            String encoding = Base64.getEncoder().encodeToString(("phoenix-client:password").getBytes());
+            httpPost.setHeader("Authorization", "Basic " + encoding);
+
+
+            httpPost.setHeader("Content-Type", "application/x-www-form-urlencoded");
+            HttpResponse httpResponse = httpClient.execute(httpPost);
+
+            BufferedReader rd = new BufferedReader(new InputStreamReader(httpResponse.getEntity().getContent()));
+
+            StringBuffer rb = new StringBuffer();
+            String line = "";
+            while ((line = rd.readLine()) != null) {
+                rb.append(line);
+            }
+
+            System.out.println(rb.toString());
+            String rbStr = rb.toString();
+            result = new JSONObject(rbStr);
+
+        } catch(IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                httpClient.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return result;
     }
 }

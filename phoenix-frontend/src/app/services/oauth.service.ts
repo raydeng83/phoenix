@@ -73,4 +73,14 @@ export class OauthService {
     return this.http.post(url, info, {withCredentials: true,headers : tokenHeader});
   }
 
+  getOauthAccessToken(code) {
+    let url = this.serverPath+"/oauth";
+    let tokenHeader = new Headers ({
+      'Content-Type': 'application/json',
+    });
+    
+
+    return this.http.post(url, code, {withCredentials: true,headers : tokenHeader});
+  }
+
 }

@@ -3,6 +3,7 @@ package com.phoenix.external.ssoapp.fr.openam.impl;
 import com.phoenix.external.ssoapp.fr.openam.AMUserService;
 import com.phoenix.external.ssoapp.model.User;
 import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -123,6 +124,52 @@ public class AMUserServiceImpl implements AMUserService {
            result = new JSONObject(rb.toString());
 
 
+
+        } catch(IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                httpClient.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return result;
+    }
+
+    @Override
+    public boolean verifyToken(String accessToken){
+        boolean result = false;
+
+        String authenticateUserUrl = openamUrl+"/oauth2/realms/phoenix-dev/tokeninfo?access_token="+accessToken;
+
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+
+        try {
+            HttpGet httpGet = new HttpGet(authenticateUserUrl);
+
+            HttpResponse httpResponse = httpClient.execute(httpGet);
+
+            BufferedReader rd = new BufferedReader(new InputStreamReader(httpResponse.getEntity().getContent()));
+
+            StringBuffer rb = new StringBuffer();
+            String line = "";
+            while ((line = rd.readLine()) != null) {
+                rb.append(line);
+            }
+
+            JSONObject jo = new JSONObject(rb.toString());
+            System.out.println(jo.toString());
+            if(!jo.has("error")) {
+                String scopeStr = jo.get("scope").toString();
+                String scope = scopeStr.substring(2, scopeStr.length()-2);
+                System.out.println(scope);
+                if(!scope.equalsIgnoreCase("profile")) {
+                    throw new IOException("Wrong scope value");
+                }
+
+                result=true;
+            }
 
         } catch(IOException e) {
             e.printStackTrace();

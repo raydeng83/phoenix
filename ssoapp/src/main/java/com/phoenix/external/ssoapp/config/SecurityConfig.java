@@ -22,7 +22,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/image/**",
             "/login/**",
             "/logout/**",
-            "/user"
+            "/user",
+            "/oauthSso"
     };
 
     @Override

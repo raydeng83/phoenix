@@ -28,4 +28,6 @@ public interface AMUserService {
 
     JSONObject accessEvaluation(String resource, String adminTokenId, String tokenId) throws
             UnsupportedEncodingException;
+
+    JSONObject getOauthToken(String code);
 }

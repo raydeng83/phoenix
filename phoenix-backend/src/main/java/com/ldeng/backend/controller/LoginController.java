@@ -210,4 +210,11 @@ public class LoginController {
 
         return result.toString();
     }
+
+    @RequestMapping("/oauth")
+    public String oauthPost(@RequestBody String code){
+        JSONObject jo = amUserService.getOauthToken(code);
+
+        return jo.toString();
+    }
 }

@@ -65,6 +65,16 @@ export class LoginService {
     return this.http.get(url, {withCredentials:true, headers : headers});
   }
 
+  oauthSsoClient1(access_token) {
+    let url = "http://localhost:8383/oauthSso";
+    let headers = new Headers(
+      {
+        'AuthorizationToken': 'Bearer '+access_token
+     });
+
+    return this.http.get(url, {headers:headers});
+  }
+
   sendOtp(otpId, passcode) {
     let url = this.serverPath+"/otp";
 

@@ -55,6 +55,10 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/resource1']);
   }
 
+  onOauthSsoClient1(){
+    location.href = "http://openam.example.com:18080/openam/oauth2/realms/phoenix-dev/authorize?client_id=phoenix-client&response_type=code&scope=profile&redirect_uri=http://localhost:4200/oauth";
+  }
+
   ngOnInit() {
     this.loginService.checkSession().subscribe(
       (res) => this.loggedIn=res

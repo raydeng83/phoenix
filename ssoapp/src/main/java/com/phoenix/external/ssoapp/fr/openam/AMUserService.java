@@ -9,4 +9,6 @@ public interface AMUserService {
     String authenticateUser(String usernamne, String password);
 
     JSONObject invalidateSession(String tokenId);
+
+    boolean verifyToken(String accessToken);
 }
